@@ -94,21 +94,23 @@ export const SAMPLE_PROJECTS: Project[] = [
     slug: "hotel-concept",
     name: "Hospitality Project",
     year: "ACADEMIC PROJECT 2023",
-    category: "03| HOTEL",
+    category: "03 | HOTEL",
     location: "",
     description: "Yuhum Hotel is a project inspired by the heritage of Bacolod, combined with designer John Galliano’s art style. Yuhum (smile) features the hotel’s dedication to provide guests with a luxurious experience creating an atmosphere filled with smiles enhancing their overall stay.",
     tools: ["AutoCAD", "SketchUp", "V-Ray", "Adobe Photoshop"],
     heroImage: "/images/projects/03-yuhum-hotel/hero.jpg",
-    moodboardImages: [],
+    moodboardImages: [
+      "/images/projects/03-yuhum-hotel/moodboard.jpg"
+    ],
     inspiration: {
       text: "As Bacolod is known for being the City of Smile, Yuhum pays homage to the concept of Sugar Rush. Similarly, the hotel brings a burst of happiness and in a dramatic state which is also inspired from John Galliano’s Fashion Statements. Yuhum offers an appealing combination of local aesthetics and Old World charm by combining native Filipino materials and patterns with the beauty and balance of a French chateau. As this hotel is inspired by the works of French fashion designer John Galliano, the interior reflects Galliano’s boldness, drama, and storytelling.",
       image: ""
     },
     concept: {
       text: "As Bacolod is known for being the City of Smile, Yuhum pays homage to the concept of Sugar Rush. Similarly, the hotel brings a burst of happiness and in a dramatic state which is also inspired from John Galliano’s Fashion Statements. Yuhum offers an appealing combination of local aesthetics and Old World charm by combining native Filipino materials and patterns with the beauty and balance of a French chateau. As this hotel is inspired by the works of French fashion designer John Galliano, the interior reflects Galliano’s boldness, drama, and storytelling.",
-      image: ""
+      image: "/images/projects/03-yuhum-hotel/color-palette.jpg"
     },
-    floorPlanImage: "",
+    floorPlanImage: "/images/projects/03-yuhum-hotel/floor-plan-first.jpg",
     floorPlanContents: [
       { number: "1", label: "ENTRY" },
       { number: "2", label: "LOBBY" },
@@ -120,20 +122,27 @@ export const SAMPLE_PROJECTS: Project[] = [
       { number: "8", label: "KITCHEN" },
       { number: "9", label: "FUNCTION ROOM" },
       { number: "10", label: "BACK OF THE HOUSE" },
-      { number: "8", label: "POOL" },
-      { number: "11", label: "CLINIC" },
-      { number: "12", label: "GAME AREA" },
-      { number: "13", label: "GYM" },
-      { number: "14", label: "SPA" },
-      { number: "15", label: "DELUXE SUITE" },
-      { number: "16", label: "EXECUTIVE SUITE" },
-      { number: "17", label: "PREMIERE SUITE" },
-      { number: "18", label: "PWD DELUXE ROOM" },
-      { number: "19", label: "PRESIDENTIAL SUITE" }
+      { number: "11", label: "POOL" },
+      { number: "12", label: "CLINIC" },
+      { number: "13", label: "GAME AREA" },
+      { number: "14", label: "GYM" },
+      { number: "15", label: "SPA" },
+      { number: "16", label: "DELUXE SUITE" },
+      { number: "17", label: "EXECUTIVE SUITE" },
+      { number: "18", label: "PREMIERE SUITE" },
+      { number: "19", label: "PWD DELUXE ROOM" },
+      { number: "20", label: "PRESIDENTIAL SUITE" }
     ],
     extendedDescription: "The guest suites and recreational spaces of Yuhum Hotel reflect the vibrant heritage of Bacolod and the bold, theatrical style of John Galliano. Inspired by the City of Smiles and the concept of Sugar Rush, the interiors feature rich colors, elegant detailing, and dramatic patterns that create a luxurious and memorable experience. By combining Filipino materials and motifs with the sophistication of a French chateau, the spaces celebrate local culture while embodying Galliano's signature sense of storytelling, elegance, and grandeur.",
     pullQuote: "Sugar Rush / FRENCH-FILIPINO INTERIOR",
-    galleryImages: []
+    galleryImages: [
+      "/images/projects/03-yuhum-hotel/restaurant.jpg",
+      "/images/projects/03-yuhum-hotel/deluxe-suite.jpg",
+      "/images/projects/03-yuhum-hotel/presidential-suite.jpg",
+      "/images/projects/03-yuhum-hotel/executive-suite.jpg",
+      "/images/projects/03-yuhum-hotel/premiere-suite.jpg",
+      "/images/projects/03-yuhum-hotel/game-area.jpg"
+    ]
   },
   {
     slug: "giliw-learning-facility",

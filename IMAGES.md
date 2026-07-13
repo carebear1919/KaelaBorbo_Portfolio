@@ -51,6 +51,17 @@ If a file uses `.png` instead, rename it to `.jpg` OR tell me and I'll update th
 | File | What it is |
 |---|---|
 | `hero.jpg` | Main shot — also on homepage carousel |
+| `moodboard.jpg` | Mood board image |
+| `color-palette.jpg` | Color palette image (also Concept & Mood center panel) |
+| `gift-shop.jpg` | Gift shop image |
+| `floor-plan-first.jpg` | 1st floor plan |
+| `floor-plan-second.jpg` | 2nd floor plan |
+| `restaurant.jpg` | Restaurant wide image (full-width in gallery) |
+| `deluxe-suite.jpg` | Deluxe suite (large tile) |
+| `presidential-suite.jpg` | Presidential suite |
+| `executive-suite.jpg` | Executive suite |
+| `premiere-suite.jpg` | Premiere suite |
+| `game-area.jpg` | Game area |
 
 ## 04 — Giliw Learning Facility (`04-giliw-learning-facility/`)
 

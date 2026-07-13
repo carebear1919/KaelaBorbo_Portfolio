@@ -89,7 +89,7 @@ export default function Contact() {
                 </h3>
                 
                 <p className="text-sm text-paper/85 font-light leading-relaxed">
-                  I accept a limited selection of residential, hospitality, and civic commissions annually. Whether you have a clear blueprint or just a raw site, let's shape it into a sensory landmark.
+                  A fresh Interior Design graduate open to residential, commercial, hospitality, and community-centered projects. Whether you have a clear vision or just a raw space, I'd love to help shape it into something functional and striking.
                 </p>
               </div>
 

@@ -1096,7 +1096,7 @@ export default function ProjectPage({
 
             {/* Column 2: Central Floating Highlight Image or Sketch Box */}
             <div className={`${
-              ["coastal-residence", "container-home"].includes(project.slug) ? "lg:col-span-4" : "lg:col-span-6"
+              ["coastal-residence", "container-home", "hotel-concept"].includes(project.slug) ? "lg:col-span-4" : "lg:col-span-6"
             } bg-mist/5 border border-mist/10 p-8 flex flex-col justify-center items-center rounded-md shadow-sm group cursor-pointer fade-up`}
                  onClick={() => handleOpenLightbox(project.concept ? project.concept.image : project.heroImage, [project.heroImage])}>
               <div className="w-full h-full flex flex-col justify-between">
@@ -1149,7 +1149,7 @@ export default function ProjectPage({
             </div>
 
             {/* Column 3: rendered for projects with real moodboard details */}
-            {["coastal-residence", "container-home"].includes(project.slug) && (
+            {["coastal-residence", "container-home", "hotel-concept"].includes(project.slug) && (
               <div className="lg:col-span-4 flex flex-col justify-between p-8 bg-paper border border-mist/20 rounded-md shadow-sm fade-up">
                 <div className="space-y-6">
                   <span className="font-mono text-[9px] tracking-[0.3em] text-slate uppercase block">
@@ -1187,6 +1187,53 @@ export default function ProjectPage({
           </div>
         </div>
       </section>
+
+      {/* SECTION 5.4: COLOR PALETTE & GIFT SHOP (FOR YUHUM HOTEL ONLY) */}
+      {project.slug === "hotel-concept" && (
+        <section className="py-20 bg-paper/30 border-b border-mist/10" id="project-hotel-palette-section">
+          <div className="max-w-7xl mx-auto px-6 space-y-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+              <div className="lg:col-span-7 fade-up">
+                <img
+                  src="/images/projects/03-yuhum-hotel/color-palette.jpg"
+                  alt="Yuhum Hotel Color Palette"
+                  className="w-full object-contain rounded-sm cursor-pointer shadow-sm"
+                  referrerPolicy="no-referrer"
+                  onClick={() => handleOpenLightbox("/images/projects/03-yuhum-hotel/color-palette.jpg", ["/images/projects/03-yuhum-hotel/color-palette.jpg", "/images/projects/03-yuhum-hotel/gift-shop.jpg"])}
+                />
+              </div>
+              <div className="lg:col-span-5 space-y-6 fade-up">
+                <div className="border-l-2 border-slate pl-6 py-1">
+                  <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-1">
+                    02 / CHROMATIC COORDINATION
+                  </span>
+                  <h3 className="font-serif text-3xl font-light text-ink uppercase tracking-wide">
+                    Color Palette
+                  </h3>
+                </div>
+                <p className="text-sm text-slate/85 font-light leading-relaxed">
+                  The color palette of the Yuhum Hotel & Restaurant revolves around soft red, blue, and neutral colors such as brown to evoke a sense of theatrics and flamboyance with a mix of French Countryside vibe that helps balance the overall space and create a more cohesive area. The hotel also features high quality materials such as stone, wood, brass, glass, and velvet fabrics that bring out a sophisticated look reflecting Galliano’s works.
+                </p>
+              </div>
+            </div>
+
+            <div
+              className="relative overflow-hidden rounded-md shadow-md group cursor-pointer aspect-16/9 max-w-4xl mx-auto fade-up"
+              onClick={() => handleOpenLightbox("/images/projects/03-yuhum-hotel/gift-shop.jpg", ["/images/projects/03-yuhum-hotel/color-palette.jpg", "/images/projects/03-yuhum-hotel/gift-shop.jpg"])}
+            >
+              <img
+                src="/images/projects/03-yuhum-hotel/gift-shop.jpg"
+                alt="Yuhum Hotel Gift Shop"
+                className="w-full h-full object-cover group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute bottom-4 left-4 bg-ink/75 backdrop-blur-xs text-[8px] font-mono uppercase tracking-widest text-paper px-3 py-1.5 rounded-xs border border-white/5">
+                GIFT SHOP
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* SECTION 5.5: SUSTAINABLE INCLUSIONS (FOR CONTAINER-HOME ONLY) */}
       {project.slug === "container-home" && (
@@ -1375,24 +1422,30 @@ export default function ProjectPage({
                     </div>
                   </div>
                 ) : project.slug === "hotel-concept" ? (
-                  <div className="space-y-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div className="w-full aspect-[4/3] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-6 text-center select-none">
-                        <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
-                          1ST FLOOR PLAN
-                        </span>
-                        <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                          image placeholder
-                        </span>
-                      </div>
-                      <div className="w-full aspect-[4/3] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-6 text-center select-none">
-                        <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
-                          2ND FLOOR PLAN
-                        </span>
-                        <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                          image placeholder
-                        </span>
-                      </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <img
+                        src="/images/projects/03-yuhum-hotel/floor-plan-first.jpg"
+                        alt="Yuhum Hotel First Floor Plan"
+                        className="w-full object-contain rounded-sm cursor-pointer"
+                        referrerPolicy="no-referrer"
+                        onClick={() => handleOpenLightbox("/images/projects/03-yuhum-hotel/floor-plan-first.jpg", ["/images/projects/03-yuhum-hotel/floor-plan-first.jpg", "/images/projects/03-yuhum-hotel/floor-plan-second.jpg"])}
+                      />
+                      <span className="font-mono text-[9px] tracking-widest text-mist uppercase block text-center">
+                        1ST FLOOR PLAN
+                      </span>
+                    </div>
+                    <div className="space-y-2">
+                      <img
+                        src="/images/projects/03-yuhum-hotel/floor-plan-second.jpg"
+                        alt="Yuhum Hotel Second Floor Plan"
+                        className="w-full object-contain rounded-sm cursor-pointer"
+                        referrerPolicy="no-referrer"
+                        onClick={() => handleOpenLightbox("/images/projects/03-yuhum-hotel/floor-plan-second.jpg", ["/images/projects/03-yuhum-hotel/floor-plan-first.jpg", "/images/projects/03-yuhum-hotel/floor-plan-second.jpg"])}
+                      />
+                      <span className="font-mono text-[9px] tracking-widest text-mist uppercase block text-center">
+                        2ND FLOOR PLAN
+                      </span>
                     </div>
                   </div>
                 ) : project.slug === "giliw-learning-facility" ? (
@@ -1614,7 +1667,7 @@ export default function ProjectPage({
                     The Restaurant / Filipino-French Fusion
                   </h4>
                   <span className="font-mono text-xxs tracking-widest text-slate uppercase block mt-1">
-                    01 / BACOLOD FOOD CULTURE INFLUENCE (2 PERSPECTIVES)
+                    01 / BACOLOD FOOD CULTURE INFLUENCE
                   </span>
                 </div>
                 
@@ -1622,20 +1675,16 @@ export default function ProjectPage({
                   The restaurant plays an integral part in the hotel project as it offers a glimpse of the food culture of Bacolod. The space features dramatic wall finishes such as dark red paint and wallpapers matched with checkerboard flooring and wood ceiling finishes to evoke grandeur, highlighting the Filipino-French fusion.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {[1, 2].map((num) => (
-                    <div
-                      key={num}
-                      className="w-full aspect-[16/10] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none fade-up"
-                    >
-                      <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
-                        RESTAURANT PERSPECTIVE 0{num}
-                      </span>
-                      <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                        placeholder image
-                      </span>
-                    </div>
-                  ))}
+                <div
+                  className="overflow-hidden rounded-md shadow-lg group cursor-pointer aspect-16/9 fade-up"
+                  onClick={() => handleOpenLightbox(project.galleryImages[0], project.galleryImages)}
+                >
+                  <img
+                    src={project.galleryImages[0]}
+                    alt="Yuhum Hotel Restaurant"
+                    className="w-full h-full object-cover group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
               </div>
 
@@ -1646,7 +1695,7 @@ export default function ProjectPage({
                     Guest Suites & Recreation Spaces
                   </h4>
                   <span className="font-mono text-xxs tracking-widest text-slate uppercase block mt-1">
-                    02 / THEATRICAL GRANDEUR & SUGAR RUSH CONCEPT (5 PERSPECTIVES)
+                    02 / THEATRICAL GRANDEUR & SUGAR RUSH CONCEPT
                   </span>
                 </div>
 
@@ -1655,51 +1704,30 @@ export default function ProjectPage({
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-                  {/* Staggered grid of 5 image placeholders */}
-                  <div className="md:col-span-8 aspect-video border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-6 text-center select-none fade-up">
-                    <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
-                      SUITE MAIN PERSPECTIVE 01
-                    </span>
-                    <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                      placeholder image (theatrical bedroom view)
-                    </span>
-                  </div>
-                  
-                  <div className="md:col-span-4 aspect-square md:aspect-auto border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-6 text-center select-none fade-up">
-                    <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
-                      SUITE DETAIL 02
-                    </span>
-                    <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                      placeholder image
-                    </span>
-                  </div>
-
-                  <div className="md:col-span-4 aspect-square md:aspect-auto border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-6 text-center select-none fade-up">
-                    <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
-                      RECREATION PERSPECTIVE 03
-                    </span>
-                    <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                      placeholder image
-                    </span>
-                  </div>
-
-                  <div className="md:col-span-4 aspect-square md:aspect-auto border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-6 text-center select-none fade-up">
-                    <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
-                      RECREATION PERSPECTIVE 04
-                    </span>
-                    <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                      placeholder image
-                    </span>
-                  </div>
-
-                  <div className="md:col-span-4 aspect-square md:aspect-auto border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-6 text-center select-none fade-up">
-                    <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
-                      SUITE PERSPECTIVE 05
-                    </span>
-                    <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                      placeholder image
-                    </span>
-                  </div>
+                  {/* Staggered grid of 5 suite & recreation images */}
+                  {[
+                    { image: project.galleryImages[1], label: "DELUXE SUITE", gridClass: "md:col-span-8 aspect-video" },
+                    { image: project.galleryImages[2], label: "PRESIDENTIAL SUITE", gridClass: "md:col-span-4 aspect-square md:aspect-auto" },
+                    { image: project.galleryImages[3], label: "EXECUTIVE SUITE", gridClass: "md:col-span-4 aspect-square md:aspect-auto" },
+                    { image: project.galleryImages[4], label: "PREMIERE SUITE", gridClass: "md:col-span-4 aspect-square md:aspect-auto" },
+                    { image: project.galleryImages[5], label: "GAME AREA", gridClass: "md:col-span-4 aspect-square md:aspect-auto" }
+                  ].map((item, idx) => (
+                    <div
+                      key={idx}
+                      className={`relative overflow-hidden rounded-sm shadow-md group cursor-pointer fade-up ${item.gridClass}`}
+                      onClick={() => handleOpenLightbox(item.image, project.galleryImages)}
+                    >
+                      <img
+                        src={item.image}
+                        alt={`Yuhum Hotel ${item.label}`}
+                        className="w-full h-full object-cover group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="absolute bottom-4 left-4 bg-ink/75 backdrop-blur-xs text-[8px] font-mono uppercase tracking-widest text-paper px-3 py-1.5 rounded-xs border border-white/5">
+                        {item.label}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
