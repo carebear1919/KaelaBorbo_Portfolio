@@ -1052,20 +1052,9 @@ export default function ProjectPage({
           <h3 className="font-serif text-2xl md:text-3xl font-light text-ink leading-snug">
             {project.description}
           </h3>
-          {project.slug === "coastal-residence" ? (
-            <p className="text-sm md:text-base">
-              {project.extendedDescription}
-            </p>
-          ) : (
-            <>
-              <p className="text-sm md:text-base">
-                Throughout the project timeline, our design decisions prioritised durable physical elements and sensory clarity. Rather than packing the space with distracting secondary details, we chose fewer, larger pieces with rich textures.
-              </p>
-              <p className="text-sm md:text-base">
-                We developed several custom iterations of cabinetry profiles and millwork thresholds to satisfy the client's high standards. By partnering with local artisan steel and wood craftsmen, we delivered an authentic, bespoke result.
-              </p>
-            </>
-          )}
+          <p className="text-sm md:text-base">
+            {project.extendedDescription}
+          </p>
         </div>
       </section>
 
