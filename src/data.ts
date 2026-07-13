@@ -224,41 +224,27 @@ export const SAMPLE_PROJECTS: Project[] = [
   {
     slug: "iglu-round-sofa",
     name: "Iglu Round Sofa",
-    year: "2023",
-    category: "Furniture",
+    year: "ACADEMIC PROJECT 2023",
+    category: "06 | FURNITURE",
     location: "Manila, PH",
-    description: "An academic industrial design study exploring curvilinear ergonomics. A custom circular seating option engineered with comfortable bouclé fabrics and native Philippine ashwood bases.",
-    tools: ["Rhino 3D", "Keyshot", "Hand Prototyping"],
+    description: "The Iglu Round Sofa was co-created by Kaela V. Borbon and draws inspiration from the ceramic works of artist Lanelle Abueva-Fernando, translating her handcrafted textures into a multifunctional seating piece with an integrated planter that symbolizes community and growth. The design celebrates Filipino craftsmanship while promoting interaction and connection through its circular form. It was recognized as the 3rd Runner-Up in the People's Choice Awards during the LIKHAYAN Exhibit 2023, highlighting its creative interpretation of local artistry and innovative furniture design.",
+    tools: [],
     heroImage: "/images/projects/06-iglu-round-sofa/hero.jpg",
     moodboardImages: [],
     inspiration: {
-      text: "The concept explores the safety of defensive dome-like formations. A circular geometry invites multiple sitters to experience a unified cozy focus area.",
-      image: "/images/projects/06-iglu-round-sofa/inspiration-ceramics-1.jpg"
+      text: "",
+      image: ""
     },
     concept: {
-      text: "Utilizing dense multi-tier urethane foam cores. The upholstery wraps the curved back smoothly, supported structurally by native Philippine solid ash dowels.",
-      image: "/images/projects/06-iglu-round-sofa/perspective-render.jpg"
+      text: "",
+      image: ""
     },
-    colorPalette: [
-      { name: "Boucle Cream", hex: "#FAF8F6" },
-      { name: " Philippine Natural Ash", hex: "#D1D5DB" }
-    ],
-    materials: [
-      { caption: "Tactile Boucle Textile", image: "/images/projects/06-iglu-round-sofa/material-boucle.jpg" }
-    ],
-    process: [
-      "Ergonomics Prototyping — Sculpting foam blocks to find perfect spinal angles.",
-      "Upholstery Stretching — Adjusting seam placement across complex curves."
-    ],
-    floorPlanImage: "/images/projects/06-iglu-round-sofa/top-view-schematic.jpg",
-    floorPlanContents: [
-      { number: "01", label: "Top Profile Silhouette" },
-      { number: "02", label: "Seam Axis Diagram" }
-    ],
-    extendedDescription: "The Iglu sofa aims to reconstruct commercial open-plan waiting bays, dividing spacious layouts into cozy pockets without erecting physical structural panels.",
-    pullQuote: "Furniture acts as micro-architecture. By turning seating into a circle, we reshape human community.",
+    floorPlanImage: "",
+    floorPlanContents: [],
+    extendedDescription: "",
+    pullQuote: "",
     galleryImages: [
-      "/images/projects/06-iglu-round-sofa/perspective-render.jpg"
+      "/images/projects/06-iglu-round-sofa/perspective.jpg"
     ]
   }
 ];

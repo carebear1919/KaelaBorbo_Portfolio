@@ -101,10 +101,11 @@ If a file uses `.png` instead, rename it to `.jpg` OR tell me and I'll update th
 | File | What it is |
 |---|---|
 | `hero.jpg` | Main sofa shot |
-| `inspiration-ceramics-1.jpg` | Lanelle Abueva-Fernando ceramics inspiration 1 |
-| `inspiration-ceramics-2.jpg` | Ceramics inspiration 2 |
-| `perspective-render.jpg` | 3D perspective render of the sofa |
-| `material-boucle.jpg` | Bouclé fabric material photo |
+| `inspiration-ceramics-1.jpg` | Ceramic works inspiration image |
+| `inspiration-artist.jpg` | Person image (Lanelle Abueva-Fernando) |
+| `top-view.jpg` | Top view drawing |
+| `section-view.jpg` | Section view drawing |
+| `perspective.jpg` | Perspective view |
 
 ## Notes
 

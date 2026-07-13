@@ -896,16 +896,6 @@ export default function ProjectPage({
                   <span className="text-mist block">AWARDS</span>
                   <span className="text-ink font-semibold text-[#B45309]">3rd Runner-Up, LIKHAYAN 2023</span>
                 </div>
-                <div className="space-y-1">
-                  <span className="text-mist block">TOOLS USED</span>
-                  <div className="flex flex-wrap gap-1.5 mt-1">
-                    {project.tools.map((tool) => (
-                      <span key={tool} className="bg-mist/15 text-slate font-medium px-2 py-0.5 rounded-sm">
-                        {tool}
-                      </span>
-                    ))}
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -951,31 +941,31 @@ export default function ProjectPage({
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
             <div 
               className="md:col-span-5 aspect-[4/5] rounded-sm overflow-hidden bg-ink shadow-md cursor-pointer group relative"
-              onClick={() => handleOpenLightbox("/images/projects/06-iglu-round-sofa/inspiration-ceramics-1.jpg", ["/images/projects/06-iglu-round-sofa/inspiration-ceramics-1.jpg", "/images/projects/06-iglu-round-sofa/inspiration-ceramics-2.jpg"])}
+              onClick={() => handleOpenLightbox("/images/projects/06-iglu-round-sofa/inspiration-ceramics-1.jpg", ["/images/projects/06-iglu-round-sofa/inspiration-ceramics-1.jpg", "/images/projects/06-iglu-round-sofa/inspiration-artist.jpg"])}
             >
               <img 
                 src="/images/projects/06-iglu-round-sofa/inspiration-ceramics-1.jpg" 
-                alt="Organic Ceramic Vessel" 
+                alt="Ceramic works of Lanelle Abueva-Fernando"
                 className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-102"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute bottom-4 left-4 bg-ink/75 backdrop-blur-xs text-[8px] font-mono uppercase tracking-widest text-paper px-3 py-1.5 rounded-xs border border-white/5">
-                01 / Organic Vessel Textures
+                CERAMIC WORKS
               </div>
             </div>
 
             <div 
               className="md:col-span-7 aspect-[16/10] md:aspect-auto rounded-sm overflow-hidden bg-ink shadow-md cursor-pointer group relative"
-              onClick={() => handleOpenLightbox("/images/projects/06-iglu-round-sofa/inspiration-ceramics-2.jpg", ["/images/projects/06-iglu-round-sofa/inspiration-ceramics-1.jpg", "/images/projects/06-iglu-round-sofa/inspiration-ceramics-2.jpg"])}
+              onClick={() => handleOpenLightbox("/images/projects/06-iglu-round-sofa/inspiration-artist.jpg", ["/images/projects/06-iglu-round-sofa/inspiration-ceramics-1.jpg", "/images/projects/06-iglu-round-sofa/inspiration-artist.jpg"])}
             >
               <img 
-                src="/images/projects/06-iglu-round-sofa/inspiration-ceramics-2.jpg" 
-                alt="Ceramics Studio Elements" 
+                src="/images/projects/06-iglu-round-sofa/inspiration-artist.jpg" 
+                alt="Lanelle Abueva-Fernando"
                 className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-102"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute bottom-4 left-4 bg-ink/75 backdrop-blur-xs text-[8px] font-mono uppercase tracking-widest text-paper px-3 py-1.5 rounded-xs border border-white/5">
-                02 / Handcrafted Pottery Forms
+                LANELLE ABUEVA-FERNANDO
               </div>
             </div>
           </div>
@@ -1004,107 +994,39 @@ export default function ProjectPage({
 
           {/* 3 Images Technical Grid - Top view, section view, perspective */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-            {/* 1. TOP VIEW (Technical Drafting Component) */}
-            <div className="flex flex-col justify-between p-6 bg-paper border border-mist/20 rounded shadow-sm hover:border-slate/40 transition-colors group relative overflow-hidden">
-              <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#1a1a1b_1px,transparent_1px)] [background-size:12px_12px]" />
-              
-              <div className="space-y-4 z-10">
-                <div className="flex justify-between items-center font-mono text-[8px] text-mist tracking-widest uppercase">
-                  <span>PLATE 01 / SCHEMATIC</span>
-                  <span>TOP VIEW</span>
-                </div>
-                <div className="h-44 flex items-center justify-center bg-[#FAF9F5]/80 border border-mist/10 rounded-sm">
-                  <svg viewBox="0 0 200 200" className="w-36 h-36 text-slate/90">
-                    <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" strokeWidth="0.75" strokeDasharray="3,3" />
-                    <circle cx="100" cy="100" r="75" fill="none" stroke="currentColor" strokeWidth="1.25" />
-                    <line x1="100" y1="25" x2="100" y2="175" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2,2" />
-                    <line x1="25" x2="175" y1="100" y2="100" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2,2" />
-                    <circle cx="100" cy="100" r="45" fill="none" stroke="currentColor" strokeWidth="1" />
-                    <circle cx="100" cy="100" r="25" fill="none" stroke="currentColor" strokeWidth="0.75" />
-                    <circle cx="100" cy="100" r="20" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2,1" />
-                    <path d="M100,100 C95,90 90,85 100,75 C110,85 105,90 100,100" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="0.5" />
-                    <path d="M100,100 C110,95 115,90 125,100 C115,110 110,105 100,100" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="0.5" />
-                    <path d="M100,100 C90,105 85,110 75,100 C85,90 90,95 100,100" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="0.5" />
-                    <path d="M100,100 C105,110 110,115 100,125 C90,115 95,110 100,100" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="0.5" />
-                    <line x1="20" y1="185" x2="180" y2="185" stroke="currentColor" strokeWidth="0.5" />
-                    <line x1="20" y1="182" x2="20" y2="188" stroke="currentColor" strokeWidth="0.5" />
-                    <line x1="180" y1="182" x2="180" y2="188" stroke="currentColor" strokeWidth="0.5" />
-                    <text x="100" y="195" textAnchor="middle" fontSize="6.5" fontFamily="monospace" fill="currentColor" className="tracking-wider">Ø 1800mm</text>
-                  </svg>
-                </div>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-mist/10 space-y-1">
-                <span className="font-serif text-sm font-semibold text-ink block uppercase">TOP VIEW CIRCULATION</span>
-                <span className="font-mono text-[9px] text-mist block uppercase">Symmetrical 360° seating contour layout</span>
-              </div>
-            </div>
-
-            {/* 2. SECTION VIEW (Technical Drafting Component) */}
-            <div className="flex flex-col justify-between p-6 bg-paper border border-mist/20 rounded shadow-sm hover:border-slate/40 transition-colors group relative overflow-hidden">
-              <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#1a1a1b_1px,transparent_1px)] [background-size:12px_12px]" />
-              
-              <div className="space-y-4 z-10">
-                <div className="flex justify-between items-center font-mono text-[8px] text-mist tracking-widest uppercase">
-                  <span>PLATE 02 / SCHEMATIC</span>
-                  <span>SECTIONAL SLICE</span>
-                </div>
-                <div className="h-44 flex items-center justify-center bg-[#FAF9F5]/80 border border-mist/10 rounded-sm">
-                  <svg viewBox="0 0 200 150" className="w-40 h-36 text-slate/90">
-                    <line x1="10" y1="130" x2="190" y2="130" stroke="currentColor" strokeWidth="0.75" />
-                    <rect x="35" y="110" width="8" height="20" fill="none" stroke="currentColor" strokeWidth="0.75" />
-                    <rect x="157" y="110" width="8" height="20" fill="none" stroke="currentColor" strokeWidth="0.75" />
-                    <rect x="96" y="115" width="8" height="15" fill="none" stroke="currentColor" strokeWidth="0.75" />
-                    <rect x="25" y="105" width="150" height="5" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="0.75" />
-                    <path d="M25,105 L25,75 C25,60 40,55 55,55 L75,55 L75,105 Z" fill="none" stroke="currentColor" strokeWidth="1" />
-                    <path d="M175,105 L175,75 C175,60 160,55 145,55 L125,55 L125,105 Z" fill="none" stroke="currentColor" strokeWidth="1" />
-                    <rect x="78" y="55" width="44" height="50" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="0.75" />
-                    <path d="M100,55 C100,40 94,32 100,18 C106,32 100,40 100,55" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="0.5" />
-                    <path d="M100,55 C105,45 115,40 120,32 C110,36 105,45 100,55" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="0.5" />
-                    <path d="M100,55 C95,45 85,40 80,32 C90,36 95,45 100,55" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="0.5" />
-                    <line x1="15" y1="55" x2="15" y2="130" stroke="currentColor" strokeWidth="0.5" strokeDasharray="1,1" />
-                    <line x1="12" y1="55" x2="18" y2="55" stroke="currentColor" strokeWidth="0.5" />
-                    <line x1="12" y1="130" x2="18" y2="130" stroke="currentColor" strokeWidth="0.5" />
-                    <text x="8" y="95" textAnchor="middle" fontSize="6.5" fontFamily="monospace" fill="currentColor" transform="rotate(-90 8 95)">H 750mm</text>
-                  </svg>
-                </div>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-mist/10 space-y-1">
-                <span className="font-serif text-sm font-semibold text-ink block uppercase">SECTIONAL PROFILE</span>
-                <span className="font-mono text-[9px] text-mist block uppercase">Urethane foam core & ashwood joinery details</span>
-              </div>
-            </div>
-
-            {/* 3. PERSPECTIVE VIEW (Render Showcase Card) */}
-            <div 
-              className="flex flex-col justify-between p-6 bg-paper border border-mist/20 rounded shadow-sm hover:border-slate/40 transition-all cursor-pointer group relative overflow-hidden"
-              onClick={() => handleOpenLightbox("/images/projects/06-iglu-round-sofa/perspective-render.jpg", ["/images/projects/06-iglu-round-sofa/perspective-render.jpg"])}
-            >
-              <div className="space-y-4">
-                <div className="flex justify-between items-center font-mono text-[8px] text-mist tracking-widest uppercase">
-                  <span>PLATE 03 / RENDERING</span>
-                  <span>3D VIEW</span>
-                </div>
-                <div className="h-44 overflow-hidden rounded-sm bg-ink shadow-inner relative">
-                  <img 
-                    src="/images/projects/06-iglu-round-sofa/perspective-render.jpg" 
-                    alt="Iglu Sofa Perspective Render" 
-                    className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-103"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-ink/10 group-hover:bg-transparent transition-colors" />
-                  <div className="absolute top-2 right-2 bg-paper/90 px-1.5 py-0.5 rounded-xs text-[6px] font-mono tracking-widest uppercase text-ink border border-mist/10">
-                    CLICK TO MAGNIFY
+            {[
+              { image: "/images/projects/06-iglu-round-sofa/top-view.jpg", plate: "PLATE 01", label: "TOP VIEW" },
+              { image: "/images/projects/06-iglu-round-sofa/section-view.jpg", plate: "PLATE 02", label: "SECTION VIEW" },
+              { image: "/images/projects/06-iglu-round-sofa/perspective.jpg", plate: "PLATE 03", label: "PERSPECTIVE" }
+            ].map((item, idx, arr) => (
+              <div
+                key={idx}
+                className="flex flex-col justify-between p-6 bg-paper border border-mist/20 rounded shadow-sm hover:border-slate/40 transition-all cursor-pointer group relative overflow-hidden"
+                onClick={() => handleOpenLightbox(item.image, arr.map((i) => i.image))}
+              >
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center font-mono text-[8px] text-mist tracking-widest uppercase">
+                    <span>{item.plate}</span>
+                    <span>{item.label}</span>
+                  </div>
+                  <div className="h-44 overflow-hidden rounded-sm bg-[#FAF9F5]/80 border border-mist/10 shadow-inner relative">
+                    <img
+                      src={item.image}
+                      alt={`Iglu Round Sofa ${item.label}`}
+                      className="w-full h-full object-contain transition-transform duration-[1200ms] group-hover:scale-103"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute top-2 right-2 bg-paper/90 px-1.5 py-0.5 rounded-xs text-[6px] font-mono tracking-widest uppercase text-ink border border-mist/10">
+                      CLICK TO MAGNIFY
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="mt-6 pt-4 border-t border-mist/10 space-y-1">
-                <span className="font-serif text-sm font-semibold text-ink block uppercase">PERSPECTIVE RENDER</span>
-                <span className="font-mono text-[9px] text-mist block uppercase">Keyshot 3D volumetric material visualization</span>
+                <div className="mt-6 pt-4 border-t border-mist/10 space-y-1">
+                  <span className="font-serif text-sm font-semibold text-ink block uppercase">{item.label}</span>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </section>
 
