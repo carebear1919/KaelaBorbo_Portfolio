@@ -133,7 +133,7 @@ export const SAMPLE_PROJECTS: Project[] = [
       { number: "19", label: "PWD DELUXE ROOM" },
       { number: "20", label: "PRESIDENTIAL SUITE" }
     ],
-    extendedDescription: "",
+    extendedDescription: "As Bacolod is known for being the City of Smile, Yuhum pays homage to the concept of Sugar Rush. Similarly, the hotel brings a burst of happiness and in a dramatic state which is also inspired from John Galliano’s Fashion Statements. Yuhum offers an appealing combination of local aesthetics and Old World charm by combining native Filipino materials and patterns with the beauty and balance of a French chateau.",
     pullQuote: "Sugar Rush / FRENCH-FILIPINO INTERIOR",
     galleryImages: [
       "/images/projects/03-yuhum-hotel/restaurant.jpg",
