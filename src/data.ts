@@ -18,7 +18,7 @@ export const SAMPLE_PROJECTS: Project[] = [
       image: ""
     },
     concept: {
-      text: "The open-plan layout allows smooth circulation between the living, dining, and kitchen areas, while private spaces provide a quiet retreat. Large openings and landscaped areas maximize natural light, ventilation, and outdoor views, creating a bright and relaxing environment.",
+      text: "",
       image: "/images/projects/01-coastal-residence/living-area.jpg"
     },
     process: [
@@ -41,7 +41,7 @@ export const SAMPLE_PROJECTS: Project[] = [
       { number: "10", label: "GUEST BEDROOM" }
     ],
     extendedDescription: "Inspired by the serenity of a coastal scene, the residence is designed to promote openness, comfort, and a strong connection to nature. The open-plan layout allows smooth circulation between the living, dining, and kitchen areas, while private spaces provide a quiet retreat. Large openings and landscaped areas maximize natural light, ventilation, and outdoor views, creating a bright and relaxing environment. Overall, the design captures the peaceful essence of coastal living through functional planning and seamless indoor-outdoor integration.",
-    pullQuote: "Drawing deep inspiration from the coastal scene, this home combines the ocean’s tones and textures to evoke a sense of tranquility, with an emphasis on natural lighting and timeless furniture pieces.",
+    pullQuote: "",
     galleryImages: [
       "/images/projects/01-coastal-residence/gallery-01-living-area.jpg",
       "/images/projects/01-coastal-residence/gallery-02-guest-bedroom.jpg",
@@ -68,7 +68,7 @@ export const SAMPLE_PROJECTS: Project[] = [
       image: ""
     },
     concept: {
-      text: "Contemporary Bavarian homes combine history and innovation with features like pitched roofs, wide windows, timber cladding, and high ceilings. Spacious rooms, abundant natural light, and a link to the outside environment are all embodied in the design. Sustainability and caring for the environment are core Bavarian principles. This innovative Modern Bavarian container home is an ode to the everlasting charm of Bavarian architecture, which expertly mixes history with innovation and environmental ethics, in addition to offering a cozy and practical living area.",
+      text: "",
       image: "/images/projects/02-container-home/living-area.jpg"
     },
     floorPlanImage: "/images/projects/02-container-home/floor-plan.jpg",
@@ -103,11 +103,11 @@ export const SAMPLE_PROJECTS: Project[] = [
       "/images/projects/03-yuhum-hotel/moodboard.jpg"
     ],
     inspiration: {
-      text: "As Bacolod is known for being the City of Smile, Yuhum pays homage to the concept of Sugar Rush. Similarly, the hotel brings a burst of happiness and in a dramatic state which is also inspired from John Galliano’s Fashion Statements. Yuhum offers an appealing combination of local aesthetics and Old World charm by combining native Filipino materials and patterns with the beauty and balance of a French chateau. As this hotel is inspired by the works of French fashion designer John Galliano, the interior reflects Galliano’s boldness, drama, and storytelling.",
+      text: "",
       image: ""
     },
     concept: {
-      text: "As Bacolod is known for being the City of Smile, Yuhum pays homage to the concept of Sugar Rush. Similarly, the hotel brings a burst of happiness and in a dramatic state which is also inspired from John Galliano’s Fashion Statements. Yuhum offers an appealing combination of local aesthetics and Old World charm by combining native Filipino materials and patterns with the beauty and balance of a French chateau. As this hotel is inspired by the works of French fashion designer John Galliano, the interior reflects Galliano’s boldness, drama, and storytelling.",
+      text: "",
       image: "/images/projects/03-yuhum-hotel/color-palette.jpg"
     },
     floorPlanImage: "/images/projects/03-yuhum-hotel/floor-plan-first.jpg",
@@ -133,8 +133,8 @@ export const SAMPLE_PROJECTS: Project[] = [
       { number: "19", label: "PWD DELUXE ROOM" },
       { number: "20", label: "PRESIDENTIAL SUITE" }
     ],
-    extendedDescription: "As Bacolod is known for being the City of Smile, Yuhum pays homage to the concept of Sugar Rush. Similarly, the hotel brings a burst of happiness and in a dramatic state which is also inspired from John Galliano’s Fashion Statements. Yuhum offers an appealing combination of local aesthetics and Old World charm by combining native Filipino materials and patterns with the beauty and balance of a French chateau.",
-    pullQuote: "Sugar Rush / FRENCH-FILIPINO INTERIOR",
+    extendedDescription: "As Bacolod is known for being the City of Smile, Yuhum pays homage to the concept of Sugar Rush. Similarly, the hotel brings a burst of happiness and in a dramatic state which is also inspired from John Galliano’s Fashion Statements. Yuhum offers an appealing combination of local aesthetics and Old World charm by combining native Filipino materials and patterns with the beauty and balance of a French chateau. As this hotel is inspired by the works of French fashion designer John Galliano, the interior reflects Galliano’s boldness, drama, and storytelling.",
+    pullQuote: "",
     galleryImages: [
       "/images/projects/03-yuhum-hotel/restaurant.jpg",
       "/images/projects/03-yuhum-hotel/deluxe-suite.jpg",

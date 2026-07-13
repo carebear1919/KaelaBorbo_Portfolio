@@ -1052,7 +1052,7 @@ export default function ProjectPage({
           <h3 className="font-serif text-2xl md:text-3xl font-light text-ink leading-snug">
             {project.description}
           </h3>
-          {project.extendedDescription && (
+          {project.extendedDescription && !project.pullQuote && (
             <p className="text-sm md:text-base">
               {project.extendedDescription}
             </p>
@@ -1080,14 +1080,16 @@ export default function ProjectPage({
 
                 <div className="w-8 h-px bg-slate/40" />
 
-                <div className="space-y-4">
-                  <span className="font-mono text-xxs tracking-[0.25em] text-mist uppercase block">
-                    INSPIRATION & ATMOSPHERE
-                  </span>
-                  <p className="text-xs text-slate/90 leading-relaxed font-light">
-                    {project.concept ? project.concept.text : project.description}
-                  </p>
-                </div>
+                {project.concept?.text && (
+                  <div className="space-y-4">
+                    <span className="font-mono text-xxs tracking-[0.25em] text-mist uppercase block">
+                      INSPIRATION & ATMOSPHERE
+                    </span>
+                    <p className="text-xs text-slate/90 leading-relaxed font-light">
+                      {project.concept.text}
+                    </p>
+                  </div>
+                )}
               </div>
 
               <div className="pt-8 mt-8 border-t border-mist/10 flex justify-between items-baseline font-mono text-[9px] text-mist tracking-widest uppercase">
@@ -1176,14 +1178,16 @@ export default function ProjectPage({
                   </div>
                 </div>
 
-                <div className="space-y-4 pt-6 border-t border-mist/10">
-                  <p className="text-[11px] text-slate/85 leading-relaxed font-light">
-                    {project.inspiration ? project.inspiration.text : "The space evokes a calm and inviting atmosphere, using soft light, natural geography, and thoughtful zone divisions to define each unique living area."}
-                  </p>
-                  <span className="font-mono text-[8px] tracking-[0.25em] text-mist uppercase block">
-                    CURATED INSPIRATION MATRIX
-                  </span>
-                </div>
+                {project.inspiration?.text && (
+                  <div className="space-y-4 pt-6 border-t border-mist/10">
+                    <p className="text-[11px] text-slate/85 leading-relaxed font-light">
+                      {project.inspiration.text}
+                    </p>
+                    <span className="font-mono text-[8px] tracking-[0.25em] text-mist uppercase block">
+                      CURATED INSPIRATION MATRIX
+                    </span>
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -1595,7 +1599,7 @@ export default function ProjectPage({
       )}
 
       {/* SECTION 10: EXTENDED DESCRIPTION WITH DISPLAY PULL QUOTE */}
-      {project.slug !== "coastal-residence" && (
+      {project.pullQuote && (
         <section className="py-24 bg-paper/50" id="project-quote-section">
           <div className="max-w-4xl mx-auto px-6 text-center space-y-8 fade-up">
             <div className="text-slate text-6xl font-serif select-none pointer-events-none mb-2">
