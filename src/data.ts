@@ -148,21 +148,23 @@ export const SAMPLE_PROJECTS: Project[] = [
     slug: "giliw-learning-facility",
     name: "LEARNING FACILITY",
     year: "COMMUNITY ACADEMIC PROJECT FOR AYDA 2024",
-    category: "04|GILIW",
+    category: "04 | GILIW",
     location: "",
     description: "\"Giliw,\" which translates to hospitality or love in Filipino, is an educational facility dedicated to teaching and assisting street children in Manila and children in need across the Philippines. Inspired by Childhope Philippines' vision, Giliw seeks to establish a long-lasting, sound, and compassionate environment in which less fortunate adolescents are able to learn, develop, and get involved in a variety of programs that emphasize income-generating proficiency.",
     tools: ["AutoCAD", "SketchUp", "Enscape", "Adobe Photoshop"],
     heroImage: "/images/projects/04-giliw-learning-facility/hero.jpg",
-    moodboardImages: [],
+    moodboardImages: [
+      "/images/projects/04-giliw-learning-facility/moodboard.jpg"
+    ],
     inspiration: {
-      text: "Its design embodies its core philosophy: to provide a space for passion, learning, and community. Giliw promises a brighter future for street children through their initiatives and collaborations, encouraging them to thrive and make significant improvements to society. Creating a learnercentric environment that is suited to the needs of the students, establishing collaborative spaces that foster relationships between students, teachers, and volunteers, integrating healthcare and fitness to address well-being, and cultivating a welcoming atmosphere that embraces everyone is all part of the design objectives. When combined, these components produce a unified, dynamic area that fosters community, personal development, and holistic advancement.",
+      text: "",
       image: ""
     },
     concept: {
       text: "Its design embodies its core philosophy: to provide a space for passion, learning, and community. Giliw promises a brighter future for street children through their initiatives and collaborations, encouraging them to thrive and make significant improvements to society. Creating a learnercentric environment that is suited to the needs of the students, establishing collaborative spaces that foster relationships between students, teachers, and volunteers, integrating healthcare and fitness to address well-being, and cultivating a welcoming atmosphere that embraces everyone is all part of the design objectives. When combined, these components produce a unified, dynamic area that fosters community, personal development, and holistic advancement.",
       image: ""
     },
-    floorPlanImage: "",
+    floorPlanImage: "/images/projects/04-giliw-learning-facility/floor-plan.jpg",
     floorPlanContents: [
       { number: "1", label: "ENTRY" },
       { number: "2", label: "SEATING AREA" },
@@ -187,7 +189,13 @@ export const SAMPLE_PROJECTS: Project[] = [
     ],
     extendedDescription: "As the facility is dedicated to providing a safe, nurturing, and empowering environment where street children and children in need can learn, grow, and develop practical life skills. The Workshop Area encourages creativity, collaboration, and hands-on learning through flexible workspaces, while the Fitness Area promotes physical activity and overall well-being. Together, these spaces reflect Giliw's mission of fostering holistic development and creating opportunities for a brighter future.",
     pullQuote: "GILIW / A Learning Center for Street Children",
-    galleryImages: []
+    galleryImages: [
+      "/images/projects/04-giliw-learning-facility/lounge-area.jpg",
+      "/images/projects/04-giliw-learning-facility/learning-area.jpg",
+      "/images/projects/04-giliw-learning-facility/art-studio.jpg",
+      "/images/projects/04-giliw-learning-facility/workshop-studio.jpg",
+      "/images/projects/04-giliw-learning-facility/fitness-area.jpg"
+    ]
   },
   {
     slug: "community-resilience-facility",

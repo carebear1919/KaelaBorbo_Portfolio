@@ -68,6 +68,17 @@ If a file uses `.png` instead, rename it to `.jpg` OR tell me and I'll update th
 | File | What it is |
 |---|---|
 | `hero.jpg` | Main shot |
+| `moodboard.jpg` | Mood board image |
+| `material-selection.jpg` | Material selection image |
+| `floor-plan.jpg` | Floor plan drawing |
+| `elevation-a.jpg` | Elevation A drawing |
+| `elevation-b.jpg` | Elevation B drawing |
+| `lounge-area.jpg` | Lounge area picture (full-width) |
+| `learning-area.jpg` | Learning area picture |
+| `art-studio.jpg` | Art studio picture |
+| `built-in-details.jpg` | Built-in details drawing (with A–M assembly key) |
+| `workshop-studio.jpg` | Workshop studio picture |
+| `fitness-area.jpg` | Fitness area picture |
 
 ## 05 — Bangon Bayan (`05-bangon-bayan/`)
 

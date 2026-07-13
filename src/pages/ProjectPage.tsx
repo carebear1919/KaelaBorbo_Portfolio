@@ -508,7 +508,7 @@ export default function ProjectPage({
           </div>
         </section>
 
-        {/* SECTION 3: DESIGN PHILOSOPHY / CONCEPT */}
+        {/* SECTION 3: MOOD BOARD & DESIGN PHILOSOPHY */}
         <section className="py-24 border-t border-b border-mist/10 bg-paper/30">
           <div className="max-w-4xl mx-auto px-6 text-center space-y-8">
             <div className="space-y-3">
@@ -516,9 +516,20 @@ export default function ProjectPage({
                 01 / DESIGN PHILOSOPHY
               </span>
               <h3 className="font-serif text-3xl md:text-4xl font-light text-ink uppercase tracking-wider">
-                Space for Passion & Learning
+                GILIW
               </h3>
+              <span className="font-serif italic text-lg text-slate block">
+                A Learning Center for Street Children
+              </span>
             </div>
+
+            <img
+              src={project.moodboardImages[0]}
+              alt="Giliw Mood Board"
+              className="w-full object-contain rounded-sm shadow-sm cursor-pointer"
+              referrerPolicy="no-referrer"
+              onClick={() => handleOpenLightbox(project.moodboardImages[0], project.moodboardImages)}
+            />
 
             <p className="text-sm md:text-base text-slate/90 font-light leading-relaxed max-w-3xl mx-auto text-left md:text-center font-serif leading-relaxed">
               {project.concept ? project.concept.text : ""}
@@ -526,23 +537,50 @@ export default function ProjectPage({
           </div>
         </section>
 
+        {/* SECTION 3.5: MATERIAL SELECTION */}
+        <section className="py-20 max-w-7xl mx-auto px-6 border-b border-mist/10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-5 space-y-6">
+              <div className="border-l-2 border-[#10B981] pl-6 py-1">
+                <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-1">
+                  02 / TACTILE REFINEMENT
+                </span>
+                <h3 className="font-serif text-3xl font-light text-ink uppercase tracking-wide">
+                  Material Selection
+                </h3>
+              </div>
+              <p className="text-sm text-slate/85 font-light leading-relaxed">
+                The materials utilized throughout Giliw reflect the facility's commitment to sustainability. Rattan and wood laminates add organic warmth and texture, tying the interiors to the outside, while long-lasting and environmentally friendly textiles boost convenience and durability. Terrazzo tiles have been used for flooring because of its adaptability, which matters in high-traffic areas, considering they are also easy to maintain. In addition to their advantages for the environment, these materials are perfect for Giliw as they can be used to create a unified space that is aligned with the center's objectives.
+              </p>
+            </div>
+            <div className="lg:col-span-7">
+              <img
+                src="/images/projects/04-giliw-learning-facility/material-selection.jpg"
+                alt="Giliw Material Selection"
+                className="w-full object-contain rounded-sm shadow-sm cursor-pointer"
+                referrerPolicy="no-referrer"
+                onClick={() => handleOpenLightbox("/images/projects/04-giliw-learning-facility/material-selection.jpg", ["/images/projects/04-giliw-learning-facility/material-selection.jpg"])}
+              />
+            </div>
+          </div>
+        </section>
+
         {/* SECTION 4: FLOOR PLAN & LAYOUT INDEX */}
         <section className="py-20 max-w-7xl mx-auto px-6 border-b border-mist/10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7">
-              <div className="w-full aspect-[16/10] border border-dashed border-[#10B981]/30 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none shadow-sm">
-                <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1 font-semibold">
-                  LEARNING CENTER FLOOR PLAN
-                </span>
-                <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                  Spatial distribution & zone planning map
-                </span>
-              </div>
+              <img
+                src={project.floorPlanImage}
+                alt="Giliw Learning Center Floor Plan"
+                className="w-full object-contain rounded-sm shadow-sm cursor-pointer"
+                referrerPolicy="no-referrer"
+                onClick={() => handleOpenLightbox(project.floorPlanImage, [project.floorPlanImage])}
+              />
             </div>
             <div className="lg:col-span-5 space-y-6">
               <div className="border-l-2 border-[#10B981] pl-6 py-1">
                 <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-1">
-                  02 / SPATIAL ARRANGEMENT
+                  03 / SPATIAL ARRANGEMENT
                 </span>
                 <h3 className="font-serif text-3xl font-light text-ink uppercase tracking-wide">
                   Layout Index
@@ -565,7 +603,7 @@ export default function ProjectPage({
         <section className="py-20 max-w-7xl mx-auto px-6">
           <div className="mb-10 text-center">
             <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-2">
-              03 / DRAWING STUDIES
+              04 / DRAWING STUDIES
             </span>
             <h3 className="font-serif text-3xl font-light text-ink uppercase tracking-wide">
               ELEVATION A & ELEVATION B
@@ -573,34 +611,193 @@ export default function ProjectPage({
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="w-full aspect-[16/10] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none shadow-sm hover:border-slate/50 transition-colors">
-              <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+            <div className="space-y-2">
+              <img
+                src="/images/projects/04-giliw-learning-facility/elevation-a.jpg"
+                alt="Giliw Elevation A"
+                className="w-full object-contain rounded-sm shadow-sm cursor-pointer"
+                referrerPolicy="no-referrer"
+                onClick={() => handleOpenLightbox("/images/projects/04-giliw-learning-facility/elevation-a.jpg", ["/images/projects/04-giliw-learning-facility/elevation-a.jpg", "/images/projects/04-giliw-learning-facility/elevation-b.jpg"])}
+              />
+              <span className="font-mono text-[9px] tracking-widest text-mist uppercase block text-center">
                 ELEVATION A
               </span>
-              <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                Front structural facade study placeholder
-              </span>
             </div>
-            <div className="w-full aspect-[16/10] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none shadow-sm hover:border-slate/50 transition-colors">
-              <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+            <div className="space-y-2">
+              <img
+                src="/images/projects/04-giliw-learning-facility/elevation-b.jpg"
+                alt="Giliw Elevation B"
+                className="w-full object-contain rounded-sm shadow-sm cursor-pointer"
+                referrerPolicy="no-referrer"
+                onClick={() => handleOpenLightbox("/images/projects/04-giliw-learning-facility/elevation-b.jpg", ["/images/projects/04-giliw-learning-facility/elevation-a.jpg", "/images/projects/04-giliw-learning-facility/elevation-b.jpg"])}
+              />
+              <span className="font-mono text-[9px] tracking-widest text-mist uppercase block text-center">
                 ELEVATION B
-              </span>
-              <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                Lateral cross-section study placeholder
               </span>
             </div>
           </div>
         </section>
 
-        {/* SECTION 6: EXTENDED DETAILS */}
-        <section className="py-24 border-t border-b border-mist/10 bg-paper/20">
-          <div className="max-w-4xl mx-auto px-6 text-center space-y-8">
-            <h4 className="font-serif text-3xl md:text-4xl font-light text-slate uppercase tracking-wider italic leading-relaxed">
-              "{project.pullQuote}"
-            </h4>
-            <p className="text-sm md:text-base text-slate/90 font-light leading-relaxed max-w-3xl mx-auto text-left md:text-center">
+        {/* SECTION 6: LOUNGE AREA */}
+        <section className="py-20 border-t border-mist/10 bg-paper/20">
+          <div className="max-w-5xl mx-auto px-6">
+            <div
+              className="relative overflow-hidden rounded-md shadow-md group cursor-pointer aspect-16/9"
+              onClick={() => handleOpenLightbox(project.galleryImages[0], project.galleryImages)}
+            >
+              <img
+                src={project.galleryImages[0]}
+                alt="Giliw Lounge Area"
+                className="w-full h-full object-cover group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute bottom-4 left-4 bg-ink/75 backdrop-blur-xs text-[8px] font-mono uppercase tracking-widest text-paper px-3 py-1.5 rounded-xs border border-white/5">
+                LOUNGE AREA
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 7: LEARNING AREAS */}
+        <section className="py-20 max-w-7xl mx-auto px-6 border-t border-mist/10">
+          <div className="space-y-6">
+            <div className="border-l-2 border-[#D97706] pl-4">
+              <h4 className="font-serif text-2xl font-light text-ink uppercase tracking-wide">
+                Learning Areas
+              </h4>
+              <span className="font-mono text-xxs tracking-widest text-slate uppercase block mt-1">
+                05 / LEARNING AREA & ART STUDIO
+              </span>
+            </div>
+
+            <p className="text-xs text-slate font-light leading-relaxed max-w-4xl">
+              The learning areas are designed to foster creativity, collaboration, and focused learning in a welcoming environment. Flexible seating, individual study nooks, and interactive workspaces accommodate different learning styles, while soft curves, natural materials, and playful colors create a calming atmosphere. Abundant natural light and an open layout encourage engagement, making the spaces comfortable for reading, studying, group discussions, and creative activities.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                { image: project.galleryImages[1], label: "LEARNING AREA" },
+                { image: project.galleryImages[2], label: "ART STUDIO" }
+              ].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="relative overflow-hidden rounded-md shadow-md group cursor-pointer aspect-[16/10] fade-up"
+                  onClick={() => handleOpenLightbox(item.image, project.galleryImages)}
+                >
+                  <img
+                    src={item.image}
+                    alt={`Giliw ${item.label}`}
+                    className="w-full h-full object-cover group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute bottom-4 left-4 bg-ink/75 backdrop-blur-xs text-[8px] font-mono uppercase tracking-widest text-paper px-3 py-1.5 rounded-xs border border-white/5">
+                    {item.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 8: BUILT-IN DETAILS */}
+        <section className="py-20 max-w-7xl mx-auto px-6 border-t border-mist/10">
+          <div className="space-y-6">
+            <div className="border-l-2 border-[#065F46] pl-4">
+              <h4 className="font-serif text-2xl font-light text-ink uppercase tracking-wide">
+                Built-in Details
+              </h4>
+              <span className="font-mono text-xxs tracking-widest text-slate uppercase block mt-1">
+                06 / TECHNICAL ASSEMBLY KEY
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+              <div className="md:col-span-7">
+                <img
+                  src="/images/projects/04-giliw-learning-facility/built-in-details.jpg"
+                  alt="Giliw Built-in Details"
+                  className="w-full object-contain rounded-sm shadow-sm cursor-pointer"
+                  referrerPolicy="no-referrer"
+                  onClick={() => handleOpenLightbox("/images/projects/04-giliw-learning-facility/built-in-details.jpg", ["/images/projects/04-giliw-learning-facility/built-in-details.jpg"])}
+                />
+              </div>
+
+              <div className="md:col-span-5 space-y-4">
+                <div className="bg-[#FAF9F5]/80 border border-mist/20 p-6 rounded-md shadow-sm">
+                  <span className="font-mono text-xxs text-slate font-semibold tracking-widest block mb-4 uppercase">
+                    TECHNICAL ASSEMBLY KEY
+                  </span>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 font-mono text-[10px] text-ink">
+                    {[
+                      { key: "A", label: "FRONT PANEL" },
+                      { key: "B", label: "SIDE PANEL" },
+                      { key: "C", label: "BACK PANEL" },
+                      { key: "D", label: "BOTTOM PANEL" },
+                      { key: "E", label: "TOP PANEL" },
+                      { key: "F", label: "CURVED PANEL" },
+                      { key: "G", label: "TOP SHELF PANEL" },
+                      { key: "H", label: "BOTTOM SHELF PANEL" },
+                      { key: "I", label: "CURVED BACK PANEL" },
+                      { key: "J", label: "CURVED FRAMING" },
+                      { key: "K", label: "CABINET TABLETOP" },
+                      { key: "L", label: "DESK TABLETOP" },
+                      { key: "M", label: "TOE KICK" }
+                    ].map((part, idx) => (
+                      <div key={idx} className="flex items-center gap-2 py-1 border-b border-mist/10">
+                        <span className="w-5 h-5 rounded-full bg-[#065F46] text-paper flex items-center justify-center font-bold text-[8px]">
+                          {part.key}
+                        </span>
+                        <span className="tracking-wide text-ink font-light uppercase">
+                          {part.label}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 9: WORKSHOP STUDIO & FITNESS AREA */}
+        <section className="py-20 max-w-7xl mx-auto px-6 border-t border-mist/10">
+          <div className="space-y-6">
+            <div className="border-l-2 border-[#B45309] pl-4">
+              <h4 className="font-serif text-2xl font-light text-ink uppercase tracking-wide">
+                Workshop Studio & Fitness Area
+              </h4>
+              <span className="font-mono text-xxs tracking-widest text-slate uppercase block mt-1">
+                07 / HOLISTIC DEVELOPMENT
+              </span>
+            </div>
+
+            <p className="text-xs text-slate font-light leading-relaxed max-w-4xl">
               {project.extendedDescription}
             </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                { image: project.galleryImages[3], label: "WORKSHOP STUDIO" },
+                { image: project.galleryImages[4], label: "FITNESS AREA" }
+              ].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="relative overflow-hidden rounded-md shadow-md group cursor-pointer aspect-[16/10] fade-up"
+                  onClick={() => handleOpenLightbox(item.image, project.galleryImages)}
+                >
+                  <img
+                    src={item.image}
+                    alt={`Giliw ${item.label}`}
+                    className="w-full h-full object-cover group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute bottom-4 left-4 bg-ink/75 backdrop-blur-xs text-[8px] font-mono uppercase tracking-widest text-paper px-3 py-1.5 rounded-xs border border-white/5">
+                    {item.label}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -636,6 +833,17 @@ export default function ProjectPage({
             </div>
           </div>
         </section>
+
+        {/* LIGHTBOX STAGE OVERLAY */}
+        {lightboxActiveIdx >= 0 && (
+          <Lightbox
+            images={lightboxImages}
+            activeIndex={lightboxActiveIdx}
+            onClose={() => setLightboxActiveIdx(-1)}
+            onPrev={handlePrevLightbox}
+            onNext={handleNextLightbox}
+          />
+        )}
       </div>
     );
   }
