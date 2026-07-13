@@ -1052,9 +1052,11 @@ export default function ProjectPage({
           <h3 className="font-serif text-2xl md:text-3xl font-light text-ink leading-snug">
             {project.description}
           </h3>
-          <p className="text-sm md:text-base">
-            {project.extendedDescription}
-          </p>
+          {project.extendedDescription && (
+            <p className="text-sm md:text-base">
+              {project.extendedDescription}
+            </p>
+          )}
         </div>
       </section>
 
@@ -1603,9 +1605,11 @@ export default function ProjectPage({
               {project.pullQuote}
             </blockquote>
             <div className="w-12 h-0.5 bg-mist/30 mx-auto" />
-            <p className="text-sm md:text-base text-ink/70 font-light leading-relaxed max-w-2xl mx-auto pt-4">
-              {project.extendedDescription}
-            </p>
+            {project.extendedDescription && (
+              <p className="text-sm md:text-base text-ink/70 font-light leading-relaxed max-w-2xl mx-auto pt-4">
+                {project.extendedDescription}
+              </p>
+            )}
           </div>
         </section>
       )}

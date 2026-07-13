@@ -133,7 +133,7 @@ export const SAMPLE_PROJECTS: Project[] = [
       { number: "19", label: "PWD DELUXE ROOM" },
       { number: "20", label: "PRESIDENTIAL SUITE" }
     ],
-    extendedDescription: "The guest suites and recreational spaces of Yuhum Hotel reflect the vibrant heritage of Bacolod and the bold, theatrical style of John Galliano. Inspired by the City of Smiles and the concept of Sugar Rush, the interiors feature rich colors, elegant detailing, and dramatic patterns that create a luxurious and memorable experience. By combining Filipino materials and motifs with the sophistication of a French chateau, the spaces celebrate local culture while embodying Galliano's signature sense of storytelling, elegance, and grandeur.",
+    extendedDescription: "",
     pullQuote: "Sugar Rush / FRENCH-FILIPINO INTERIOR",
     galleryImages: [
       "/images/projects/03-yuhum-hotel/restaurant.jpg",
