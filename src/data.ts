@@ -212,33 +212,12 @@ export const SAMPLE_PROJECTS: Project[] = [
       image: "/images/projects/05-bangon-bayan/concept-diagram.jpg"
     },
     concept: {
-      text: "The floor plan of the Community Resilience facility highlights the concept through interconnected spatial layout that adapts to changing needs. The main area, which is the Food Corridor acts as the central spine of the facility, and this connects the foodfocused, health, care, and administrative zones, which all function like bamboo nodes supporting the whole system.",
-      image: "/images/projects/05-bangon-bayan/floor-plan.jpg"
+      text: "",
+      image: ""
     },
-    colorPalette: [
-      { name: "Bamboo Forest", hex: "#047857" },
-      { name: "Earthy Clay", hex: "#B45309" },
-      { name: "Warm Concrete", hex: "#F3F4F6" }
-    ],
-    materials: [
-      { caption: "Sustainable Bamboo Structural Joinery", image: "/images/projects/05-bangon-bayan/material-bamboo.jpg" }
-    ],
-    process: [
-      "Urban Density Analysis — Optimizing 1,512sqm footprint.",
-      "Bamboo structural node layout modeling.",
-      "Food Corridor flow path simulation.",
-      "Emergency evacuation zone partitioning."
-    ],
-    floorPlanImage: "/images/projects/05-bangon-bayan/floor-plan.jpg",
-    floorPlanContents: [
-      { number: "01", label: "Food Corridor (Central Spine)" },
-      { number: "02", label: "Evacuation Sleeping Quarters" },
-      { number: "03", label: "Indoor Hydroponics Lab" },
-      { number: "04", label: "Rooftop Community Garden" },
-      { number: "05", label: "Community Pantry Hub" },
-      { number: "06", label: "Multipurpose Adaptive Hall" }
-    ],
-    extendedDescription: "Bangon Bayan centers on providing the community of Tondo a space for food security and a space for evacuating in consideration with the area's high urban density and high rate of food insecurity. The facility balances daily productivity with emergency readiness, featuring robust vertical gardens, a double-tiered pantry, vocational skill improvement classrooms, and temporary housing zones designed to support families when severe tropical monsoons strike.",
+    floorPlanImage: "",
+    floorPlanContents: [],
+    extendedDescription: "These spaces showcase the facility's flexibility in supporting both everyday community use and disaster response. The workshop area promotes skills development and livelihood opportunities, while the multipurpose hall serves as a venue for community activities and converts into an evacuation area during emergencies. Privacy pods provide comfort and dignity for evacuees, and the indoor hydroponics with the community garden strengthen food security by enabling sustainable food production and encouraging community participation.",
     pullQuote: "Nodes of Resilience: Bending without Breaking",
     galleryImages: []
   },

@@ -144,54 +144,29 @@ export default function ProjectPage({
           </div>
         </section>
 
-        {/* SECTION 3: TWO PRIMARY IMAGES */}
+        {/* SECTION 3: DINING AREA (2 IMAGES) */}
         <section className="pb-20 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="w-full aspect-[16/10] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none shadow-sm hover:border-mist/50 transition-colors">
-              <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
-                COMMUNITY RESILIENCE FACILITY
-              </span>
-              <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                exterior perspective placeholder image
-              </span>
-            </div>
-            <div className="w-full aspect-[16/10] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none shadow-sm hover:border-mist/50 transition-colors">
-              <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
-                COMMUNITY RESILIENCE FACILITY
-              </span>
-              <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                interior visualization placeholder image
-              </span>
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION 4: FLOOR PLAN (GROUND FLOOR & DECK) */}
-        <section className="py-20 max-w-7xl mx-auto px-6 border-t border-mist/10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-7">
-              <div className="w-full aspect-[16/10] border border-dashed border-[#10B981]/30 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none shadow-sm">
-                <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1 font-semibold">
-                  FLOOR PLAN: GROUND FLOOR AND DECK
-                </span>
-                <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                  1,512 SQM footprint spatial layout
-                </span>
+            {[
+              "/images/projects/05-bangon-bayan/dining-area-1.jpg",
+              "/images/projects/05-bangon-bayan/dining-area-2.jpg"
+            ].map((img, idx, arr) => (
+              <div
+                key={idx}
+                className="relative overflow-hidden rounded-sm shadow-sm group cursor-pointer aspect-[16/10]"
+                onClick={() => handleOpenLightbox(img, arr)}
+              >
+                <img
+                  src={img}
+                  alt={`Bangon Bayan Dining Area ${idx + 1}`}
+                  className="w-full h-full object-cover group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute bottom-4 left-4 bg-ink/75 backdrop-blur-xs text-[8px] font-mono uppercase tracking-widest text-paper px-3 py-1.5 rounded-xs border border-white/5">
+                  DINING AREA
+                </div>
               </div>
-            </div>
-            <div className="lg:col-span-5 space-y-6">
-              <div className="border-l-2 border-[#10B981] pl-6 py-1">
-                <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-1">
-                  01 / SPATIAL ARRANGEMENT
-                </span>
-                <h3 className="font-serif text-3xl font-light text-ink uppercase tracking-wide">
-                  Floor Plan
-                </h3>
-              </div>
-              <p className="text-sm text-slate/85 font-light leading-relaxed">
-                The floor plan of the Community Resilience facility highlights the concept through interconnected spatial layout that adapts to changing needs. The main area, which is the Food Corridor acts as the central spine of the facility, and this connects the foodfocused, health, care, and administrative zones, which all function like bamboo nodes supporting the whole system.
-              </p>
-            </div>
+            ))}
           </div>
         </section>
 
@@ -210,49 +185,43 @@ export default function ProjectPage({
               </span>
             </div>
 
-            <div className="w-full max-w-2xl mx-auto aspect-[16/9] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none shadow-sm">
-              <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
-                CONCEPT DIAGRAM
-              </span>
-              <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                Bamboo Analogy Sketch
-              </span>
-            </div>
+            <img
+              src={project.inspiration.image}
+              alt="Bangon Bayan Concept Diagram"
+              className="w-full max-w-2xl mx-auto object-contain rounded-sm shadow-sm cursor-pointer"
+              referrerPolicy="no-referrer"
+              onClick={() => handleOpenLightbox(project.inspiration.image, [project.inspiration.image])}
+            />
 
             <p className="text-sm md:text-base text-slate/90 font-light leading-relaxed max-w-3xl mx-auto text-left md:text-center">
-              Inspired by the bamboo plant and its nodes, this concept is a symbolism of resilience. In times of challenges. In times of challenges, a community can learn from bamboo’s qualities of being flexible rather than being rigid (Lambert). A bamboo is also known to adapt to challenges with resilience, allowing individuals to be molded by their experiences without losing strength. The bamboo’s nodes function as clusters for community togetherness, food security, sanitations, and more forms of support that are all interlinked by flexible zones that mimic the joints of the bamboo.
+              {project.inspiration.text}
             </p>
           </div>
         </section>
 
-        {/* SECTION 6: ADDITIONAL DETAILED PLATES (2 IMAGES) */}
+        {/* SECTION 6: LOBBY/RECEPTION & OUTDOOR AGRICULTURE (2 IMAGES) */}
         <section className="py-20 max-w-7xl mx-auto px-6">
-          <div className="mb-10 text-center">
-            <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-2">
-              03 / VISUAL STUDIES
-            </span>
-            <h3 className="font-serif text-3xl font-light text-ink uppercase tracking-wide">
-              Resilience Nodes in Context
-            </h3>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="w-full aspect-[16/10] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none shadow-sm hover:border-mist/50 transition-colors">
-              <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
-                PERSPECTIVE RENDER
-              </span>
-              <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                detail study 01 placeholder image
-              </span>
-            </div>
-            <div className="w-full aspect-[16/10] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none shadow-sm hover:border-mist/50 transition-colors">
-              <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
-                PERSPECTIVE RENDER
-              </span>
-              <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                detail study 02 placeholder image
-              </span>
-            </div>
+            {[
+              { image: "/images/projects/05-bangon-bayan/lobby-reception.jpg", label: "LOBBY / RECEPTION AREA" },
+              { image: "/images/projects/05-bangon-bayan/outdoor-agriculture.jpg", label: "OUTDOOR AGRICULTURE AREA" }
+            ].map((item, idx, arr) => (
+              <div
+                key={idx}
+                className="relative overflow-hidden rounded-sm shadow-sm group cursor-pointer aspect-[16/10]"
+                onClick={() => handleOpenLightbox(item.image, arr.map((i) => i.image))}
+              >
+                <img
+                  src={item.image}
+                  alt={`Bangon Bayan ${item.label}`}
+                  className="w-full h-full object-cover group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute bottom-4 left-4 bg-ink/75 backdrop-blur-xs text-[8px] font-mono uppercase tracking-widest text-paper px-3 py-1.5 rounded-xs border border-white/5">
+                  {item.label}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -260,19 +229,25 @@ export default function ProjectPage({
         <section className="py-20 border-t border-mist/10 bg-paper/10">
           <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7">
-              <div className="w-full aspect-[16/10] border border-dashed border-[#10B981]/30 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none shadow-sm">
-                <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1 font-semibold">
+              <div
+                className="relative overflow-hidden rounded-sm shadow-sm group cursor-pointer aspect-[16/10]"
+                onClick={() => handleOpenLightbox("/images/projects/05-bangon-bayan/community-pantry.jpg", ["/images/projects/05-bangon-bayan/community-pantry.jpg"])}
+              >
+                <img
+                  src="/images/projects/05-bangon-bayan/community-pantry.jpg"
+                  alt="Bangon Bayan Community Pantry"
+                  className="w-full h-full object-cover group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute bottom-4 left-4 bg-ink/75 backdrop-blur-xs text-[8px] font-mono uppercase tracking-widest text-paper px-3 py-1.5 rounded-xs border border-white/5">
                   COMMUNITY PANTRY
-                </span>
-                <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                  1 perspective image placeholder
-                </span>
+                </div>
               </div>
             </div>
             <div className="lg:col-span-5 space-y-6">
               <div className="border-l-2 border-[#10B981] pl-6 py-1">
                 <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-1">
-                  04 / MICRO-ENTERPRISE & FOOD SECURITY
+                  03 / MICRO-ENTERPRISE & FOOD SECURITY
                 </span>
                 <h3 className="font-serif text-3xl font-light text-ink uppercase tracking-wide">
                   Community Pantry Hub
@@ -291,43 +266,39 @@ export default function ProjectPage({
             <div className="max-w-4xl space-y-4">
               <div className="border-l-2 border-[#B45309] pl-6 py-1">
                 <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-1">
-                  05 / MULTI-FUNCTIONAL ADAPTIVITY
+                  04 / MULTI-FUNCTIONAL ADAPTIVITY
                 </span>
                 <h3 className="font-serif text-3xl font-light text-ink uppercase tracking-wide">
                   Flexible Zones & Evacuation Centers
                 </h3>
               </div>
               <p className="text-sm text-slate/85 font-light leading-relaxed">
-                These spaces showcase the facility's flexibility in supporting both everyday community use and disaster response. The workshop area promotes skills development and livelihood opportunities, while the multipurpose hall serves as a venue for community activities and converts into an evacuation area during emergencies. Privacy pods provide comfort and dignity for evacuees, and the indoor hydroponics with the community garden strengthen food security by enabling sustainable food production and encouraging community participation.
+                {project.extendedDescription}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 items-stretch">
               {[
-                { 
-                  title: "LIVELIHOOD & WORKSHOP AREA", 
-                  detail: "Skills development & vocational training",
+                {
+                  title: "WORKSHOP AREA",
                   image: "/images/projects/05-bangon-bayan/workshop-area.jpg",
                   gridClass: "lg:col-span-5",
                   aspectClass: "aspect-4/3 lg:aspect-[3/4.2]"
                 },
-                { 
-                  title: "MULTIPURPOSE HALL", 
-                  detail: "Evacuation conversion & community meetings",
-                  image: "/images/projects/05-bangon-bayan/multipurpose-hall.jpg",
+                {
+                  title: "LEARNING AREA",
+                  image: "/images/projects/05-bangon-bayan/learning-area.jpg",
                   gridClass: "lg:col-span-7",
                   aspectClass: "aspect-4/3 lg:aspect-[1.6/1.05]"
                 },
-                { 
-                  title: "PRIVACY PODS", 
-                  detail: "Dignified temporary emergency shelter",
-                  image: "/images/projects/05-bangon-bayan/privacy-pods.jpg",
+                {
+                  title: "EVACUATION AREA",
+                  image: "/images/projects/05-bangon-bayan/evacuation-area.jpg",
                   gridClass: "lg:col-span-7",
                   aspectClass: "aspect-4/3 lg:aspect-[1.6/1.05]"
                 },
-                { 
-                  title: "INDOOR HYDROPONICS", 
-                  detail: "Sustainable food production & green spaces",
+                {
+                  title: "INDOOR HYDROPONICS AREA",
                   image: "/images/projects/05-bangon-bayan/indoor-hydroponics.jpg",
                   gridClass: "lg:col-span-5",
                   aspectClass: "aspect-4/3 lg:aspect-[3/4.2]"
@@ -361,11 +332,8 @@ export default function ProjectPage({
                         <h4 className="font-serif text-lg font-medium text-ink tracking-wide group-hover:text-slate transition-colors leading-tight uppercase">
                           {item.title}
                         </h4>
-                        <p className="text-[10px] text-mist font-light font-mono leading-relaxed uppercase tracking-wider">
-                          {item.detail}
-                        </p>
                       </div>
-                      
+
                       <div className="w-full h-px bg-mist/20 group-hover:bg-slate/30 transition-colors mt-4" />
                       <div className="flex items-center justify-between text-[7px] font-mono tracking-widest uppercase text-slate/60 group-hover:text-ink transition-colors pt-3">
                         <span>Magnify View</span>
@@ -411,6 +379,17 @@ export default function ProjectPage({
             </div>
           </div>
         </section>
+
+        {/* LIGHTBOX STAGE OVERLAY */}
+        {lightboxActiveIdx >= 0 && (
+          <Lightbox
+            images={lightboxImages}
+            activeIndex={lightboxActiveIdx}
+            onClose={() => setLightboxActiveIdx(-1)}
+            onPrev={handlePrevLightbox}
+            onNext={handleNextLightbox}
+          />
+        )}
       </div>
     );
   }

@@ -85,13 +85,16 @@ If a file uses `.png` instead, rename it to `.jpg` OR tell me and I'll update th
 | File | What it is |
 |---|---|
 | `hero.jpg` | Main shot |
-| `concept-diagram.jpg` | Bamboo analogy concept sketch |
-| `floor-plan.jpg` | Ground floor and deck plan |
-| `material-bamboo.jpg` | Bamboo material photo |
-| `workshop-area.jpg` | Livelihood & workshop area perspective |
-| `multipurpose-hall.jpg` | Multipurpose hall perspective |
-| `privacy-pods.jpg` | Privacy pods perspective |
-| `indoor-hydroponics.jpg` | Indoor hydroponics perspective |
+| `dining-area-1.jpg` | Dining area picture 1 |
+| `dining-area-2.jpg` | Dining area picture 2 |
+| `concept-diagram.jpg` | Nodes of Resilience concept image (bamboo) |
+| `lobby-reception.jpg` | Lobby / reception area picture |
+| `outdoor-agriculture.jpg` | Outdoor agriculture area picture |
+| `community-pantry.jpg` | Community pantry picture |
+| `workshop-area.jpg` | Workshop area picture |
+| `learning-area.jpg` | Learning area picture |
+| `evacuation-area.jpg` | Evacuation area picture |
+| `indoor-hydroponics.jpg` | Indoor hydroponics area picture |
 
 ## 06 — Iglu Round Sofa (`06-iglu-round-sofa/`)
 
