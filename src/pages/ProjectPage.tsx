@@ -1,0 +1,2057 @@
+import { useState, useEffect } from "react";
+import { ArrowRight, MapPin, Calendar, Briefcase, Wrench, ChevronRight } from "lucide-react";
+import { Project } from "../types";
+import { SAMPLE_PROJECTS } from "../data";
+import { initScrollReveal } from "../utils";
+import Lightbox from "../components/Lightbox";
+
+interface ProjectPageProps {
+  slug: string;
+  onNavigateProject: (slug: string) => void;
+  onNavigateHome: () => void;
+}
+
+export default function ProjectPage({
+  slug,
+  onNavigateProject,
+  onNavigateHome,
+}: ProjectPageProps) {
+  const projectIndex = SAMPLE_PROJECTS.findIndex((p) => p.slug === slug);
+  const project: Project = projectIndex !== -1 ? SAMPLE_PROJECTS[projectIndex] : SAMPLE_PROJECTS[0];
+
+  // Calculate Next Project
+  const nextProjectIndex = (projectIndex + 1) % SAMPLE_PROJECTS.length;
+  const nextProject = SAMPLE_PROJECTS[nextProjectIndex];
+
+  // Lightbox State
+  const [lightboxActiveIdx, setLightboxActiveIdx] = useState(-1);
+  const [lightboxImages, setLightboxImages] = useState<string[]>([]);
+
+  useEffect(() => {
+    // Reset scroll position on project change
+    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+    
+    // Initialize scroll-reveal fade-ups
+    const cleanup = initScrollReveal();
+    return cleanup;
+  }, [slug]);
+
+  // Consolidate gallery images for lightbox preview
+  const handleOpenLightbox = (imgUrl: string, list: string[]) => {
+    setLightboxImages(list);
+    const idx = list.indexOf(imgUrl);
+    setLightboxActiveIdx(idx);
+  };
+
+  const handlePrevLightbox = () => {
+    setLightboxActiveIdx((prev) => (prev - 1 + lightboxImages.length) % lightboxImages.length);
+  };
+
+  const handleNextLightbox = () => {
+    setLightboxActiveIdx((prev) => (prev + 1) % lightboxImages.length);
+  };
+
+  if (project.slug === "community-resilience-facility") {
+    return (
+      <div className="paper-grain pb-24 animate-fade-in" id="project-view-community-resilience-facility">
+        {/* SECTION 1: HERO - FULL BLEED PHOTO */}
+        <section
+          className="relative w-full h-[70vh] bg-cover bg-center flex items-end"
+          style={{ backgroundImage: `url(${project.heroImage})` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-transparent" />
+          
+          <div className="max-w-7xl mx-auto w-full px-6 pb-16 z-10 text-paper">
+            {/* Breadcrumb back to home */}
+            <button
+              onClick={onNavigateHome}
+              className="font-mono text-xxs tracking-widest uppercase text-mist hover:text-paper transition-colors mb-6 flex items-center gap-1.5 focus:outline-none"
+              id="project-back-btn"
+            >
+              ← Back to Projects
+            </button>
+            
+            <span className="font-mono text-xxs tracking-[0.25em] text-[#10B981] uppercase block mb-3 font-semibold">
+              05 | COMMUNITY RESILIENCE FACILITY
+            </span>
+            <h1 className="font-serif text-4xl md:text-6xl font-light tracking-tight leading-tight mb-4 max-w-4xl uppercase text-paper">
+              BANGON BAYAN
+            </h1>
+
+            {/* Metadata bar */}
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xxs tracking-[0.2em] text-mist uppercase border-t border-paper/10 pt-4">
+              <span className="flex items-center gap-1">
+                <Calendar className="w-3.5 h-3.5 text-slate" /> THESIS PROJECT 2025
+              </span>
+              <span>—</span>
+              <span className="flex items-center gap-1">
+                <MapPin className="w-3.5 h-3.5 text-slate" /> TONDO, MANILA, PH
+              </span>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 2: DESCRIPTION & PROJECT SCOPE */}
+        <section className="py-20 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
+          {/* Left Column: Thesis Context Info */}
+          <div className="md:col-span-4 space-y-8 md:sticky md:top-28 h-fit">
+            <div className="border-l-2 border-[#10B981] pl-6 py-2">
+              <span className="font-mono text-xxs tracking-widest text-mist uppercase block mb-1">
+                PROJECT SCOPE
+              </span>
+              <h2 className="font-serif text-2xl font-light text-ink">
+                Thesis Context
+              </h2>
+            </div>
+
+            <div className="space-y-4 text-xs font-mono tracking-wider text-ink/75">
+              <div>
+                <span className="text-mist block text-[10px] uppercase mb-1">YEAR</span>
+                <span className="text-sm font-semibold">2025</span>
+              </div>
+              <hr className="border-mist/10" />
+              <div>
+                <span className="text-mist block text-[10px] uppercase mb-1">TOTAL FOOTPRINT</span>
+                <span className="text-sm font-semibold">1,512 SQM</span>
+              </div>
+              <hr className="border-mist/10" />
+              <div>
+                <span className="text-mist block text-[10px] uppercase mb-1">LOCATION</span>
+                <span className="text-sm font-semibold">TONDO, MANILA</span>
+              </div>
+              <hr className="border-mist/10" />
+              <div>
+                <span className="text-mist block text-[10px] uppercase mb-2">TOOLS USED</span>
+                <div className="flex flex-wrap gap-1.5">
+                  {["AutoCAD", "SketchUp", "Enscape", "Adobe Photoshop"].map((tool) => (
+                    <span
+                      key={tool}
+                      className="inline-block px-2.5 py-1 bg-[#10B981]/5 text-[#047857] text-[10px] rounded font-semibold border border-[#10B981]/10"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Project Statement */}
+          <div className="md:col-span-8 space-y-6 text-base font-light text-ink/80 leading-relaxed md:pt-2">
+            <h3 className="font-serif text-2xl md:text-3xl font-light text-ink leading-snug">
+              Bangon Bayan is a proposed community resilience facility that centers on providing the community of Tondo a space for food security and a space for evacuating in consideration with the area’s high urban density and high rate of food insecurity. The space has a 1,512sqm area with spaces for resting, urban farming, skill improvement spaces, and areas where the community can access nutritious meals.
+            </h3>
+          </div>
+        </section>
+
+        {/* SECTION 3: TWO PRIMARY IMAGES */}
+        <section className="pb-20 max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="w-full aspect-[16/10] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none shadow-sm hover:border-mist/50 transition-colors">
+              <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                COMMUNITY RESILIENCE FACILITY
+              </span>
+              <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                exterior perspective placeholder image
+              </span>
+            </div>
+            <div className="w-full aspect-[16/10] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none shadow-sm hover:border-mist/50 transition-colors">
+              <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                COMMUNITY RESILIENCE FACILITY
+              </span>
+              <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                interior visualization placeholder image
+              </span>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 4: FLOOR PLAN (GROUND FLOOR & DECK) */}
+        <section className="py-20 max-w-7xl mx-auto px-6 border-t border-mist/10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7">
+              <div className="w-full aspect-[16/10] border border-dashed border-[#10B981]/30 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none shadow-sm">
+                <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1 font-semibold">
+                  FLOOR PLAN: GROUND FLOOR AND DECK
+                </span>
+                <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                  1,512 SQM footprint spatial layout
+                </span>
+              </div>
+            </div>
+            <div className="lg:col-span-5 space-y-6">
+              <div className="border-l-2 border-[#10B981] pl-6 py-1">
+                <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-1">
+                  01 / SPATIAL ARRANGEMENT
+                </span>
+                <h3 className="font-serif text-3xl font-light text-ink uppercase tracking-wide">
+                  Floor Plan
+                </h3>
+              </div>
+              <p className="text-sm text-slate/85 font-light leading-relaxed">
+                The floor plan of the Community Resilience facility highlights the concept through interconnected spatial layout that adapts to changing needs. The main area, which is the Food Corridor acts as the central spine of the facility, and this connects the foodfocused, health, care, and administrative zones, which all function like bamboo nodes supporting the whole system.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 5: CONCEPT - NODES OF RESILIENCE */}
+        <section className="py-24 border-t border-b border-mist/10 bg-paper/30">
+          <div className="max-w-4xl mx-auto px-6 text-center space-y-8">
+            <div className="space-y-3">
+              <span className="font-mono text-xxs tracking-[0.3em] text-[#047857] font-semibold uppercase block">
+                02 / CONCEPTUAL ANALYSIS
+              </span>
+              <h3 className="font-serif text-3xl md:text-4xl font-light text-ink uppercase tracking-wider">
+                Nodes of Resilience
+              </h3>
+              <span className="font-serif italic text-lg text-slate block lowercase">
+                “Bending without Breaking”
+              </span>
+            </div>
+
+            <div className="w-full max-w-2xl mx-auto aspect-[16/9] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none shadow-sm">
+              <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                CONCEPT DIAGRAM
+              </span>
+              <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                Bamboo Analogy Sketch
+              </span>
+            </div>
+
+            <p className="text-sm md:text-base text-slate/90 font-light leading-relaxed max-w-3xl mx-auto text-left md:text-center">
+              Inspired by the bamboo plant and its nodes, this concept is a symbolism of resilience. In times of challenges. In times of challenges, a community can learn from bamboo’s qualities of being flexible rather than being rigid (Lambert). A bamboo is also known to adapt to challenges with resilience, allowing individuals to be molded by their experiences without losing strength. The bamboo’s nodes function as clusters for community togetherness, food security, sanitations, and more forms of support that are all interlinked by flexible zones that mimic the joints of the bamboo.
+            </p>
+          </div>
+        </section>
+
+        {/* SECTION 6: ADDITIONAL DETAILED PLATES (2 IMAGES) */}
+        <section className="py-20 max-w-7xl mx-auto px-6">
+          <div className="mb-10 text-center">
+            <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-2">
+              03 / VISUAL STUDIES
+            </span>
+            <h3 className="font-serif text-3xl font-light text-ink uppercase tracking-wide">
+              Resilience Nodes in Context
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="w-full aspect-[16/10] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none shadow-sm hover:border-mist/50 transition-colors">
+              <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                PERSPECTIVE RENDER
+              </span>
+              <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                detail study 01 placeholder image
+              </span>
+            </div>
+            <div className="w-full aspect-[16/10] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none shadow-sm hover:border-mist/50 transition-colors">
+              <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                PERSPECTIVE RENDER
+              </span>
+              <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                detail study 02 placeholder image
+              </span>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 7: COMMUNITY PANTRY (1 IMAGE + TEXT) */}
+        <section className="py-20 border-t border-mist/10 bg-paper/10">
+          <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7">
+              <div className="w-full aspect-[16/10] border border-dashed border-[#10B981]/30 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none shadow-sm">
+                <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1 font-semibold">
+                  COMMUNITY PANTRY
+                </span>
+                <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                  1 perspective image placeholder
+                </span>
+              </div>
+            </div>
+            <div className="lg:col-span-5 space-y-6">
+              <div className="border-l-2 border-[#10B981] pl-6 py-1">
+                <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-1">
+                  04 / MICRO-ENTERPRISE & FOOD SECURITY
+                </span>
+                <h3 className="font-serif text-3xl font-light text-ink uppercase tracking-wide">
+                  Community Pantry Hub
+                </h3>
+              </div>
+              <p className="text-sm text-slate/85 font-light leading-relaxed">
+                The community pantry provides free essential goods and donated items for families facing food insecurity in Tondo, Manila. The second level is also a pantry but hosts micro-enterprise non-food stalls selling low-cost essentials and community-made products to support household income and self-reliance.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 8: FLEXIBLE SPACES & DISASTER RESPONSE (4 IMAGES + TEXT) */}
+        <section className="py-20 border-t border-mist/10">
+          <div className="max-w-7xl mx-auto px-6 space-y-12">
+            <div className="max-w-4xl space-y-4">
+              <div className="border-l-2 border-[#B45309] pl-6 py-1">
+                <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-1">
+                  05 / MULTI-FUNCTIONAL ADAPTIVITY
+                </span>
+                <h3 className="font-serif text-3xl font-light text-ink uppercase tracking-wide">
+                  Flexible Zones & Evacuation Centers
+                </h3>
+              </div>
+              <p className="text-sm text-slate/85 font-light leading-relaxed">
+                These spaces showcase the facility's flexibility in supporting both everyday community use and disaster response. The workshop area promotes skills development and livelihood opportunities, while the multipurpose hall serves as a venue for community activities and converts into an evacuation area during emergencies. Privacy pods provide comfort and dignity for evacuees, and the indoor hydroponics with the community garden strengthen food security by enabling sustainable food production and encouraging community participation.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 items-stretch">
+              {[
+                { 
+                  title: "LIVELIHOOD & WORKSHOP AREA", 
+                  detail: "Skills development & vocational training",
+                  image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+                  gridClass: "lg:col-span-5",
+                  aspectClass: "aspect-4/3 lg:aspect-[3/4.2]"
+                },
+                { 
+                  title: "MULTIPURPOSE HALL", 
+                  detail: "Evacuation conversion & community meetings",
+                  image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
+                  gridClass: "lg:col-span-7",
+                  aspectClass: "aspect-4/3 lg:aspect-[1.6/1.05]"
+                },
+                { 
+                  title: "PRIVACY PODS", 
+                  detail: "Dignified temporary emergency shelter",
+                  image: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=800&q=80",
+                  gridClass: "lg:col-span-7",
+                  aspectClass: "aspect-4/3 lg:aspect-[1.6/1.05]"
+                },
+                { 
+                  title: "INDOOR HYDROPONICS", 
+                  detail: "Sustainable food production & green spaces",
+                  image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80",
+                  gridClass: "lg:col-span-5",
+                  aspectClass: "aspect-4/3 lg:aspect-[3/4.2]"
+                }
+              ].map((item, idx, arr) => {
+                const allImages = arr.map(i => i.image);
+                return (
+                  <div
+                    key={idx}
+                    onClick={() => handleOpenLightbox(item.image, allImages)}
+                    className={`group cursor-pointer flex flex-col h-full rounded-sm overflow-hidden transition-all duration-500 fade-up ${item.gridClass}`}
+                    id={`resilience-zone-card-${idx}`}
+                  >
+                    {/* Image Wrap */}
+                    <div className={`relative overflow-hidden w-full bg-ink rounded-sm ${item.aspectClass}`}>
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover transition-transform duration-[1500ms] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-[1.025]"
+                        referrerPolicy="no-referrer"
+                      />
+                      {/* Subtle top-left badge overlay */}
+                      <div className="absolute top-4 left-4 bg-[#242424]/90 backdrop-blur-xs px-2.5 py-1 rounded-xs text-[8px] font-mono tracking-widest uppercase text-paper border border-white/5">
+                        PERSPECTIVE 0{idx + 1}
+                      </div>
+                    </div>
+
+                    {/* Banner underneath */}
+                    <div className="pt-4 pb-2 bg-transparent shrink-0 flex flex-col justify-between">
+                      <div className="space-y-1">
+                        <h4 className="font-serif text-lg font-medium text-ink tracking-wide group-hover:text-slate transition-colors leading-tight uppercase">
+                          {item.title}
+                        </h4>
+                        <p className="text-[10px] text-mist font-light font-mono leading-relaxed uppercase tracking-wider">
+                          {item.detail}
+                        </p>
+                      </div>
+                      
+                      <div className="w-full h-px bg-mist/20 group-hover:bg-slate/30 transition-colors mt-4" />
+                      <div className="flex items-center justify-between text-[7px] font-mono tracking-widest uppercase text-slate/60 group-hover:text-ink transition-colors pt-3">
+                        <span>Magnify View</span>
+                        <ArrowRight className="w-2.5 h-2.5 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 9: NEXT PROJECT CYCLE CARD */}
+        <section className="py-12 max-w-7xl mx-auto px-6" id="project-next-cycle">
+          <div
+            onClick={() => onNavigateProject(nextProject.slug)}
+            className="relative group overflow-hidden rounded-md shadow-xl aspect-21/9 md:aspect-32/9 bg-ink cursor-pointer"
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center opacity-70 group-hover:opacity-60 transition-all duration-[1200ms] group-hover:scale-103"
+              style={{ backgroundImage: `url(${nextProject.heroImage})` }}
+            />
+            <div className="absolute inset-0 bg-navy/30 mix-blend-multiply" />
+            <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/40 to-transparent" />
+
+            <div className="absolute inset-0 flex items-center px-8 md:px-16 text-paper justify-between">
+              <div className="space-y-2 select-none">
+                <span className="font-mono text-xxs tracking-[0.3em] text-mist uppercase block">
+                  UP NEXT
+                </span>
+                <h4 className="font-serif text-3xl md:text-5xl font-light tracking-tight group-hover:text-slate transition-colors">
+                  {nextProject.name}
+                </h4>
+                <span className="font-mono text-xxs text-paper/60 uppercase tracking-widest block">
+                  {nextProject.category} — {nextProject.year}
+                </span>
+              </div>
+              
+              <div className="p-5 bg-paper text-ink rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <ChevronRight className="w-6 h-6 text-slate" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  if (project.slug === "giliw-learning-facility") {
+    return (
+      <div className="paper-grain pb-24 animate-fade-in" id="project-view-giliw-learning-facility">
+        {/* SECTION 1: HERO - FULL BLEED PHOTO */}
+        <section
+          className="relative w-full h-[70vh] bg-cover bg-center flex items-end"
+          style={{ backgroundImage: `url(${project.heroImage})` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-transparent" />
+          
+          <div className="max-w-7xl mx-auto w-full px-6 pb-16 z-10 text-paper">
+            {/* Breadcrumb back to home */}
+            <button
+              onClick={onNavigateHome}
+              className="font-mono text-xxs tracking-widest uppercase text-mist hover:text-paper transition-colors mb-6 flex items-center gap-1.5 focus:outline-none"
+              id="project-back-btn"
+            >
+              ← Back to Projects
+            </button>
+            
+            <span className="font-mono text-xxs tracking-[0.25em] text-[#10B981] uppercase block mb-3 font-semibold">
+              04 | GILIW LEARNING FACILITY
+            </span>
+            <h1 className="font-serif text-4xl md:text-6xl font-light tracking-tight leading-tight mb-4 max-w-4xl uppercase text-paper">
+              GILIW
+            </h1>
+
+            {/* Metadata bar */}
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xxs tracking-[0.2em] text-mist uppercase border-t border-paper/10 pt-4">
+              <span className="flex items-center gap-1">
+                <Calendar className="w-3.5 h-3.5 text-slate" /> COMMUNITY ACADEMIC PROJECT FOR AYDA 2024
+              </span>
+              <span>—</span>
+              <span className="flex items-center gap-1">
+                <MapPin className="w-3.5 h-3.5 text-slate" /> MANILA, PH
+              </span>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 2: DESCRIPTION & PROJECT SCOPE */}
+        <section className="py-20 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
+          {/* Left Column: Details */}
+          <div className="md:col-span-4 space-y-8 md:sticky md:top-28 h-fit">
+            <div className="border-l-2 border-[#10B981] pl-6 py-2">
+              <span className="font-mono text-xxs tracking-widest text-mist uppercase block mb-1">
+                PROJECT SCOPE
+              </span>
+              <h2 className="font-serif text-2xl font-light text-ink">
+                Academic Context
+              </h2>
+            </div>
+
+            <div className="space-y-4 text-xs font-mono tracking-wider text-ink/75">
+              <div>
+                <span className="text-mist block text-[10px] uppercase mb-1">YEAR</span>
+                <span className="text-sm font-semibold">2024</span>
+              </div>
+              <hr className="border-mist/10" />
+              <div>
+                <span className="text-mist block text-[10px] uppercase mb-1">PROGRAM</span>
+                <span className="text-sm font-semibold">AYDA 2024</span>
+              </div>
+              <hr className="border-mist/10" />
+              <div>
+                <span className="text-mist block text-[10px] uppercase mb-1">LOCATION</span>
+                <span className="text-sm font-semibold">MANILA, PHILIPPINES</span>
+              </div>
+              <hr className="border-mist/10" />
+              <div>
+                <span className="text-mist block text-[10px] uppercase mb-2">TOOLS USED</span>
+                <div className="flex flex-wrap gap-1.5">
+                  {project.tools.map((tool) => (
+                    <span
+                      key={tool}
+                      className="inline-block px-2.5 py-1 bg-[#10B981]/5 text-[#047857] text-[10px] rounded font-semibold border border-[#10B981]/10"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Statement */}
+          <div className="md:col-span-8 space-y-6 text-base font-light text-ink/80 leading-relaxed md:pt-2">
+            <h3 className="font-serif text-2xl md:text-3xl font-light text-ink leading-snug">
+              {project.description}
+            </h3>
+          </div>
+        </section>
+
+        {/* SECTION 3: DESIGN PHILOSOPHY / CONCEPT */}
+        <section className="py-24 border-t border-b border-mist/10 bg-paper/30">
+          <div className="max-w-4xl mx-auto px-6 text-center space-y-8">
+            <div className="space-y-3">
+              <span className="font-mono text-xxs tracking-[0.3em] text-[#047857] font-semibold uppercase block">
+                01 / DESIGN PHILOSOPHY
+              </span>
+              <h3 className="font-serif text-3xl md:text-4xl font-light text-ink uppercase tracking-wider">
+                Space for Passion & Learning
+              </h3>
+            </div>
+
+            <p className="text-sm md:text-base text-slate/90 font-light leading-relaxed max-w-3xl mx-auto text-left md:text-center font-serif leading-relaxed">
+              {project.concept ? project.concept.text : ""}
+            </p>
+          </div>
+        </section>
+
+        {/* SECTION 4: FLOOR PLAN & LAYOUT INDEX */}
+        <section className="py-20 max-w-7xl mx-auto px-6 border-b border-mist/10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7">
+              <div className="w-full aspect-[16/10] border border-dashed border-[#10B981]/30 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none shadow-sm">
+                <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1 font-semibold">
+                  LEARNING CENTER FLOOR PLAN
+                </span>
+                <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                  Spatial distribution & zone planning map
+                </span>
+              </div>
+            </div>
+            <div className="lg:col-span-5 space-y-6">
+              <div className="border-l-2 border-[#10B981] pl-6 py-1">
+                <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-1">
+                  02 / SPATIAL ARRANGEMENT
+                </span>
+                <h3 className="font-serif text-3xl font-light text-ink uppercase tracking-wide">
+                  Layout Index
+                </h3>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-x-6 gap-y-2 font-mono text-[11px] text-ink/80 border-t border-mist/10 pt-4 max-h-[300px] overflow-y-auto pr-2">
+                {project.floorPlanContents.map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-2 py-1.5 border-b border-mist/5">
+                    <span className="text-slate font-semibold w-5">{item.number}</span>
+                    <span className="truncate uppercase tracking-wider">{item.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 5: ELEVATION DRAWINGS */}
+        <section className="py-20 max-w-7xl mx-auto px-6">
+          <div className="mb-10 text-center">
+            <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-2">
+              03 / DRAWING STUDIES
+            </span>
+            <h3 className="font-serif text-3xl font-light text-ink uppercase tracking-wide">
+              ELEVATION A & ELEVATION B
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="w-full aspect-[16/10] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none shadow-sm hover:border-slate/50 transition-colors">
+              <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                ELEVATION A
+              </span>
+              <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                Front structural facade study placeholder
+              </span>
+            </div>
+            <div className="w-full aspect-[16/10] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none shadow-sm hover:border-slate/50 transition-colors">
+              <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                ELEVATION B
+              </span>
+              <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                Lateral cross-section study placeholder
+              </span>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 6: EXTENDED DETAILS */}
+        <section className="py-24 border-t border-b border-mist/10 bg-paper/20">
+          <div className="max-w-4xl mx-auto px-6 text-center space-y-8">
+            <h4 className="font-serif text-3xl md:text-4xl font-light text-slate uppercase tracking-wider italic leading-relaxed">
+              "{project.pullQuote}"
+            </h4>
+            <p className="text-sm md:text-base text-slate/90 font-light leading-relaxed max-w-3xl mx-auto text-left md:text-center">
+              {project.extendedDescription}
+            </p>
+          </div>
+        </section>
+
+        {/* SECTION 7: NEXT PROJECT CARD */}
+        <section className="py-12 max-w-7xl mx-auto px-6" id="project-next-cycle">
+          <div
+            onClick={() => onNavigateProject(nextProject.slug)}
+            className="relative group overflow-hidden rounded-md shadow-xl aspect-21/9 md:aspect-32/9 bg-ink cursor-pointer"
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center opacity-70 group-hover:opacity-60 transition-all duration-[1200ms] group-hover:scale-103"
+              style={{ backgroundImage: `url(${nextProject.heroImage})` }}
+            />
+            <div className="absolute inset-0 bg-navy/30 mix-blend-multiply" />
+            <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/40 to-transparent" />
+
+            <div className="absolute inset-0 flex items-center px-8 md:px-16 text-paper justify-between">
+              <div className="space-y-2 select-none">
+                <span className="font-mono text-xxs tracking-[0.3em] text-mist uppercase block">
+                  UP NEXT
+                </span>
+                <h4 className="font-serif text-3xl md:text-5xl font-light tracking-tight group-hover:text-slate transition-colors">
+                  {nextProject.name}
+                </h4>
+                <span className="font-mono text-xxs text-paper/60 uppercase tracking-widest block">
+                  {nextProject.category} — {nextProject.year}
+                </span>
+              </div>
+              
+              <div className="p-5 bg-paper text-ink rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <ChevronRight className="w-6 h-6 text-slate" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  if (project.slug === "iglu-round-sofa") {
+    return (
+      <div className="paper-grain pb-24 animate-fade-in" id="project-view-iglu-round-sofa">
+        {/* SECTION 1: HERO - FULL BLEED PHOTO */}
+        <section
+          className="relative w-full h-[70vh] bg-cover bg-center flex items-end"
+          style={{ backgroundImage: `url(${project.heroImage})` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-transparent" />
+          
+          <div className="max-w-7xl mx-auto w-full px-6 pb-16 z-10 text-paper">
+            {/* Breadcrumb back to home */}
+            <button
+              onClick={onNavigateHome}
+              className="font-mono text-xxs tracking-widest uppercase text-mist hover:text-paper transition-colors mb-6 flex items-center gap-1.5 focus:outline-none"
+              id="project-back-btn"
+            >
+              ← Back to Projects
+            </button>
+            
+            <span className="font-mono text-xxs tracking-[0.25em] text-[#B45309] uppercase block mb-3 font-semibold">
+              06 | FURNITURE
+            </span>
+            <h1 className="font-serif text-4xl md:text-6xl font-light tracking-tight leading-tight mb-4 max-w-4xl uppercase text-paper">
+              Iglu Round Sofa
+            </h1>
+
+            {/* Metadata bar */}
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xxs tracking-[0.2em] text-mist uppercase border-t border-paper/10 pt-4">
+              <span className="flex items-center gap-1">
+                <Calendar className="w-3.5 h-3.5 text-slate" /> ACADEMIC PROJECT 2023
+              </span>
+              <span>—</span>
+              <span className="flex items-center gap-1">
+                <MapPin className="w-3.5 h-3.5 text-slate" /> MANILA, PH
+              </span>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 2: OVERVIEW - TWO-COLUMN LAYOUT */}
+        <section className="py-24 max-w-7xl mx-auto px-6 border-b border-mist/10" id="project-overview-section">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-20">
+            {/* Left Column: Scope Details Sidebar */}
+            <div className="md:col-span-4 space-y-8 md:sticky md:top-28 h-fit" id="project-scope-sidebar">
+              <div className="space-y-4">
+                <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block">
+                  Project Scope
+                </span>
+                <div className="w-8 h-px bg-slate" />
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-y-6 gap-x-4 font-mono text-xxs uppercase tracking-wider">
+                <div className="space-y-1">
+                  <span className="text-mist block">TYPOLOGY</span>
+                  <span className="text-ink font-semibold">Furniture Design / Industrial</span>
+                </div>
+                <div className="space-y-1">
+                  <span className="text-mist block">CO-CREATOR</span>
+                  <span className="text-ink font-semibold">Kaela V. Borbon</span>
+                </div>
+                <div className="space-y-1">
+                  <span className="text-mist block">INSPIRATION</span>
+                  <span className="text-ink font-semibold">Lanelle Abueva-Fernando</span>
+                </div>
+                <div className="space-y-1">
+                  <span className="text-mist block">AWARDS</span>
+                  <span className="text-ink font-semibold text-[#B45309]">3rd Runner-Up, LIKHAYAN 2023</span>
+                </div>
+                <div className="space-y-1">
+                  <span className="text-mist block">TOOLS USED</span>
+                  <div className="flex flex-wrap gap-1.5 mt-1">
+                    {project.tools.map((tool) => (
+                      <span key={tool} className="bg-mist/15 text-slate font-medium px-2 py-0.5 rounded-sm">
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Narrative Description */}
+            <div className="md:col-span-8 space-y-8" id="project-narrative-panel">
+              <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block">
+                00 / Concept Narrative
+              </span>
+              <p className="font-serif text-xl sm:text-2xl font-light text-ink/90 leading-relaxed italic">
+                “The Iglu Round Sofa was co-created by Kaela V. Borbon and draws inspiration from the ceramic works of artist Lanelle Abueva-Fernando, translating her handcrafted textures into a multifunctional seating piece with an integrated planter that symbolizes community and growth.”
+              </p>
+              <div className="space-y-6 text-sm text-ink/80 font-light leading-relaxed max-w-3xl">
+                <p>
+                  The design celebrates Filipino craftsmanship while promoting interaction and connection through its circular form. It was recognized as the 3rd Runner-Up in the People's Choice Awards during the LIKHAYAN Exhibit 2023, highlighting its creative interpretation of local artistry and innovative furniture design.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 3: THE INSPIRATION - 2 IMAGES GRID */}
+        <section className="py-24 max-w-7xl mx-auto px-6 border-b border-mist/10" id="project-inspiration-section">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start mb-16">
+            <div className="md:col-span-4 space-y-4">
+              <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block">
+                01 / THE INSPIRATION
+              </span>
+              <h2 className="font-serif text-3xl md:text-4xl font-light tracking-tight text-ink uppercase">
+                Ceramics by Lanelle Abueva-Fernando
+              </h2>
+            </div>
+            <div className="md:col-span-8 text-sm text-ink/80 font-light leading-relaxed space-y-6">
+              <p>
+                The Iglu Round Sofa draws inspiration from the ceramic works of Lanelle Abueva-Fernando, particularly the handcrafted vessel forms that celebrate organic textures and Filipino craftsmanship. Its circular silhouette echoes the rounded geometry of her pottery, while the woven base references the tactile quality of handcrafted ceramics.
+              </p>
+              <p>
+                The integrated planter at the center symbolizes growth and community, creating a gathering space that encourages interaction and connection. Through its soft curves, natural materials, and earthy tones, the sofa reflects the warmth, artistry, and timeless character found in Abueva-Fernando's ceramic creations.
+              </p>
+            </div>
+          </div>
+
+          {/* Inspiration 2-Image Grid (Highly Asymmetric & Elegant) */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+            <div 
+              className="md:col-span-5 aspect-[4/5] rounded-sm overflow-hidden bg-ink shadow-md cursor-pointer group relative"
+              onClick={() => handleOpenLightbox("https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80", ["https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?auto=format&fit=crop&w=800&q=80"])}
+            >
+              <img 
+                src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80" 
+                alt="Organic Ceramic Vessel" 
+                className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-102"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute bottom-4 left-4 bg-ink/75 backdrop-blur-xs text-[8px] font-mono uppercase tracking-widest text-paper px-3 py-1.5 rounded-xs border border-white/5">
+                01 / Organic Vessel Textures
+              </div>
+            </div>
+
+            <div 
+              className="md:col-span-7 aspect-[16/10] md:aspect-auto rounded-sm overflow-hidden bg-ink shadow-md cursor-pointer group relative"
+              onClick={() => handleOpenLightbox("https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?auto=format&fit=crop&w=800&q=80", ["https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?auto=format&fit=crop&w=800&q=80"])}
+            >
+              <img 
+                src="https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?auto=format&fit=crop&w=800&q=80" 
+                alt="Ceramics Studio Elements" 
+                className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-102"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute bottom-4 left-4 bg-ink/75 backdrop-blur-xs text-[8px] font-mono uppercase tracking-widest text-paper px-3 py-1.5 rounded-xs border border-white/5">
+                02 / Handcrafted Pottery Forms
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 4: THE PROCESS & 3 IMAGES (TOP VIEW, SECTION, PERSPECTIVE) */}
+        <section className="py-24 max-w-7xl mx-auto px-6 border-b border-mist/10" id="project-process-section">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start mb-16">
+            <div className="md:col-span-4 space-y-4">
+              <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block">
+                02 / THE PROCESS
+              </span>
+              <h2 className="font-serif text-3xl md:text-4xl font-light tracking-tight text-ink uppercase">
+                Form Exploration & Schematics
+              </h2>
+            </div>
+            <div className="md:col-span-8 text-sm text-ink/80 font-light leading-relaxed space-y-6">
+              <p>
+                The design process of the Iglu Round Sofa began by studying the organic forms and handcrafted textures found in the ceramic works of Lanelle Abueva-Fernando. The rounded silhouette of the ceramic vessel was translated into a circular seating arrangement that encourages gathering and interaction. An integrated planter was placed at the center to symbolize growth, connection, and harmony with nature, while the woven base reflects the tactile quality of handcrafted Filipino craftsmanship.
+              </p>
+              <p>
+                Through sketching, form exploration, and 3D modeling, the concept evolved into a multifunctional furniture piece that combines seating, greenery, and cultural inspiration, creating a welcoming focal point that celebrates both community and local artistry.
+              </p>
+            </div>
+          </div>
+
+          {/* 3 Images Technical Grid - Top view, section view, perspective */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+            {/* 1. TOP VIEW (Technical Drafting Component) */}
+            <div className="flex flex-col justify-between p-6 bg-paper border border-mist/20 rounded shadow-sm hover:border-slate/40 transition-colors group relative overflow-hidden">
+              <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#1a1a1b_1px,transparent_1px)] [background-size:12px_12px]" />
+              
+              <div className="space-y-4 z-10">
+                <div className="flex justify-between items-center font-mono text-[8px] text-mist tracking-widest uppercase">
+                  <span>PLATE 01 / SCHEMATIC</span>
+                  <span>TOP VIEW</span>
+                </div>
+                <div className="h-44 flex items-center justify-center bg-[#FAF9F5]/80 border border-mist/10 rounded-sm">
+                  <svg viewBox="0 0 200 200" className="w-36 h-36 text-slate/90">
+                    <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" strokeWidth="0.75" strokeDasharray="3,3" />
+                    <circle cx="100" cy="100" r="75" fill="none" stroke="currentColor" strokeWidth="1.25" />
+                    <line x1="100" y1="25" x2="100" y2="175" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2,2" />
+                    <line x1="25" x2="175" y1="100" y2="100" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2,2" />
+                    <circle cx="100" cy="100" r="45" fill="none" stroke="currentColor" strokeWidth="1" />
+                    <circle cx="100" cy="100" r="25" fill="none" stroke="currentColor" strokeWidth="0.75" />
+                    <circle cx="100" cy="100" r="20" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2,1" />
+                    <path d="M100,100 C95,90 90,85 100,75 C110,85 105,90 100,100" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="0.5" />
+                    <path d="M100,100 C110,95 115,90 125,100 C115,110 110,105 100,100" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="0.5" />
+                    <path d="M100,100 C90,105 85,110 75,100 C85,90 90,95 100,100" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="0.5" />
+                    <path d="M100,100 C105,110 110,115 100,125 C90,115 95,110 100,100" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="0.5" />
+                    <line x1="20" y1="185" x2="180" y2="185" stroke="currentColor" strokeWidth="0.5" />
+                    <line x1="20" y1="182" x2="20" y2="188" stroke="currentColor" strokeWidth="0.5" />
+                    <line x1="180" y1="182" x2="180" y2="188" stroke="currentColor" strokeWidth="0.5" />
+                    <text x="100" y="195" textAnchor="middle" fontSize="6.5" fontFamily="monospace" fill="currentColor" className="tracking-wider">Ø 1800mm</text>
+                  </svg>
+                </div>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-mist/10 space-y-1">
+                <span className="font-serif text-sm font-semibold text-ink block uppercase">TOP VIEW CIRCULATION</span>
+                <span className="font-mono text-[9px] text-mist block uppercase">Symmetrical 360° seating contour layout</span>
+              </div>
+            </div>
+
+            {/* 2. SECTION VIEW (Technical Drafting Component) */}
+            <div className="flex flex-col justify-between p-6 bg-paper border border-mist/20 rounded shadow-sm hover:border-slate/40 transition-colors group relative overflow-hidden">
+              <div className="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#1a1a1b_1px,transparent_1px)] [background-size:12px_12px]" />
+              
+              <div className="space-y-4 z-10">
+                <div className="flex justify-between items-center font-mono text-[8px] text-mist tracking-widest uppercase">
+                  <span>PLATE 02 / SCHEMATIC</span>
+                  <span>SECTIONAL SLICE</span>
+                </div>
+                <div className="h-44 flex items-center justify-center bg-[#FAF9F5]/80 border border-mist/10 rounded-sm">
+                  <svg viewBox="0 0 200 150" className="w-40 h-36 text-slate/90">
+                    <line x1="10" y1="130" x2="190" y2="130" stroke="currentColor" strokeWidth="0.75" />
+                    <rect x="35" y="110" width="8" height="20" fill="none" stroke="currentColor" strokeWidth="0.75" />
+                    <rect x="157" y="110" width="8" height="20" fill="none" stroke="currentColor" strokeWidth="0.75" />
+                    <rect x="96" y="115" width="8" height="15" fill="none" stroke="currentColor" strokeWidth="0.75" />
+                    <rect x="25" y="105" width="150" height="5" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="0.75" />
+                    <path d="M25,105 L25,75 C25,60 40,55 55,55 L75,55 L75,105 Z" fill="none" stroke="currentColor" strokeWidth="1" />
+                    <path d="M175,105 L175,75 C175,60 160,55 145,55 L125,55 L125,105 Z" fill="none" stroke="currentColor" strokeWidth="1" />
+                    <rect x="78" y="55" width="44" height="50" fill="currentColor" fillOpacity="0.05" stroke="currentColor" strokeWidth="0.75" />
+                    <path d="M100,55 C100,40 94,32 100,18 C106,32 100,40 100,55" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="0.5" />
+                    <path d="M100,55 C105,45 115,40 120,32 C110,36 105,45 100,55" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="0.5" />
+                    <path d="M100,55 C95,45 85,40 80,32 C90,36 95,45 100,55" fill="currentColor" fillOpacity="0.1" stroke="currentColor" strokeWidth="0.5" />
+                    <line x1="15" y1="55" x2="15" y2="130" stroke="currentColor" strokeWidth="0.5" strokeDasharray="1,1" />
+                    <line x1="12" y1="55" x2="18" y2="55" stroke="currentColor" strokeWidth="0.5" />
+                    <line x1="12" y1="130" x2="18" y2="130" stroke="currentColor" strokeWidth="0.5" />
+                    <text x="8" y="95" textAnchor="middle" fontSize="6.5" fontFamily="monospace" fill="currentColor" transform="rotate(-90 8 95)">H 750mm</text>
+                  </svg>
+                </div>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-mist/10 space-y-1">
+                <span className="font-serif text-sm font-semibold text-ink block uppercase">SECTIONAL PROFILE</span>
+                <span className="font-mono text-[9px] text-mist block uppercase">Urethane foam core & ashwood joinery details</span>
+              </div>
+            </div>
+
+            {/* 3. PERSPECTIVE VIEW (Render Showcase Card) */}
+            <div 
+              className="flex flex-col justify-between p-6 bg-paper border border-mist/20 rounded shadow-sm hover:border-slate/40 transition-all cursor-pointer group relative overflow-hidden"
+              onClick={() => handleOpenLightbox("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80", ["https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80"])}
+            >
+              <div className="space-y-4">
+                <div className="flex justify-between items-center font-mono text-[8px] text-mist tracking-widest uppercase">
+                  <span>PLATE 03 / RENDERING</span>
+                  <span>3D VIEW</span>
+                </div>
+                <div className="h-44 overflow-hidden rounded-sm bg-ink shadow-inner relative">
+                  <img 
+                    src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" 
+                    alt="Iglu Sofa Perspective Render" 
+                    className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-103"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-ink/10 group-hover:bg-transparent transition-colors" />
+                  <div className="absolute top-2 right-2 bg-paper/90 px-1.5 py-0.5 rounded-xs text-[6px] font-mono tracking-widest uppercase text-ink border border-mist/10">
+                    CLICK TO MAGNIFY
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-mist/10 space-y-1">
+                <span className="font-serif text-sm font-semibold text-ink block uppercase">PERSPECTIVE RENDER</span>
+                <span className="font-mono text-[9px] text-mist block uppercase">Keyshot 3D volumetric material visualization</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 12: NEXT PROJECT - CYCLE CARD */}
+        <section className="py-12 max-w-7xl mx-auto px-6" id="project-next-cycle">
+          <div
+            onClick={() => onNavigateProject(nextProject.slug)}
+            className="relative group overflow-hidden rounded-md shadow-xl aspect-21/9 md:aspect-32/9 bg-ink cursor-pointer"
+          >
+            {/* Next Image with hover slow scale zoom */}
+            <div
+              className="absolute inset-0 bg-cover bg-center opacity-70 group-hover:opacity-60 transition-all duration-[1200ms] group-hover:scale-103"
+              style={{ backgroundImage: `url(${nextProject.heroImage})` }}
+            />
+            {/* Deep blue color overlay */}
+            <div className="absolute inset-0 bg-navy/30 mix-blend-multiply" />
+            <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/40 to-transparent" />
+
+            {/* Content details overlay */}
+            <div className="absolute inset-0 flex items-center px-8 md:px-16 text-paper justify-between">
+              <div className="space-y-2 select-none">
+                <span className="font-mono text-xxs tracking-[0.3em] text-mist uppercase block">
+                  UP NEXT
+                </span>
+                <h4 className="font-serif text-3xl md:text-5xl font-light tracking-tight group-hover:text-slate transition-colors">
+                  {nextProject.name}
+                </h4>
+                <span className="font-mono text-xxs text-paper/60 uppercase tracking-widest block">
+                  {nextProject.category} — {nextProject.year}
+                </span>
+              </div>
+              
+              <div className="p-5 bg-paper text-ink rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <ChevronRight className="w-6 h-6 text-slate" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* LIGHTBOX STAGE OVERLAY */}
+        {lightboxActiveIdx >= 0 && (
+          <Lightbox
+            images={lightboxImages}
+            activeIndex={lightboxActiveIdx}
+            onClose={() => setLightboxActiveIdx(-1)}
+            onPrev={handlePrevLightbox}
+            onNext={handleNextLightbox}
+          />
+        )}
+      </div>
+    );
+  }
+
+  return (
+    <div className="paper-grain pb-24" id={`project-view-${project.slug}`}>
+      {/* SECTION 1: HERO - FULL BLEED PHOTO */}
+      <section
+        className="relative w-full h-[70vh] bg-cover bg-center flex items-end"
+        style={{ backgroundImage: `url(${project.heroImage})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent" />
+        
+        <div className="max-w-7xl mx-auto w-full px-6 pb-16 z-10 text-paper">
+          {/* Breadcrumb back to home */}
+          <button
+            onClick={onNavigateHome}
+            className="font-mono text-xxs tracking-widest uppercase text-sky-200/80 hover:text-white transition-colors mb-6 flex items-center gap-1.5 focus:outline-none"
+            id="project-back-btn"
+          >
+            ← Back to Projects
+          </button>
+          
+          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight leading-tight mb-4 max-w-4xl uppercase text-paper">
+            {project.name}
+          </h1>
+
+          {/* Metadata bar */}
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xxs tracking-[0.25em] text-sky-100 uppercase border-t border-paper/10 pt-4">
+            <span className="flex items-center gap-1">
+              <Calendar className="w-3.5 h-3.5 text-sky-200/70" /> {project.year}
+            </span>
+            <span className="text-paper/30">—</span>
+            <span className="flex items-center gap-1">
+              <Briefcase className="w-3.5 h-3.5 text-sky-200/70" /> {project.category}
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 2: OVERVIEW - TWO COLUMNS */}
+      <section className="py-20 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
+        {/* Left Sticky Sidebar */}
+        <div className="md:col-span-4 space-y-8 md:sticky md:top-28 h-fit" id="project-overview-sidebar">
+          <div className="border-l-2 border-slate pl-6 py-2">
+            <span className="font-mono text-xxs tracking-widest text-mist uppercase block mb-1">
+              PROJECT SCOPE
+            </span>
+            <h2 className="font-serif text-2xl font-light text-ink">
+              Executive Details
+            </h2>
+          </div>
+
+          <div className="space-y-4 text-xs font-mono tracking-wider text-ink/75">
+            <div>
+              <span className="text-mist block text-[10px] uppercase mb-1">DATE DELIVERED</span>
+              <span className="text-sm font-semibold">{project.year}</span>
+            </div>
+            <hr className="border-mist/10" />
+            <div>
+              <span className="text-mist block text-[10px] uppercase mb-1">TYPOLOGY</span>
+              <span className="text-sm font-semibold">{project.category}</span>
+            </div>
+            <hr className="border-mist/10" />
+            <div>
+              <span className="text-mist block text-[10px] uppercase mb-2">SYSTEMS & TOOLS</span>
+              <div className="flex flex-wrap gap-1.5">
+                {project.tools.map((tool) => (
+                  <span
+                    key={tool}
+                    className="inline-block px-2.5 py-1 bg-ink/5 text-ink text-[10px] rounded"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Description Paragraphs */}
+        <div className="md:col-span-8 space-y-6 text-base font-light text-ink/80 leading-relaxed md:pt-2" id="project-overview-content">
+          <h3 className="font-serif text-2xl md:text-3xl font-light text-ink leading-snug">
+            {project.description}
+          </h3>
+          {project.slug === "coastal-residence" ? (
+            <p className="text-sm md:text-base">
+              {project.extendedDescription}
+            </p>
+          ) : (
+            <>
+              <p className="text-sm md:text-base">
+                Throughout the project timeline, our design decisions prioritised durable physical elements and sensory clarity. Rather than packing the space with distracting secondary details, we chose fewer, larger pieces with rich textures.
+              </p>
+              <p className="text-sm md:text-base">
+                We developed several custom iterations of cabinetry profiles and millwork thresholds to satisfy the client's high standards. By partnering with local artisan steel and wood craftsmen, we delivered an authentic, bespoke result.
+              </p>
+            </>
+          )}
+        </div>
+      </section>
+
+      {/* SECTION 3, 4, 5: CURATED LOOKBOOK 'CONCEPT & MOOD' 3-COLUMN SHEET (Slide 3 style) */}
+      <section className="py-24 border-t border-b border-mist/10 bg-paper/30" id="project-concept-mood-lookbook">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            
+            {/* Column 1: Massive Header & Metadata Panel */}
+            <div className="lg:col-span-4 flex flex-col justify-between p-8 bg-paper border border-mist/20 rounded-md shadow-sm fade-up">
+              <div className="space-y-12">
+                <div>
+                  <span className="font-mono text-[9px] tracking-[0.3em] text-slate uppercase block mb-1">
+                    VOL. 01 / SCHEMATICS
+                  </span>
+                  <h2 className="font-serif text-4xl md:text-5xl font-light tracking-tight text-ink leading-[1.05] uppercase">
+                    CONCEPT <br />
+                    <span className="italic font-normal text-slate lowercase">& mood</span>
+                  </h2>
+                </div>
+
+                <div className="w-8 h-px bg-slate/40" />
+
+                <div className="space-y-4">
+                  <span className="font-mono text-xxs tracking-[0.25em] text-mist uppercase block">
+                    INSPIRATION & ATMOSPHERE
+                  </span>
+                  <p className="text-xs text-slate/90 leading-relaxed font-light">
+                    {project.concept ? project.concept.text : project.description}
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-8 mt-8 border-t border-mist/10 flex justify-between items-baseline font-mono text-[9px] text-mist tracking-widest uppercase">
+                <span>YEAR OF DESIGN</span>
+                <span>{project.year}</span>
+              </div>
+            </div>
+
+            {/* Column 2: Central Floating Highlight Image or Sketch Box */}
+            <div className={`${
+              project.slug === "coastal-residence" ? "lg:col-span-4" : "lg:col-span-6"
+            } bg-mist/5 border border-mist/10 p-8 flex flex-col justify-center items-center rounded-md shadow-sm group cursor-pointer fade-up`}
+                 onClick={() => handleOpenLightbox(project.concept ? project.concept.image : project.heroImage, [project.heroImage])}>
+              <div className="w-full h-full flex flex-col justify-between">
+                <span className="font-mono text-[8px] tracking-[0.3em] text-mist uppercase block mb-4">
+                  01 / CENTRAL INTENT
+                </span>
+                
+                <div className="overflow-hidden rounded-sm w-full grow flex items-center justify-center bg-paper/20 py-6">
+                  {project.concept && project.concept.image ? (
+                    <img
+                      src={project.concept.image}
+                      alt={`${project.name} primary concept`}
+                      className="max-h-[300px] w-auto object-contain transition-transform duration-700 group-hover:scale-102"
+                      referrerPolicy="no-referrer"
+                    />
+                  ) : project.slug === "container-home" ? (
+                    <div className="w-full aspect-[4/3] border border-dashed border-[#10B981]/30 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-4 text-center select-none">
+                      <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1 font-semibold">
+                        CONTAINER GEOMETRY
+                      </span>
+                      <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                        Bavarian design & timber-metal fusion sketch
+                      </span>
+                    </div>
+                  ) : project.slug === "hotel-concept" ? (
+                    <div className="w-full aspect-[4/3] border border-dashed border-[#10B981]/30 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-4 text-center select-none">
+                      <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1 font-semibold">
+                        DESIGN STORYBOARD
+                      </span>
+                      <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                        French Chateau & theatrical fashion narrative
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="w-full aspect-[4/3] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-4 text-center select-none">
+                      <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1 font-semibold">
+                        CONCEPT DRAWING
+                      </span>
+                      <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                        Architectural form & layout study
+                      </span>
+                    </div>
+                  )}
+                </div>
+
+                <span className="font-mono text-[8px] tracking-[0.25em] text-mist uppercase block mt-4 text-center">
+                  TOUCH TO MAGNIFY VIEW
+                </span>
+              </div>
+            </div>
+
+            {/* Column 3: ONLY rendered for coastal-residence (which has real moodboard details!) */}
+            {project.slug === "coastal-residence" && (
+              <div className="lg:col-span-4 flex flex-col justify-between p-8 bg-paper border border-mist/20 rounded-md shadow-sm fade-up">
+                <div className="space-y-6">
+                  <span className="font-mono text-[9px] tracking-[0.3em] text-slate uppercase block">
+                    02 / MATERIAL COLLAGE
+                  </span>
+                  
+                  <div className="grid grid-cols-2 gap-4">
+                    {project.moodboardImages.slice(0, 2).map((img, idx) => (
+                      <div 
+                        key={idx} 
+                        className="aspect-square overflow-hidden rounded-sm bg-ink border border-mist/10 cursor-pointer group"
+                        onClick={() => handleOpenLightbox(img, project.moodboardImages)}
+                      >
+                        <img
+                          src={img}
+                          alt="Mood element"
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          referrerPolicy="no-referrer"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-4 pt-6 border-t border-mist/10">
+                  <p className="text-[11px] text-slate/85 leading-relaxed font-light">
+                    {project.inspiration ? project.inspiration.text : "The space evokes a calm and inviting atmosphere, using soft light, natural geography, and thoughtful zone divisions to define each unique living area."}
+                  </p>
+                  <span className="font-mono text-[8px] tracking-[0.25em] text-mist uppercase block">
+                    CURATED INSPIRATION MATRIX
+                  </span>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 5.5: SUSTAINABLE INCLUSIONS (FOR CONTAINER-HOME ONLY) */}
+      {project.slug === "container-home" && (
+        <section className="py-20 bg-paper/30 border-b border-mist/10" id="project-sustainable-inclusions">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="mb-12">
+              <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-2">
+                ECO-FRIENDLY INCLUSIONS
+              </span>
+              <h3 className="font-serif text-3xl font-light text-ink uppercase">
+                SUSTAINABLE INCLUSIONS
+              </h3>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 font-mono text-xs">
+              {[
+                "Rainwater Harvest Tank",
+                "Occupancy Sensor",
+                "Tankless Water Heater",
+                "Smart Plugs",
+                "Smart Home Technologies",
+                "Solar Panels",
+                "Smart Pet Feeders"
+              ].map((inclusion, idx) => (
+                <div key={idx} className="flex flex-col justify-between py-4 px-6 border border-mist/20 rounded bg-[#FAF9F5]/70 shadow-sm">
+                  <span className="text-slate font-semibold text-[10px] tracking-widest block mb-4 uppercase">
+                    ITEM 0{idx + 1}
+                  </span>
+                  <span className="text-ink font-light text-sm tracking-wide">
+                    {inclusion}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* SECTION 6: COLOR PALETTE (OPTIONAL) */}
+      {project.colorPalette && (
+        <section className="py-20 max-w-7xl mx-auto px-6 border-b border-mist/10" id="project-palette-section">
+          <div className="mb-12 text-center fade-up">
+            <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-2">
+              CHROMATIC COORDINATION
+            </span>
+            <h3 className="font-serif text-3xl font-light text-ink uppercase">
+              The Color Swatches
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+            {project.colorPalette.map((color) => (
+              <div
+                key={color.hex}
+                className="bg-paper p-4 rounded-md shadow-sm flex flex-col gap-3 items-center text-center fade-up"
+              >
+                {/* Visual Swatch */}
+                <div
+                  className="w-full aspect-square rounded-sm shadow-inner"
+                  style={{ backgroundColor: color.hex }}
+                />
+                <div className="space-y-1">
+                  <span className="font-serif text-sm font-semibold text-ink block">
+                    {color.name}
+                  </span>
+                  <span className="font-mono text-xxs text-mist block">
+                    {color.hex}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* SECTION 7: MATERIAL SELECTION (OPTIONAL) */}
+      {project.materials && (
+        <section className="py-20 max-w-7xl mx-auto px-6 border-b border-mist/10" id="project-materials-section">
+          <div className="mb-12 fade-up">
+            <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-2">
+              TACTILE REFINEMENT
+            </span>
+            <h3 className="font-serif text-3xl font-light text-ink uppercase">
+              Material Curation
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {project.materials.map((mat) => (
+              <div
+                key={mat.caption}
+                className="group cursor-pointer bg-paper rounded-md overflow-hidden shadow-sm fade-up"
+                onClick={() => handleOpenLightbox(mat.image, project.materials!.map((m) => m.image))}
+              >
+                <div className="overflow-hidden aspect-4/3">
+                  <img
+                    src={mat.image}
+                    alt={mat.caption}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <div className="p-4 bg-paper">
+                  <span className="font-mono text-xxs tracking-wider uppercase text-slate">
+                    {mat.caption}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* SECTION 8: FLOOR PLAN */}
+      <section className="py-20 bg-paper/30 border-b border-mist/10" id="project-floorplan-section">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-12 text-center fade-up">
+            <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-2">
+              ARCHITECTURAL COMPOSITION
+            </span>
+            <h3 className="font-serif text-3xl font-light text-ink uppercase">
+              The Spatial Layout
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            {/* The Plan Sketch (displayed large on the paper texture) */}
+            <div className="md:col-span-7 fade-up">
+              <div className="bg-paper p-6 rounded-md shadow-inner max-w-3xl mx-auto">
+                {project.slug === "coastal-residence" ? (
+                  <div className="w-full aspect-[4/3] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none">
+                    <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                      FLOOR PLAN
+                    </span>
+                    <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                      placeholder image
+                    </span>
+                  </div>
+                ) : project.slug === "container-home" ? (
+                  <div className="space-y-6">
+                    <div className="w-full aspect-[4/3] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none">
+                      <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                        FLOOR PLAN
+                      </span>
+                      <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                        placeholder image
+                      </span>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="w-full aspect-[4/3] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-6 text-center select-none">
+                        <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                          ELEVATION A
+                        </span>
+                        <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                          placeholder image (floor plan image type)
+                        </span>
+                      </div>
+                      <div className="w-full aspect-[4/3] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-6 text-center select-none">
+                        <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                          ELEVATION B
+                        </span>
+                        <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                          placeholder image (floor plan image type)
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                ) : project.slug === "hotel-concept" ? (
+                  <div className="space-y-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="w-full aspect-[4/3] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-6 text-center select-none">
+                        <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                          1ST FLOOR PLAN
+                        </span>
+                        <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                          image placeholder
+                        </span>
+                      </div>
+                      <div className="w-full aspect-[4/3] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-6 text-center select-none">
+                        <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                          2ND FLOOR PLAN
+                        </span>
+                        <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                          image placeholder
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                ) : project.slug === "giliw-learning-facility" ? (
+                  <div className="w-full aspect-[16/10] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none">
+                    <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                      LEARNING CENTER FLOOR PLAN
+                    </span>
+                    <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                      placeholder image
+                    </span>
+                  </div>
+                ) : project.slug === "community-resilience-facility" ? (
+                  <div className="w-full aspect-[16/10] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none">
+                    <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                      GROUND FLOOR AND DECK PLAN
+                    </span>
+                    <span className="font-mono text-[9px] tracking-widest text-mist uppercase mb-3">
+                      1,512sqm Spatial Layout
+                    </span>
+                    <span className="text-[10px] text-slate/70 max-w-md font-mono leading-relaxed block uppercase tracking-wider">
+                      Main Food Corridor connects the health, care, and administrative zones, functioning like structural bamboo nodes.
+                    </span>
+                  </div>
+                ) : (
+                  <img
+                    src={project.floorPlanImage}
+                    alt={`${project.name} Architectural Floor Plan`}
+                    className="w-full object-contain rounded-sm aspect-4/3 mix-blend-multiply opacity-80"
+                    referrerPolicy="no-referrer"
+                  />
+                )}
+              </div>
+            </div>
+
+            {/* Two-Column Legend list */}
+            <div className="md:col-span-5 space-y-6 fade-up">
+              <div className="border-l-2 border-slate pl-4">
+                <h4 className="font-serif text-xl text-ink font-semibold uppercase tracking-wider">
+                  Layout Index
+                </h4>
+                <p className="text-xs text-mist font-mono uppercase tracking-widest mt-1">
+                  FLOOR PLAN CONTENTS
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs">
+                {project.floorPlanContents.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-3 py-2 border-b border-mist/10"
+                  >
+                    <span className="text-slate font-bold tracking-wider">
+                      {item.number}
+                    </span>
+                    <span className="text-ink/80 tracking-wide font-light">
+                      {item.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {project.slug === "giliw-learning-facility" && (
+            <div className="mt-16 pt-16 border-t border-mist/10 space-y-8 fade-up">
+              <div className="text-center">
+                <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-2">
+                  ARCHITECTURAL COMPOSITION
+                </span>
+                <h4 className="font-serif text-2xl font-light text-ink">
+                  ELEVATION A & ELEVATION B DRAWINGS
+                </h4>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div className="w-full aspect-[16/10] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none shadow-sm">
+                  <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                    ELEVATION A
+                  </span>
+                  <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                    placeholder image
+                  </span>
+                </div>
+                <div className="w-full aspect-[16/10] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none shadow-sm">
+                  <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                    ELEVATION B
+                  </span>
+                  <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                    placeholder image
+                  </span>
+                </div>
+              </div>
+            </div>
+          )}
+
+        </div>
+      </section>
+
+      {/* SECTION 9: THE PROCESS (OPTIONAL) */}
+      {project.process && (
+        <section className="py-20 max-w-7xl mx-auto px-6 border-b border-mist/10" id="project-process-section">
+          <div className="mb-16 text-center fade-up">
+            <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-2">
+              METHODICAL STEPS
+            </span>
+            <h3 className="font-serif text-3xl font-light text-ink uppercase">
+              The Creative Process
+            </h3>
+          </div>
+
+          {/* Timeline of process steps connected by a thin line */}
+          <div className="relative" id="process-timeline-container">
+            {/* Connecting line (Desktop only) */}
+            <div className="hidden md:block absolute top-[43px] left-8 right-8 h-0.5 bg-mist/20 z-0" />
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+              {project.process.map((step, idx) => {
+                const parts = step.split(" — ");
+                const title = parts[0];
+                const detail = parts[1] || "";
+
+                return (
+                  <div key={idx} className="space-y-4 fade-up" id={`process-step-${idx}`}>
+                    {/* Circle and number */}
+                    <div className="flex md:flex-col gap-4 items-center md:items-start">
+                      <div className="w-12 h-12 rounded-full bg-slate text-paper flex items-center justify-center font-mono font-bold shadow-md z-10">
+                        {idx + 1}
+                      </div>
+                      <div className="md:hidden h-0.5 bg-mist/20 grow" />
+                    </div>
+
+                    <div className="space-y-1">
+                      <h4 className="font-serif text-lg font-semibold text-ink">
+                        {title}
+                      </h4>
+                      <p className="text-xs text-ink/70 font-light leading-relaxed">
+                        {detail}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* SECTION 10: EXTENDED DESCRIPTION WITH DISPLAY PULL QUOTE */}
+      {project.slug !== "coastal-residence" && (
+        <section className="py-24 bg-paper/50" id="project-quote-section">
+          <div className="max-w-4xl mx-auto px-6 text-center space-y-8 fade-up">
+            <div className="text-slate text-6xl font-serif select-none pointer-events-none mb-2">
+              “
+            </div>
+            <blockquote className="font-serif text-3xl md:text-4xl font-light leading-relaxed italic text-ink">
+              {project.pullQuote}
+            </blockquote>
+            <div className="w-12 h-0.5 bg-mist/30 mx-auto" />
+            <p className="text-sm md:text-base text-ink/70 font-light leading-relaxed max-w-2xl mx-auto pt-4">
+              {project.extendedDescription}
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* SECTION 11: PHOTO GALLERY - EDITORIAL MIXED GRID */}
+      <section className="py-20 max-w-7xl mx-auto px-6" id="project-gallery-section">
+        <div className="mb-12 fade-up">
+          <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-2">
+            DETAILED PERSPECTIVES
+          </span>
+          <h3 className="font-serif text-3xl font-light text-ink uppercase">
+            Project Photo Gallery
+          </h3>
+        </div>
+
+        {/* Alternate full-width with 2-up rows */}
+        <div className="space-y-8">
+          {project.slug === "coastal-residence" ? (
+            <>
+              {/* Full-width placeholder */}
+              <div className="w-full aspect-16/9 border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none fade-up">
+                <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                  PERSPECTIVE 01
+                </span>
+                <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                  placeholder image
+                </span>
+              </div>
+
+              {/* 5 smaller grid placeholders */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {[2, 3, 4, 5, 6].map((num) => (
+                  <div
+                    key={num}
+                    className="w-full aspect-4/3 border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-6 text-center select-none fade-up"
+                  >
+                    <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                      PERSPECTIVE 0{num}
+                    </span>
+                    <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                      placeholder image
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </>
+          ) : project.slug === "container-home" ? (
+            <>
+              {/* Full-width placeholder */}
+              <div className="w-full aspect-16/9 border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none fade-up">
+                <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                  PERSPECTIVE 01
+                </span>
+                <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                  placeholder image
+                </span>
+              </div>
+
+              {/* 3 smaller grid placeholders */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {[2, 3, 4].map((num) => (
+                  <div
+                    key={num}
+                    className="w-full aspect-4/3 border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-6 text-center select-none fade-up"
+                  >
+                    <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                      PERSPECTIVE 0{num}
+                    </span>
+                    <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                      placeholder image
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </>
+          ) : project.slug === "hotel-concept" ? (
+            <div className="space-y-16">
+              {/* Part 1: Restaurant Design with 2 images */}
+              <div className="space-y-6">
+                <div className="border-l-2 border-[#B93C3C] pl-4">
+                  <h4 className="font-serif text-2xl font-light text-ink uppercase tracking-wide">
+                    The Restaurant / Filipino-French Fusion
+                  </h4>
+                  <span className="font-mono text-xxs tracking-widest text-slate uppercase block mt-1">
+                    01 / BACOLOD FOOD CULTURE INFLUENCE (2 PERSPECTIVES)
+                  </span>
+                </div>
+                
+                <p className="text-xs text-slate font-light leading-relaxed max-w-4xl">
+                  The restaurant plays an integral part in the hotel project as it offers a glimpse of the food culture of Bacolod. The space features dramatic wall finishes such as dark red paint and wallpapers matched with checkerboard flooring and wood ceiling finishes to evoke grandeur, highlighting the Filipino-French fusion.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {[1, 2].map((num) => (
+                    <div
+                      key={num}
+                      className="w-full aspect-[16/10] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none fade-up"
+                    >
+                      <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                        RESTAURANT PERSPECTIVE 0{num}
+                      </span>
+                      <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                        placeholder image
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Part 2: Guest Suites & Recreational Spaces with 5 images */}
+              <div className="space-y-6 pt-8 border-t border-mist/10">
+                <div className="border-l-2 border-[#3C5A7D] pl-4">
+                  <h4 className="font-serif text-2xl font-light text-ink uppercase tracking-wide">
+                    Guest Suites & Recreation Spaces
+                  </h4>
+                  <span className="font-mono text-xxs tracking-widest text-slate uppercase block mt-1">
+                    02 / THEATRICAL GRANDEUR & SUGAR RUSH CONCEPT (5 PERSPECTIVES)
+                  </span>
+                </div>
+
+                <p className="text-xs text-slate font-light leading-relaxed max-w-4xl">
+                  The guest suites and recreational spaces of Yuhum Hotel reflect the vibrant heritage of Bacolod and the bold, theatrical style of John Galliano. Inspired by the City of Smiles and the concept of Sugar Rush, the interiors feature rich colors, elegant detailing, and dramatic patterns that create a luxurious and memorable experience. By combining Filipino materials and motifs with the sophistication of a French chateau, the spaces celebrate local culture while embodying Galliano's signature sense of storytelling, elegance, and grandeur.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+                  {/* Staggered grid of 5 image placeholders */}
+                  <div className="md:col-span-8 aspect-video border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-6 text-center select-none fade-up">
+                    <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                      SUITE MAIN PERSPECTIVE 01
+                    </span>
+                    <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                      placeholder image (theatrical bedroom view)
+                    </span>
+                  </div>
+                  
+                  <div className="md:col-span-4 aspect-square md:aspect-auto border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-6 text-center select-none fade-up">
+                    <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                      SUITE DETAIL 02
+                    </span>
+                    <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                      placeholder image
+                    </span>
+                  </div>
+
+                  <div className="md:col-span-4 aspect-square md:aspect-auto border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-6 text-center select-none fade-up">
+                    <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                      RECREATION PERSPECTIVE 03
+                    </span>
+                    <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                      placeholder image
+                    </span>
+                  </div>
+
+                  <div className="md:col-span-4 aspect-square md:aspect-auto border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-6 text-center select-none fade-up">
+                    <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                      RECREATION PERSPECTIVE 04
+                    </span>
+                    <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                      placeholder image
+                    </span>
+                  </div>
+
+                  <div className="md:col-span-4 aspect-square md:aspect-auto border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-6 text-center select-none fade-up">
+                    <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                      SUITE PERSPECTIVE 05
+                    </span>
+                    <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                      placeholder image
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : project.slug === "giliw-learning-facility" ? (
+            <div className="space-y-16">
+              {/* Part 1: Learning Areas with 2 images */}
+              <div className="space-y-6">
+                <div className="border-l-2 border-[#D97706] pl-4">
+                  <h4 className="font-serif text-2xl font-light text-ink uppercase tracking-wide">
+                    Learning Areas / Creative & Collaborative Spaces
+                  </h4>
+                  <span className="font-mono text-xxs tracking-widest text-slate uppercase block mt-1">
+                    01 / WORKSPACES & INDIVIDUAL STUDY NOOKS (2 PERSPECTIVES)
+                  </span>
+                </div>
+                
+                <p className="text-xs text-slate font-light leading-relaxed max-w-4xl">
+                  The learning areas are designed to foster creativity, collaboration, and focused learning in a welcoming environment. Flexible seating, individual study nooks, and interactive workspaces accommodate different learning styles, while soft curves, natural materials, and playful colors create a calming atmosphere. Abundant natural light and an open layout encourage engagement, making the spaces comfortable for reading, studying, group discussions, and creative activities.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {[1, 2].map((num) => (
+                    <div
+                      key={num}
+                      className="w-full aspect-[16/10] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none fade-up"
+                    >
+                      <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                        LEARNING AREA PERSPECTIVE 0{num}
+                      </span>
+                      <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                        placeholder image
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Part 2: Built-in Details (1 image + list overlay of lettered parts) */}
+              <div className="space-y-6 pt-8 border-t border-mist/10">
+                <div className="border-l-2 border-[#065F46] pl-4">
+                  <h4 className="font-serif text-2xl font-light text-ink uppercase tracking-wide">
+                    Built-in Furniture Details
+                  </h4>
+                  <span className="font-mono text-xxs tracking-widest text-slate uppercase block mt-1">
+                    02 / ERGONOMIC JOINERY DETAILS (1 SCHEMATIC DETAIL)
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                  <div className="md:col-span-7 aspect-[4/3] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none">
+                    <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                      BUILT-IN DETAILS ASSEMBLY DRAWING
+                    </span>
+                    <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                      placeholder image
+                    </span>
+                  </div>
+
+                  <div className="md:col-span-5 space-y-4">
+                    <div className="bg-[#FAF9F5]/80 border border-mist/20 p-6 rounded-md shadow-sm">
+                      <span className="font-mono text-xxs text-slate font-semibold tracking-widest block mb-4 uppercase">
+                        TECHNICAL ASSEMBLY KEY
+                      </span>
+                      
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 font-mono text-[10px] text-ink">
+                        {[
+                          { key: "A", label: "FRONT PANEL" },
+                          { key: "B", label: "FRONT PANEL" },
+                          { key: "C", label: "SIDE PANEL" },
+                          { key: "D", label: "BACK PANEL" },
+                          { key: "E", label: "BOTTOM PANEL" },
+                          { key: "F", label: "TOP PANEL" },
+                          { key: "G", label: "CURVED PANEL" },
+                          { key: "H", label: "TOP SHELF PANEL" },
+                          { key: "I", label: "BOTTOM SHELF PANEL" },
+                          { key: "J", label: "CURVED BACK PANEL" },
+                          { key: "K", label: "CURVED FRAMING" },
+                          { key: "L", label: "CABINET TABLETOP" },
+                          { key: "M", label: "DESK TABLETOP" },
+                          { key: "N", label: "TOE KICK" }
+                        ].map((part, idx) => (
+                          <div key={idx} className="flex items-center gap-2 py-1 border-b border-mist/10">
+                            <span className="w-5 h-5 rounded-full bg-[#065F46] text-paper flex items-center justify-center font-bold text-[8px]">
+                              {part.key}
+                            </span>
+                            <span className="tracking-wide text-ink font-light uppercase">
+                              {part.label}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Part 3: Workshop Area & Fitness Area with 2 images */}
+              <div className="space-y-6 pt-8 border-t border-mist/10">
+                <div className="border-l-2 border-[#B45309] pl-4">
+                  <h4 className="font-serif text-2xl font-light text-ink uppercase tracking-wide">
+                    Workshop & Fitness Areas
+                  </h4>
+                  <span className="font-mono text-xxs tracking-widest text-slate uppercase block mt-1">
+                    03 / HOLISTIC DEVELOPMENT & LIFESKILLS TRAINING (2 PERSPECTIVES)
+                  </span>
+                </div>
+
+                <p className="text-xs text-slate font-light leading-relaxed max-w-4xl">
+                  As the facility is dedicated to providing a safe, nurturing, and empowering environment where street children and children in need can learn, grow, and develop practical life skills. The Workshop Area encourages creativity, collaboration, and hands-on learning through flexible workspaces, while the Fitness Area promotes physical activity and overall well-being. Together, these spaces reflect Giliw's mission of fostering holistic development and creating opportunities for a brighter future.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {[1, 2].map((num) => (
+                    <div
+                      key={num}
+                      className="w-full aspect-[16/10] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none fade-up"
+                    >
+                      <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                        {num === 1 ? "WORKSHOP STUDIOS" : "FITNESS AREA"} PERSPECTIVE
+                      </span>
+                      <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                        placeholder image
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : project.slug === "community-resilience-facility" ? (
+            <div className="space-y-16">
+              {/* Part 1: Community Pantry / Two-Level Pantry Hub with 2 images */}
+              <div className="space-y-6">
+                <div className="border-l-2 border-[#047857] pl-4">
+                  <h4 className="font-serif text-2xl font-light text-ink uppercase tracking-wide">
+                    Double-Tiered Community Pantry Hub
+                  </h4>
+                  <span className="font-mono text-xxs tracking-widest text-slate uppercase block mt-1">
+                    01 / ESSENTIALS PANTRY & LOCAL MICRO-ENTERPRISE STALLS (2 PERSPECTIVES)
+                  </span>
+                </div>
+                
+                <p className="text-xs text-slate font-light leading-relaxed max-w-4xl">
+                  The community pantry provides free essential goods and donated items for families facing food insecurity in Tondo, Manila. The second level is also a pantry but hosts micro-enterprise non-food stalls selling low-cost essentials and community-made products to support household income and self-reliance.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {[1, 2].map((num) => (
+                    <div
+                      key={num}
+                      className="w-full aspect-[16/10] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none fade-up"
+                    >
+                      <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                        {num === 1 ? "GROUND LEVEL COMMUNITY PANTRY" : "SECOND LEVEL MICRO-ENTERPRISE STALLS"}
+                      </span>
+                      <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
+                        perspective 0{num} image placeholder
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Part 2: Flexible Spaces & Livelihood / Evacuation Centers with 4 images */}
+              <div className="space-y-6 pt-8 border-t border-mist/10">
+                <div className="border-l-2 border-[#B45309] pl-4">
+                  <h4 className="font-serif text-2xl font-light text-ink uppercase tracking-wide">
+                    Flexible Zones & Disaster Response Systems
+                  </h4>
+                  <span className="font-mono text-xxs tracking-widest text-slate uppercase block mt-1">
+                    02 / DAILY PRODUCTIVITY & MONSOON EMERGENCY EVACUATION (4 PERSPECTIVES)
+                  </span>
+                </div>
+
+                <p className="text-xs text-slate font-light leading-relaxed max-w-4xl">
+                  These spaces showcase the facility's flexibility in supporting both everyday community use and disaster response. The workshop area promotes skills development and livelihood opportunities, while the multipurpose hall serves as a venue for community activities and converts into an evacuation area during emergencies. Privacy pods provide comfort and dignity for evacuees, and the indoor hydroponics with the community garden strengthen food security by enabling sustainable food production and encouraging community participation.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 items-stretch">
+                  {[
+                    { 
+                      title: "LIVELIHOOD & WORKSHOP AREA", 
+                      detail: "Skills development & vocational training",
+                      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+                      gridClass: "lg:col-span-5",
+                      aspectClass: "aspect-4/3 lg:aspect-[3/4.2]"
+                    },
+                    { 
+                      title: "MULTIPURPOSE HALL", 
+                      detail: "Evacuation conversion & community meetings",
+                      image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
+                      gridClass: "lg:col-span-7",
+                      aspectClass: "aspect-4/3 lg:aspect-[1.6/1.05]"
+                    },
+                    { 
+                      title: "PRIVACY PODS", 
+                      detail: "Dignified temporary emergency shelter",
+                      image: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=800&q=80",
+                      gridClass: "lg:col-span-7",
+                      aspectClass: "aspect-4/3 lg:aspect-[1.6/1.05]"
+                    },
+                    { 
+                      title: "INDOOR HYDROPONICS", 
+                      detail: "Sustainable food production & green spaces",
+                      image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80",
+                      gridClass: "lg:col-span-5",
+                      aspectClass: "aspect-4/3 lg:aspect-[3/4.2]"
+                    }
+                  ].map((item, index, arr) => {
+                    const allImages = arr.map(i => i.image);
+                    return (
+                      <div
+                        key={index}
+                        onClick={() => handleOpenLightbox(item.image, allImages)}
+                        className={`group cursor-pointer flex flex-col h-full rounded-sm overflow-hidden transition-all duration-500 fade-up ${item.gridClass}`}
+                        id={`gallery-resilience-card-${index}`}
+                      >
+                        {/* Image Wrap */}
+                        <div className={`relative overflow-hidden w-full bg-ink rounded-sm ${item.aspectClass}`}>
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="w-full h-full object-cover transition-transform duration-[1500ms] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-[1.025]"
+                            referrerPolicy="no-referrer"
+                          />
+                          {/* Subtle top-left badge overlay */}
+                          <div className="absolute top-4 left-4 bg-[#242424]/90 backdrop-blur-xs px-2.5 py-1 rounded-xs text-[8px] font-mono tracking-widest uppercase text-paper border border-white/5">
+                            PERSPECTIVE 0{index + 3}
+                          </div>
+                        </div>
+
+                        {/* Banner underneath */}
+                        <div className="pt-4 pb-2 bg-transparent shrink-0 flex flex-col justify-between">
+                          <div className="space-y-1">
+                            <h4 className="font-serif text-lg font-medium text-ink tracking-wide group-hover:text-slate transition-colors leading-tight uppercase">
+                              {item.title}
+                            </h4>
+                            <p className="text-[10px] text-mist font-light font-mono leading-relaxed uppercase tracking-wider">
+                              {item.detail}
+                            </p>
+                          </div>
+                          
+                          <div className="w-full h-px bg-mist/20 group-hover:bg-slate/30 transition-colors mt-4" />
+                          <div className="flex items-center justify-between text-[7px] font-mono tracking-widest uppercase text-slate/60 group-hover:text-ink transition-colors pt-3">
+                            <span>Magnify View</span>
+                            <ArrowRight className="w-2.5 h-2.5 group-hover:translate-x-1 transition-transform" />
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <>
+              {/* Full-width image */}
+              {project.galleryImages[0] && (
+                <div
+                  className="overflow-hidden rounded-md shadow-lg group cursor-pointer aspect-16/9 fade-up"
+                  onClick={() => handleOpenLightbox(project.galleryImages[0], project.galleryImages)}
+                >
+                  <img
+                    src={project.galleryImages[0]}
+                    alt={`${project.name} Wide Perspective`}
+                    className="w-full h-full object-cover group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              )}
+
+              {/* 2-up or 3-up rows */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {project.galleryImages.slice(1).map((img, idx) => (
+                  <div
+                    key={idx}
+                    className="overflow-hidden rounded-md shadow-md group cursor-pointer aspect-4/3 fade-up"
+                    onClick={() => handleOpenLightbox(img, project.galleryImages)}
+                  >
+                    <img
+                      src={img}
+                      alt={`${project.name} Detail Perspective ${idx + 2}`}
+                      className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      </section>
+
+      {/* SECTION 12: NEXT PROJECT - CYCLE CARD */}
+      <section className="py-12 max-w-7xl mx-auto px-6" id="project-next-cycle">
+        <div
+          onClick={() => onNavigateProject(nextProject.slug)}
+          className="relative group overflow-hidden rounded-md shadow-xl aspect-21/9 md:aspect-32/9 bg-ink cursor-pointer"
+        >
+          {/* Next Image with hover slow scale zoom */}
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-70 group-hover:opacity-60 transition-all duration-[1200ms] group-hover:scale-103"
+            style={{ backgroundImage: `url(${nextProject.heroImage})` }}
+          />
+          {/* Deep blue color overlay */}
+          <div className="absolute inset-0 bg-navy/30 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/40 to-transparent" />
+
+          {/* Content details overlay */}
+          <div className="absolute inset-0 flex items-center px-8 md:px-16 text-paper justify-between">
+            <div className="space-y-2 select-none">
+              <span className="font-mono text-xxs tracking-[0.3em] text-mist uppercase block">
+                UP NEXT
+              </span>
+              <h4 className="font-serif text-3xl md:text-5xl font-light tracking-tight group-hover:text-slate transition-colors">
+                {nextProject.name}
+              </h4>
+              <span className="font-mono text-xxs text-paper/60 uppercase tracking-widest block">
+                {nextProject.category} — {nextProject.year}
+              </span>
+            </div>
+            
+            <div className="p-5 bg-paper text-ink rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <ChevronRight className="w-6 h-6 text-slate" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* LIGHTBOX STAGE OVERLAY */}
+      {lightboxActiveIdx >= 0 && (
+        <Lightbox
+          images={lightboxImages}
+          activeIndex={lightboxActiveIdx}
+          onClose={() => setLightboxActiveIdx(-1)}
+          onPrev={handlePrevLightbox}
+          onNext={handleNextLightbox}
+        />
+      )}
+    </div>
+  );
+}
