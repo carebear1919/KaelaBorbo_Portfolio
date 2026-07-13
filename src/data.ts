@@ -55,21 +55,23 @@ export const SAMPLE_PROJECTS: Project[] = [
     slug: "container-home",
     name: "Container Home",
     year: "ACADEMIC PROJECT 2024",
-    category: "02|RESIDENTIAL",
+    category: "02 | RESIDENTIAL",
     location: "",
     description: "This contemporary style infused with Bavarian accents container home combines modern sustainability with a touch of rustic elegance. With its strong beams and wood accents, it celebrates heritage while incorporating cutting-edge technologies.",
     tools: ["AutoCAD", "SketchUp", "V-Ray", "Adobe Photoshop"],
     heroImage: "/images/projects/02-container-home/hero.jpg",
-    moodboardImages: [],
+    moodboardImages: [
+      "/images/projects/02-container-home/moodboard.jpg"
+    ],
     inspiration: {
       text: "Contemporary Bavarian homes combine history and innovation with features like pitched roofs, wide windows, timber cladding, and high ceilings. Spacious rooms, abundant natural light, and a link to the outside environment are all embodied in the design. Sustainability and caring for the environment are core Bavarian principles. This innovative Modern Bavarian container home is an ode to the everlasting charm of Bavarian architecture, which expertly mixes history with innovation and environmental ethics, in addition to offering a cozy and practical living area.",
       image: ""
     },
     concept: {
       text: "Contemporary Bavarian homes combine history and innovation with features like pitched roofs, wide windows, timber cladding, and high ceilings. Spacious rooms, abundant natural light, and a link to the outside environment are all embodied in the design. Sustainability and caring for the environment are core Bavarian principles. This innovative Modern Bavarian container home is an ode to the everlasting charm of Bavarian architecture, which expertly mixes history with innovation and environmental ethics, in addition to offering a cozy and practical living area.",
-      image: ""
+      image: "/images/projects/02-container-home/living-area.jpg"
     },
-    floorPlanImage: "",
+    floorPlanImage: "/images/projects/02-container-home/floor-plan.jpg",
     floorPlanContents: [
       { number: "1", label: "DECK" },
       { number: "2", label: "LIVING AREA" },
@@ -81,7 +83,12 @@ export const SAMPLE_PROJECTS: Project[] = [
     ],
     extendedDescription: "This container home presents a unique interpretation of contemporary design by blending modern architecture with Bavarian-inspired elements, creating a distinctive balance of tradition and innovation. Its thoughtful integration of natural materials, sustainable features, and flexible living spaces promotes comfort, functionality, and environmental responsibility. The design stands out through its seamless connection between indoor and outdoor environments, resulting in a timeless, eco-conscious home that celebrates both heritage and modern living.",
     pullQuote: "SMART SERENITY / A CONTEMPORARY BAVARIAN CONTAINER HOME",
-    galleryImages: []
+    galleryImages: [
+      "/images/projects/02-container-home/gallery-01-exterior.jpg",
+      "/images/projects/02-container-home/gallery-02-dining-area.jpg",
+      "/images/projects/02-container-home/gallery-03-office.jpg",
+      "/images/projects/02-container-home/gallery-04-kitchen.jpg"
+    ]
   },
   {
     slug: "hotel-concept",

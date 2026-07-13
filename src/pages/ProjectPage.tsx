@@ -1107,7 +1107,7 @@ export default function ProjectPage({
 
             {/* Column 2: Central Floating Highlight Image or Sketch Box */}
             <div className={`${
-              project.slug === "coastal-residence" ? "lg:col-span-4" : "lg:col-span-6"
+              ["coastal-residence", "container-home"].includes(project.slug) ? "lg:col-span-4" : "lg:col-span-6"
             } bg-mist/5 border border-mist/10 p-8 flex flex-col justify-center items-center rounded-md shadow-sm group cursor-pointer fade-up`}
                  onClick={() => handleOpenLightbox(project.concept ? project.concept.image : project.heroImage, [project.heroImage])}>
               <div className="w-full h-full flex flex-col justify-between">
@@ -1159,8 +1159,8 @@ export default function ProjectPage({
               </div>
             </div>
 
-            {/* Column 3: ONLY rendered for coastal-residence (which has real moodboard details!) */}
-            {project.slug === "coastal-residence" && (
+            {/* Column 3: rendered for projects with real moodboard details */}
+            {["coastal-residence", "container-home"].includes(project.slug) && (
               <div className="lg:col-span-4 flex flex-col justify-between p-8 bg-paper border border-mist/20 rounded-md shadow-sm fade-up">
                 <div className="space-y-6">
                   <span className="font-mono text-[9px] tracking-[0.3em] text-slate uppercase block">
@@ -1214,21 +1214,35 @@ export default function ProjectPage({
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 font-mono text-xs">
               {[
-                "Rainwater Harvest Tank",
-                "Occupancy Sensor",
-                "Tankless Water Heater",
-                "Smart Plugs",
-                "Smart Home Technologies",
-                "Solar Panels",
-                "Smart Pet Feeders"
-              ].map((inclusion, idx) => (
-                <div key={idx} className="flex flex-col justify-between py-4 px-6 border border-mist/20 rounded bg-[#FAF9F5]/70 shadow-sm">
-                  <span className="text-slate font-semibold text-[10px] tracking-widest block mb-4 uppercase">
-                    ITEM 0{idx + 1}
-                  </span>
-                  <span className="text-ink font-light text-sm tracking-wide">
-                    {inclusion}
-                  </span>
+                { label: "Rainwater Harvest Tank", image: "/images/projects/02-container-home/inclusion-rainwater-harvest-tank.jpg" },
+                { label: "Occupancy Sensor", image: "/images/projects/02-container-home/inclusion-occupancy-sensor.jpg" },
+                { label: "Tankless Water Heater", image: "/images/projects/02-container-home/inclusion-tankless-water-heater.jpg" },
+                { label: "Smart Plugs", image: "/images/projects/02-container-home/inclusion-smart-plugs.jpg" },
+                { label: "Smart Home Technologies", image: "/images/projects/02-container-home/inclusion-smart-home-technologies.jpg" },
+                { label: "Solar Panels", image: "/images/projects/02-container-home/inclusion-solar-panels.jpg" },
+                { label: "Smart Pet Feeders", image: "/images/projects/02-container-home/inclusion-smart-pet-feeders.jpg" }
+              ].map((inclusion, idx, arr) => (
+                <div
+                  key={idx}
+                  className="flex flex-col border border-mist/20 rounded bg-[#FAF9F5]/70 shadow-sm overflow-hidden group cursor-pointer hover:border-slate/40 transition-colors"
+                  onClick={() => handleOpenLightbox(inclusion.image, arr.map((i) => i.image))}
+                >
+                  <div className="aspect-4/3 overflow-hidden bg-ink">
+                    <img
+                      src={inclusion.image}
+                      alt={inclusion.label}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <div className="py-4 px-5">
+                    <span className="text-slate font-semibold text-[10px] tracking-widest block mb-2 uppercase">
+                      ITEM 0{idx + 1}
+                    </span>
+                    <span className="text-ink font-light text-sm tracking-wide">
+                      {inclusion.label}
+                    </span>
+                  </div>
                 </div>
               ))}
             </div>
@@ -1337,29 +1351,36 @@ export default function ProjectPage({
                   />
                 ) : project.slug === "container-home" ? (
                   <div className="space-y-6">
-                    <div className="w-full aspect-[4/3] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none">
-                      <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
-                        FLOOR PLAN
-                      </span>
-                      <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                        placeholder image
-                      </span>
-                    </div>
+                    <img
+                      src={project.floorPlanImage}
+                      alt={`${project.name} Floor Plan`}
+                      className="w-full object-contain rounded-sm cursor-pointer"
+                      referrerPolicy="no-referrer"
+                      onClick={() => handleOpenLightbox(project.floorPlanImage, [project.floorPlanImage, "/images/projects/02-container-home/elevation-a.jpg", "/images/projects/02-container-home/elevation-b.jpg"])}
+                    />
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div className="w-full aspect-[4/3] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-6 text-center select-none">
-                        <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                      <div className="space-y-2">
+                        <img
+                          src="/images/projects/02-container-home/elevation-a.jpg"
+                          alt="Container Home Elevation A"
+                          className="w-full object-contain rounded-sm cursor-pointer"
+                          referrerPolicy="no-referrer"
+                          onClick={() => handleOpenLightbox("/images/projects/02-container-home/elevation-a.jpg", [project.floorPlanImage, "/images/projects/02-container-home/elevation-a.jpg", "/images/projects/02-container-home/elevation-b.jpg"])}
+                        />
+                        <span className="font-mono text-[9px] tracking-widest text-mist uppercase block text-center">
                           ELEVATION A
                         </span>
-                        <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                          placeholder image (floor plan image type)
-                        </span>
                       </div>
-                      <div className="w-full aspect-[4/3] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-6 text-center select-none">
-                        <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
+                      <div className="space-y-2">
+                        <img
+                          src="/images/projects/02-container-home/elevation-b.jpg"
+                          alt="Container Home Elevation B"
+                          className="w-full object-contain rounded-sm cursor-pointer"
+                          referrerPolicy="no-referrer"
+                          onClick={() => handleOpenLightbox("/images/projects/02-container-home/elevation-b.jpg", [project.floorPlanImage, "/images/projects/02-container-home/elevation-a.jpg", "/images/projects/02-container-home/elevation-b.jpg"])}
+                        />
+                        <span className="font-mono text-[9px] tracking-widest text-mist uppercase block text-center">
                           ELEVATION B
-                        </span>
-                        <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                          placeholder image (floor plan image type)
                         </span>
                       </div>
                     </div>
@@ -1562,29 +1583,35 @@ export default function ProjectPage({
         <div className="space-y-8">
           {project.slug === "container-home" ? (
             <>
-              {/* Full-width placeholder */}
-              <div className="w-full aspect-16/9 border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none fade-up">
-                <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
-                  PERSPECTIVE 01
-                </span>
-                <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                  placeholder image
-                </span>
-              </div>
+              {/* Full-width exterior perspective */}
+              {project.galleryImages[0] && (
+                <div
+                  className="overflow-hidden rounded-md shadow-lg group cursor-pointer aspect-16/9 fade-up"
+                  onClick={() => handleOpenLightbox(project.galleryImages[0], project.galleryImages)}
+                >
+                  <img
+                    src={project.galleryImages[0]}
+                    alt={`${project.name} Exterior Perspective`}
+                    className="w-full h-full object-cover group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              )}
 
-              {/* 3 smaller grid placeholders */}
+              {/* 3-up grid: dining area, office, kitchen */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {[2, 3, 4].map((num) => (
+                {project.galleryImages.slice(1).map((img, idx) => (
                   <div
-                    key={num}
-                    className="w-full aspect-4/3 border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-6 text-center select-none fade-up"
+                    key={idx}
+                    className="overflow-hidden rounded-md shadow-md group cursor-pointer aspect-4/3 fade-up"
+                    onClick={() => handleOpenLightbox(img, project.galleryImages)}
                   >
-                    <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
-                      PERSPECTIVE 0{num}
-                    </span>
-                    <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                      placeholder image
-                    </span>
+                    <img
+                      src={img}
+                      alt={`${project.name} Detail Perspective ${idx + 2}`}
+                      className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
+                      referrerPolicy="no-referrer"
+                    />
                   </div>
                 ))}
               </div>

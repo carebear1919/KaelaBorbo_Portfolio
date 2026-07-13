@@ -28,7 +28,23 @@ If a file uses `.png` instead, rename it to `.jpg` OR tell me and I'll update th
 
 | File | What it is |
 |---|---|
-| `hero.jpg` | Main shot — also on homepage carousel |
+| `hero.jpg` | Bedroom image (main shot — also on homepage carousel) |
+| `moodboard.jpg` | Mood board image |
+| `living-area.jpg` | Living area picture (Concept & Mood center panel) |
+| `floor-plan.jpg` | Floor plan drawing |
+| `elevation-a.jpg` | Elevation A drawing |
+| `elevation-b.jpg` | Elevation B drawing |
+| `gallery-01-exterior.jpg` | Exterior perspective (full-width gallery top) |
+| `gallery-02-dining-area.jpg` | Dining area |
+| `gallery-03-office.jpg` | Office |
+| `gallery-04-kitchen.jpg` | Kitchen |
+| `inclusion-rainwater-harvest-tank.jpg` | Sustainable inclusion — rainwater harvest tank |
+| `inclusion-occupancy-sensor.jpg` | Sustainable inclusion — occupancy sensor |
+| `inclusion-tankless-water-heater.jpg` | Sustainable inclusion — tankless water heater |
+| `inclusion-smart-plugs.jpg` | Sustainable inclusion — smart plugs |
+| `inclusion-smart-home-technologies.jpg` | Sustainable inclusion — smart home technologies |
+| `inclusion-solar-panels.jpg` | Sustainable inclusion — solar panels |
+| `inclusion-smart-pet-feeders.jpg` | Sustainable inclusion — smart pet feeders |
 
 ## 03 — Yuhum Hotel (`03-yuhum-hotel/`)
 
