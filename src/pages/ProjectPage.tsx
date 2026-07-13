@@ -307,28 +307,28 @@ export default function ProjectPage({
                 { 
                   title: "LIVELIHOOD & WORKSHOP AREA", 
                   detail: "Skills development & vocational training",
-                  image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+                  image: "/images/projects/05-bangon-bayan/workshop-area.jpg",
                   gridClass: "lg:col-span-5",
                   aspectClass: "aspect-4/3 lg:aspect-[3/4.2]"
                 },
                 { 
                   title: "MULTIPURPOSE HALL", 
                   detail: "Evacuation conversion & community meetings",
-                  image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
+                  image: "/images/projects/05-bangon-bayan/multipurpose-hall.jpg",
                   gridClass: "lg:col-span-7",
                   aspectClass: "aspect-4/3 lg:aspect-[1.6/1.05]"
                 },
                 { 
                   title: "PRIVACY PODS", 
                   detail: "Dignified temporary emergency shelter",
-                  image: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=800&q=80",
+                  image: "/images/projects/05-bangon-bayan/privacy-pods.jpg",
                   gridClass: "lg:col-span-7",
                   aspectClass: "aspect-4/3 lg:aspect-[1.6/1.05]"
                 },
                 { 
                   title: "INDOOR HYDROPONICS", 
                   detail: "Sustainable food production & green spaces",
-                  image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80",
+                  image: "/images/projects/05-bangon-bayan/indoor-hydroponics.jpg",
                   gridClass: "lg:col-span-5",
                   aspectClass: "aspect-4/3 lg:aspect-[3/4.2]"
                 }
@@ -764,10 +764,10 @@ export default function ProjectPage({
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
             <div 
               className="md:col-span-5 aspect-[4/5] rounded-sm overflow-hidden bg-ink shadow-md cursor-pointer group relative"
-              onClick={() => handleOpenLightbox("https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80", ["https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?auto=format&fit=crop&w=800&q=80"])}
+              onClick={() => handleOpenLightbox("/images/projects/06-iglu-round-sofa/inspiration-ceramics-1.jpg", ["/images/projects/06-iglu-round-sofa/inspiration-ceramics-1.jpg", "/images/projects/06-iglu-round-sofa/inspiration-ceramics-2.jpg"])}
             >
               <img 
-                src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80" 
+                src="/images/projects/06-iglu-round-sofa/inspiration-ceramics-1.jpg" 
                 alt="Organic Ceramic Vessel" 
                 className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-102"
                 referrerPolicy="no-referrer"
@@ -779,10 +779,10 @@ export default function ProjectPage({
 
             <div 
               className="md:col-span-7 aspect-[16/10] md:aspect-auto rounded-sm overflow-hidden bg-ink shadow-md cursor-pointer group relative"
-              onClick={() => handleOpenLightbox("https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?auto=format&fit=crop&w=800&q=80", ["https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?auto=format&fit=crop&w=800&q=80"])}
+              onClick={() => handleOpenLightbox("/images/projects/06-iglu-round-sofa/inspiration-ceramics-2.jpg", ["/images/projects/06-iglu-round-sofa/inspiration-ceramics-1.jpg", "/images/projects/06-iglu-round-sofa/inspiration-ceramics-2.jpg"])}
             >
               <img 
-                src="https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?auto=format&fit=crop&w=800&q=80" 
+                src="/images/projects/06-iglu-round-sofa/inspiration-ceramics-2.jpg" 
                 alt="Ceramics Studio Elements" 
                 className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-102"
                 referrerPolicy="no-referrer"
@@ -892,7 +892,7 @@ export default function ProjectPage({
             {/* 3. PERSPECTIVE VIEW (Render Showcase Card) */}
             <div 
               className="flex flex-col justify-between p-6 bg-paper border border-mist/20 rounded shadow-sm hover:border-slate/40 transition-all cursor-pointer group relative overflow-hidden"
-              onClick={() => handleOpenLightbox("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80", ["https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80"])}
+              onClick={() => handleOpenLightbox("/images/projects/06-iglu-round-sofa/perspective-render.jpg", ["/images/projects/06-iglu-round-sofa/perspective-render.jpg"])}
             >
               <div className="space-y-4">
                 <div className="flex justify-between items-center font-mono text-[8px] text-mist tracking-widest uppercase">
@@ -901,7 +901,7 @@ export default function ProjectPage({
                 </div>
                 <div className="h-44 overflow-hidden rounded-sm bg-ink shadow-inner relative">
                   <img 
-                    src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" 
+                    src="/images/projects/06-iglu-round-sofa/perspective-render.jpg" 
                     alt="Iglu Sofa Perspective Render" 
                     className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-103"
                     referrerPolicy="no-referrer"
@@ -1328,14 +1328,13 @@ export default function ProjectPage({
             <div className="md:col-span-7 fade-up">
               <div className="bg-paper p-6 rounded-md shadow-inner max-w-3xl mx-auto">
                 {project.slug === "coastal-residence" ? (
-                  <div className="w-full aspect-[4/3] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none">
-                    <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
-                      FLOOR PLAN
-                    </span>
-                    <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                      placeholder image
-                    </span>
-                  </div>
+                  <img
+                    src={project.floorPlanImage}
+                    alt={`${project.name} Floor Plan`}
+                    className="w-full object-contain rounded-sm cursor-pointer"
+                    referrerPolicy="no-referrer"
+                    onClick={() => handleOpenLightbox(project.floorPlanImage, [project.floorPlanImage])}
+                  />
                 ) : project.slug === "container-home" ? (
                   <div className="space-y-6">
                     <div className="w-full aspect-[4/3] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none">
@@ -1561,36 +1560,7 @@ export default function ProjectPage({
 
         {/* Alternate full-width with 2-up rows */}
         <div className="space-y-8">
-          {project.slug === "coastal-residence" ? (
-            <>
-              {/* Full-width placeholder */}
-              <div className="w-full aspect-16/9 border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none fade-up">
-                <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
-                  PERSPECTIVE 01
-                </span>
-                <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                  placeholder image
-                </span>
-              </div>
-
-              {/* 5 smaller grid placeholders */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {[2, 3, 4, 5, 6].map((num) => (
-                  <div
-                    key={num}
-                    className="w-full aspect-4/3 border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-6 text-center select-none fade-up"
-                  >
-                    <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1">
-                      PERSPECTIVE 0{num}
-                    </span>
-                    <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                      placeholder image
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </>
-          ) : project.slug === "container-home" ? (
+          {project.slug === "container-home" ? (
             <>
               {/* Full-width placeholder */}
               <div className="w-full aspect-16/9 border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-8 text-center select-none fade-up">
@@ -1896,28 +1866,28 @@ export default function ProjectPage({
                     { 
                       title: "LIVELIHOOD & WORKSHOP AREA", 
                       detail: "Skills development & vocational training",
-                      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80",
+                      image: "/images/projects/05-bangon-bayan/workshop-area.jpg",
                       gridClass: "lg:col-span-5",
                       aspectClass: "aspect-4/3 lg:aspect-[3/4.2]"
                     },
                     { 
                       title: "MULTIPURPOSE HALL", 
                       detail: "Evacuation conversion & community meetings",
-                      image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80",
+                      image: "/images/projects/05-bangon-bayan/multipurpose-hall.jpg",
                       gridClass: "lg:col-span-7",
                       aspectClass: "aspect-4/3 lg:aspect-[1.6/1.05]"
                     },
                     { 
                       title: "PRIVACY PODS", 
                       detail: "Dignified temporary emergency shelter",
-                      image: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=800&q=80",
+                      image: "/images/projects/05-bangon-bayan/privacy-pods.jpg",
                       gridClass: "lg:col-span-7",
                       aspectClass: "aspect-4/3 lg:aspect-[1.6/1.05]"
                     },
                     { 
                       title: "INDOOR HYDROPONICS", 
                       detail: "Sustainable food production & green spaces",
-                      image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80",
+                      image: "/images/projects/05-bangon-bayan/indoor-hydroponics.jpg",
                       gridClass: "lg:col-span-5",
                       aspectClass: "aspect-4/3 lg:aspect-[3/4.2]"
                     }

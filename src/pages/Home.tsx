@@ -10,9 +10,9 @@ interface HomeProps {
 export default function Home({ onNavigate }: HomeProps) {
   // 1. Hero Carousel Setup
   const heroPhotos = [
-    "https://images.unsplash.com/photo-1613545325278-f24b0cae1224?auto=format&fit=crop&w=1600&q=80", // Coastal Residence
-    "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1600&q=80", // Container Home
-    "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=80"  // Hotel Lounge
+    "/images/projects/01-coastal-residence/hero.jpg", // Coastal Residence
+    "/images/projects/02-container-home/hero.jpg", // Container Home
+    "/images/projects/03-yuhum-hotel/hero.jpg" // Yuhum Hotel
   ];
 
   const [heroIndex, setHeroIndex] = useState(0);
@@ -186,7 +186,7 @@ export default function Home({ onNavigate }: HomeProps) {
               {/* Image */}
               <div
                 className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
-                style={{ backgroundImage: `url('https://images.unsplash.com/photo-1613545325278-f24b0cae1224?auto=format&fit=crop&w=800&q=80')` }}
+                style={{ backgroundImage: `url('/images/projects/01-coastal-residence/hero.jpg')` }}
               />
               {/* Dark subtle overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-95" />

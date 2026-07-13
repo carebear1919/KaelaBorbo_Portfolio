@@ -77,7 +77,7 @@ export default function About() {
           {/* Clean Grayscale Portrait (Middle Column) */}
           <div className="lg:col-span-4 relative group overflow-hidden rounded-sm border border-mist/20 shadow-lg fade-up">
             <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80"
+              src="/images/about/portrait.jpg"
               alt="Kaela V. Borbon Portrait"
               className="w-full h-full min-h-[380px] object-cover filter grayscale contrast-[1.04] brightness-95 group-hover:scale-101 transition-transform duration-1000"
               referrerPolicy="no-referrer"
@@ -155,7 +155,7 @@ export default function About() {
                 <div className="flex justify-between items-start gap-4">
                   <div>
                     <h3 className="font-serif text-2xl font-light text-ink tracking-tight">
-                      IEO Studio, Inc.
+                      EO Studio, Inc.
                     </h3>
                     <p className="font-mono text-[10px] text-slate uppercase tracking-wider mt-1">
                       Student Intern

@@ -13,11 +13,11 @@ export default function Contact() {
   }, []);
 
   const footerStripPhotos = [
-    "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=300&q=80",
-    "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=300&q=80",
-    "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=300&q=80",
-    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=300&q=80",
-    "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=300&q=80",
+    "/images/projects/01-coastal-residence/gallery-01-living-area.jpg",
+    "/images/projects/01-coastal-residence/gallery-02-guest-bedroom.jpg",
+    "/images/projects/01-coastal-residence/gallery-04-dining-area.jpg",
+    "/images/projects/01-coastal-residence/gallery-05-kitchen.jpg",
+    "/images/projects/01-coastal-residence/gallery-03-living-area.jpg",
   ];
 
   return (
@@ -27,22 +27,22 @@ export default function Contact() {
         {/* Tile 1: Top Left */}
         <div
           className="absolute top-24 left-[8%] w-48 aspect-square rounded-md bg-cover bg-center opacity-15 filter blur-[0.5px] rotate-[-6deg] transition-all duration-1000 hover:opacity-25"
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=400&q=80')` }}
+          style={{ backgroundImage: `url('/images/projects/01-coastal-residence/gallery-05-kitchen.jpg')` }}
         />
         {/* Tile 2: Top Right */}
         <div
           className="absolute top-36 right-[10%] w-56 aspect-4/5 rounded-md bg-cover bg-center opacity-15 filter blur-[0.5px] rotate-[8deg] transition-all duration-1000 hover:opacity-25"
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=400&q=80')` }}
+          style={{ backgroundImage: `url('/images/projects/01-coastal-residence/gallery-02-guest-bedroom.jpg')` }}
         />
         {/* Tile 3: Mid Left Bottom */}
         <div
           className="absolute bottom-40 left-[4%] w-52 aspect-3/4 rounded-md bg-cover bg-center opacity-15 filter blur-[0.5px] rotate-[5deg] transition-all duration-1000 hover:opacity-25"
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=400&q=80')` }}
+          style={{ backgroundImage: `url('/images/projects/01-coastal-residence/gallery-04-dining-area.jpg')` }}
         />
         {/* Tile 4: Mid Right Bottom */}
         <div
           className="absolute bottom-32 right-[6%] w-48 aspect-square rounded-md bg-cover bg-center opacity-15 filter blur-[0.5px] rotate-[-4deg] transition-all duration-1000 hover:opacity-25"
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1617806118233-18e1db207fc6?auto=format&fit=crop&w=400&q=80')` }}
+          style={{ backgroundImage: `url('/images/projects/01-coastal-residence/living-area.jpg')` }}
         />
       </div>
 
@@ -68,7 +68,7 @@ export default function Contact() {
             <div className="md:col-span-5 relative aspect-square md:aspect-auto md:min-h-[480px] overflow-hidden bg-ink">
               <div
                 className="absolute inset-0 bg-cover bg-center filter grayscale contrast-[1.1] brightness-95 hover:grayscale-0 transition-all duration-[1500ms] ease-in-out scale-101 hover:scale-105"
-                style={{ backgroundImage: `url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80')` }}
+                style={{ backgroundImage: `url('/images/about/portrait.jpg')` }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent pointer-events-none" />
               {/* Corner badge overlay */}
