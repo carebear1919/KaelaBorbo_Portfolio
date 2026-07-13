@@ -19,7 +19,7 @@ export const SAMPLE_PROJECTS: Project[] = [
     },
     concept: {
       text: "",
-      image: "/images/projects/01-coastal-residence/living-area.jpg"
+      image: ""
     },
     process: [
       "AutoCAD Drafting — Precision spatial plotting and layouts.",

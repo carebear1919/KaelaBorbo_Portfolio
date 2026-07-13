@@ -1207,83 +1207,51 @@ export default function ProjectPage({
               </div>
             </div>
 
-            {/* Column 2: Central Floating Highlight Image or Sketch Box */}
-            <div className={`${
-              ["coastal-residence", "container-home", "hotel-concept"].includes(project.slug) ? "lg:col-span-4" : "lg:col-span-6"
-            } bg-mist/5 border border-mist/10 p-8 flex flex-col justify-center items-center rounded-md shadow-sm group cursor-pointer fade-up`}
-                 onClick={() => handleOpenLightbox(project.concept ? project.concept.image : project.heroImage, [project.heroImage])}>
-              <div className="w-full h-full flex flex-col justify-between">
-                <span className="font-mono text-[8px] tracking-[0.3em] text-mist uppercase block mb-4">
-                  01 / CENTRAL INTENT
-                </span>
-                
-                <div className="overflow-hidden rounded-sm w-full grow flex items-center justify-center bg-paper/20 py-6">
-                  {project.concept && project.concept.image ? (
+            {/* Column 2: Central Floating Highlight Image (only when project has one) */}
+            {project.concept?.image && (
+              <div className="lg:col-span-4 bg-mist/5 border border-mist/10 p-8 flex flex-col justify-center items-center rounded-md shadow-sm group cursor-pointer fade-up"
+                   onClick={() => handleOpenLightbox(project.concept!.image, [project.concept!.image])}>
+                <div className="w-full h-full flex flex-col justify-between">
+                  <span className="font-mono text-[8px] tracking-[0.3em] text-mist uppercase block mb-4">
+                    01 / CENTRAL INTENT
+                  </span>
+
+                  <div className="overflow-hidden rounded-sm w-full grow flex items-center justify-center bg-paper/20 py-6">
                     <img
                       src={project.concept.image}
                       alt={`${project.name} primary concept`}
                       className="max-h-[300px] w-auto object-contain transition-transform duration-700 group-hover:scale-102"
                       referrerPolicy="no-referrer"
                     />
-                  ) : project.slug === "container-home" ? (
-                    <div className="w-full aspect-[4/3] border border-dashed border-[#10B981]/30 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-4 text-center select-none">
-                      <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1 font-semibold">
-                        CONTAINER GEOMETRY
-                      </span>
-                      <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                        Bavarian design & timber-metal fusion sketch
-                      </span>
-                    </div>
-                  ) : project.slug === "hotel-concept" ? (
-                    <div className="w-full aspect-[4/3] border border-dashed border-[#10B981]/30 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-4 text-center select-none">
-                      <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1 font-semibold">
-                        DESIGN STORYBOARD
-                      </span>
-                      <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                        French Chateau & theatrical fashion narrative
-                      </span>
-                    </div>
-                  ) : (
-                    <div className="w-full aspect-[4/3] border border-dashed border-mist/35 bg-[#FAF9F5] flex flex-col items-center justify-center rounded-sm p-4 text-center select-none">
-                      <span className="font-mono text-xs tracking-widest text-slate uppercase mb-1 font-semibold">
-                        CONCEPT DRAWING
-                      </span>
-                      <span className="font-mono text-[9px] tracking-widest text-mist uppercase">
-                        Architectural form & layout study
-                      </span>
-                    </div>
-                  )}
+                  </div>
+
+                  <span className="font-mono text-[8px] tracking-[0.25em] text-mist uppercase block mt-4 text-center">
+                    TOUCH TO MAGNIFY VIEW
+                  </span>
                 </div>
-
-                <span className="font-mono text-[8px] tracking-[0.25em] text-mist uppercase block mt-4 text-center">
-                  TOUCH TO MAGNIFY VIEW
-                </span>
               </div>
-            </div>
+            )}
 
-            {/* Column 3: rendered for projects with real moodboard details */}
-            {["coastal-residence", "container-home", "hotel-concept"].includes(project.slug) && (
-              <div className="lg:col-span-4 flex flex-col justify-between p-8 bg-paper border border-mist/20 rounded-md shadow-sm fade-up">
+            {/* Column 3: Mood board (wide & centered when no central intent column) */}
+            {project.moodboardImages.length > 0 && (
+              <div className={`${
+                project.concept?.image ? "lg:col-span-4" : "lg:col-span-8"
+              } flex flex-col justify-between p-8 bg-paper border border-mist/20 rounded-md shadow-sm fade-up`}>
                 <div className="space-y-6">
                   <span className="font-mono text-[9px] tracking-[0.3em] text-slate uppercase block">
-                    02 / MATERIAL COLLAGE
+                    {project.concept?.image ? "02" : "01"} / MOOD BOARD
                   </span>
-                  
-                  <div className="grid grid-cols-2 gap-4">
-                    {project.moodboardImages.slice(0, 2).map((img, idx) => (
-                      <div 
-                        key={idx} 
-                        className="aspect-square overflow-hidden rounded-sm bg-ink border border-mist/10 cursor-pointer group"
-                        onClick={() => handleOpenLightbox(img, project.moodboardImages)}
-                      >
-                        <img
-                          src={img}
-                          alt="Mood element"
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                          referrerPolicy="no-referrer"
-                        />
-                      </div>
-                    ))}
+
+                  <div
+                    className="overflow-hidden rounded-sm bg-paper/20 border border-mist/10 cursor-pointer group flex items-center justify-center"
+                    onClick={() => handleOpenLightbox(project.moodboardImages[0], project.moodboardImages)}
+                  >
+                    <img
+                      src={project.moodboardImages[0]}
+                      alt={`${project.name} Mood Board`}
+                      className="w-full object-contain transition-transform duration-500 group-hover:scale-102"
+                      referrerPolicy="no-referrer"
+                    />
                   </div>
                 </div>
 
