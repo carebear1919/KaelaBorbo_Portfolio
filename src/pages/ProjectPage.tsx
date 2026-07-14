@@ -1176,7 +1176,9 @@ export default function ProjectPage({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             
             {/* Column 1: Massive Header & Metadata Panel */}
-            <div className="lg:col-span-4 flex flex-col justify-between p-8 bg-paper border border-mist/20 rounded-md shadow-sm fade-up">
+            <div className={`${
+              project.concept?.image ? "lg:col-span-4" : "lg:col-span-3"
+            } flex flex-col justify-between p-8 bg-paper border border-mist/20 rounded-md shadow-sm fade-up`}>
               <div className="space-y-12">
                 <div>
                   <span className="font-mono text-[9px] tracking-[0.3em] text-slate uppercase block mb-1">
@@ -1236,7 +1238,7 @@ export default function ProjectPage({
             {/* Column 3: Mood board (wide & centered when no central intent column) */}
             {project.moodboardImages.length > 0 && (
               <div className={`${
-                project.concept?.image ? "lg:col-span-4" : "lg:col-span-8"
+                project.concept?.image ? "lg:col-span-4" : "lg:col-span-9"
               } flex flex-col justify-between p-8 bg-paper border border-mist/20 rounded-md shadow-sm fade-up`}>
                 <div className="space-y-6">
                   <span className="font-mono text-[9px] tracking-[0.3em] text-slate uppercase block">
@@ -1258,7 +1260,7 @@ export default function ProjectPage({
 
                 {project.inspiration?.text && (
                   <div className="space-y-4 pt-6 border-t border-mist/10">
-                    <p className="text-[11px] text-slate/85 leading-relaxed font-light">
+                    <p className="text-sm text-slate/85 leading-relaxed font-light">
                       {project.inspiration.text}
                     </p>
                     <span className="font-mono text-[8px] tracking-[0.25em] text-mist uppercase block">
