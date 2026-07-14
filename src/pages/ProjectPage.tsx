@@ -1713,30 +1713,30 @@ export default function ProjectPage({
               {/* Full-width exterior perspective */}
               {project.galleryImages[0] && (
                 <div
-                  className="overflow-hidden rounded-md shadow-lg group cursor-pointer aspect-16/9 fade-up"
+                  className="overflow-hidden rounded-md shadow-lg group cursor-pointer fade-up"
                   onClick={() => handleOpenLightbox(project.galleryImages[0], project.galleryImages)}
                 >
                   <img
                     src={project.galleryImages[0]}
                     alt={`${project.name} Exterior Perspective`}
-                    className="w-full h-full object-cover group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
+                    className="w-full h-auto group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
                     referrerPolicy="no-referrer"
                   />
                 </div>
               )}
 
               {/* 3-up grid: dining area, office, kitchen */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
                 {project.galleryImages.slice(1).map((img, idx) => (
                   <div
                     key={idx}
-                    className="overflow-hidden rounded-md shadow-md group cursor-pointer aspect-4/3 fade-up"
+                    className="overflow-hidden rounded-md shadow-md group cursor-pointer fade-up"
                     onClick={() => handleOpenLightbox(img, project.galleryImages)}
                   >
                     <img
                       src={img}
                       alt={`${project.name} Detail Perspective ${idx + 2}`}
-                      className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
+                      className="w-full h-auto group-hover:scale-103 transition-transform duration-700"
                       referrerPolicy="no-referrer"
                     />
                   </div>
@@ -2071,30 +2071,30 @@ export default function ProjectPage({
               {/* Full-width image */}
               {project.galleryImages[0] && (
                 <div
-                  className="overflow-hidden rounded-md shadow-lg group cursor-pointer aspect-16/9 fade-up"
+                  className="overflow-hidden rounded-md shadow-lg group cursor-pointer fade-up"
                   onClick={() => handleOpenLightbox(project.galleryImages[0], project.galleryImages)}
                 >
                   <img
                     src={project.galleryImages[0]}
                     alt={`${project.name} Wide Perspective`}
-                    className="w-full h-full object-cover group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
+                    className="w-full h-auto group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
                     referrerPolicy="no-referrer"
                   />
                 </div>
               )}
 
               {/* 2-up or 3-up rows */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                 {project.galleryImages.slice(1).map((img, idx) => (
                   <div
                     key={idx}
-                    className="overflow-hidden rounded-md shadow-md group cursor-pointer aspect-4/3 fade-up"
+                    className="overflow-hidden rounded-md shadow-md group cursor-pointer fade-up"
                     onClick={() => handleOpenLightbox(img, project.galleryImages)}
                   >
                     <img
                       src={img}
                       alt={`${project.name} Detail Perspective ${idx + 2}`}
-                      className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700"
+                      className="w-full h-auto group-hover:scale-103 transition-transform duration-700"
                       referrerPolicy="no-referrer"
                     />
                   </div>

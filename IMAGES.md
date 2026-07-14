@@ -15,14 +15,13 @@ If a file uses `.png` instead, rename it to `.jpg` OR tell me and I'll update th
 |---|---|
 | `hero.jpg` | Main wide shot — also used on homepage carousel + featured card (landscape, high-res) |
 | `moodboard.jpg` | Mood board / material collage image |
-| `living-area.jpg` | The labeled "Living Area" image (Concept & Mood center panel) |
-| `floor-plan.jpg` | Floor plan drawing |
-| `gallery-01-living-area.jpg` | Gallery — full-width top image (living area) |
-| `gallery-02-guest-bedroom.jpg` | Gallery — guest bedroom (bunk beds) |
-| `gallery-03-living-area.jpg` | Gallery — living area (shelving) |
-| `gallery-04-dining-area.jpg` | Gallery — dining area |
-| `gallery-05-kitchen.jpg` | Gallery — kitchen 1 |
-| `gallery-06-kitchen.jpg` | Gallery — kitchen 2 |
+| `living-area.jpg` | Wide labeled "Living Area" image — gallery full-width lead (done) |
+| `floor-plan.jpg` | Floor plan drawing (done) |
+| `gallery-01-living-area.jpg` | Gallery — living area shelving tile (done) |
+| `gallery-02-guest-bedroom.jpg` | Gallery — guest bedroom (done) |
+| `gallery-04-dining-area.jpg` | Gallery — dining area (done) |
+| `gallery-05-kitchen.jpg` | Gallery — kitchen 1 (done) |
+| `gallery-06-kitchen.jpg` | Gallery — kitchen 2 (STILL MISSING) |
 
 ## 02 — Container Home (`02-container-home/`)
 

@@ -43,9 +43,9 @@ export const SAMPLE_PROJECTS: Project[] = [
     extendedDescription: "Inspired by the serenity of a coastal scene, the residence is designed to promote openness, comfort, and a strong connection to nature. The open-plan layout allows smooth circulation between the living, dining, and kitchen areas, while private spaces provide a quiet retreat. Large openings and landscaped areas maximize natural light, ventilation, and outdoor views, creating a bright and relaxing environment. Overall, the design captures the peaceful essence of coastal living through functional planning and seamless indoor-outdoor integration.",
     pullQuote: "",
     galleryImages: [
-      "/images/projects/01-coastal-residence/gallery-01-living-area.jpg",
+      "/images/projects/01-coastal-residence/living-area.jpg",
       "/images/projects/01-coastal-residence/gallery-02-guest-bedroom.jpg",
-      "/images/projects/01-coastal-residence/gallery-03-living-area.jpg",
+      "/images/projects/01-coastal-residence/gallery-01-living-area.jpg",
       "/images/projects/01-coastal-residence/gallery-04-dining-area.jpg",
       "/images/projects/01-coastal-residence/gallery-05-kitchen.jpg",
       "/images/projects/01-coastal-residence/gallery-06-kitchen.jpg"
