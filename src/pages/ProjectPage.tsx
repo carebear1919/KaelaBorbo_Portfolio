@@ -18,6 +18,32 @@ function ToolIcon({ tool, className }: { tool: string; className?: string }) {
   return <Icon className={className ?? "w-3 h-3 shrink-0"} />;
 }
 
+function HeroRotator({ images, position }: { images: string[]; position?: string }) {
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    setIdx(0);
+    if (images.length < 2) return;
+    const timer = setInterval(() => {
+      setIdx((prev) => (prev + 1) % images.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [images.length, images[0]]);
+
+  return (
+    <>
+      {images.map((img, i) => (
+        <div
+          key={img}
+          className={`absolute inset-0 bg-cover transition-opacity duration-[1500ms] ease-out ${
+            i === idx ? "opacity-100" : "opacity-0"
+          }`}
+          style={{ backgroundImage: `url(${img})`, backgroundPosition: position ?? "center" }}
+        />
+      ))}
+    </>
+  );
+}
+
 interface ProjectPageProps {
   slug: string;
   onNavigateProject: (slug: string) => void;
@@ -68,10 +94,8 @@ export default function ProjectPage({
     return (
       <div className="paper-grain pb-24 animate-fade-in" id="project-view-community-resilience-facility">
         {/* SECTION 1: HERO - FULL BLEED PHOTO */}
-        <section
-          className="relative w-full h-[70vh] bg-cover bg-center flex items-end"
-          style={{ backgroundImage: `url(${project.heroImage})` }}
-        >
+        <section className="relative w-full h-[70vh] flex items-end overflow-hidden">
+          <HeroRotator images={project.heroImages ?? [project.heroImage]} />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/15 to-transparent" />
           
           <div className="max-w-7xl mx-auto w-full px-6 pb-16 z-10 text-paper">
@@ -162,7 +186,7 @@ export default function ProjectPage({
         <section className="pb-20 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              "/images/projects/05-bangon-bayan/05-bangon-dining-area-1.jpg",
+              "/images/projects/05-bangon-bayan/05-bangon-hero.jpg",
               "/images/projects/05-bangon-bayan/05-bangon-dining-area-2.jpg"
             ].map((img, idx, arr) => (
               <div
@@ -399,10 +423,8 @@ export default function ProjectPage({
     return (
       <div className="paper-grain pb-24 animate-fade-in" id="project-view-giliw-learning-facility">
         {/* SECTION 1: HERO - FULL BLEED PHOTO */}
-        <section
-          className="relative w-full h-[70vh] bg-cover bg-center flex items-end"
-          style={{ backgroundImage: `url(${project.heroImage})` }}
-        >
+        <section className="relative w-full h-[70vh] flex items-end overflow-hidden">
+          <HeroRotator images={project.heroImages ?? [project.heroImage]} />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/15 to-transparent" />
           
           <div className="max-w-7xl mx-auto w-full px-6 pb-16 z-10 text-paper">
@@ -854,10 +876,8 @@ export default function ProjectPage({
     return (
       <div className="paper-grain pb-24 animate-fade-in" id="project-view-iglu-round-sofa">
         {/* SECTION 1: HERO - FULL BLEED PHOTO */}
-        <section
-          className="relative w-full h-[70vh] bg-cover bg-center flex items-end"
-          style={{ backgroundImage: `url(${project.heroImage})` }}
-        >
+        <section className="relative w-full h-[70vh] flex items-end overflow-hidden">
+          <HeroRotator images={project.heroImages ?? [project.heroImage]} />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/15 to-transparent" />
           
           <div className="max-w-7xl mx-auto w-full px-6 pb-16 z-10 text-paper">
@@ -1099,14 +1119,12 @@ export default function ProjectPage({
 
   return (
     <div className="paper-grain pb-24" id={`project-view-${project.slug}`}>
-      {/* SECTION 1: HERO - FULL BLEED PHOTO */}
-      <section
-        className="relative w-full h-[70vh] bg-cover flex items-end"
-        style={{
-          backgroundImage: `url(${project.heroImage})`,
-          backgroundPosition: project.slug === "hotel-concept" ? "center 60%" : "center 75%"
-        }}
-      >
+      {/* SECTION 1: HERO - FULL BLEED ROTATING PHOTOS */}
+      <section className="relative w-full h-[70vh] flex items-end overflow-hidden">
+        <HeroRotator
+          images={project.heroImages ?? [project.heroImage]}
+          position={project.slug === "hotel-concept" ? "center 60%" : "center 75%"}
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/10 to-transparent" />
 
         <div className="max-w-7xl mx-auto w-full px-6 pb-16 z-10 text-paper">

@@ -43,4 +43,5 @@ export interface Project {
   pullQuote: string;
   galleryImages: string[];
   heroImage: string; // Main background hero for the project detail page and listing card
+  heroImages?: string[]; // Optional rotating hero carousel images (landscape orientation)
 }

@@ -77,8 +77,7 @@ If a file uses `.png` instead, rename it to `.jpg` OR tell me and I'll update th
 
 | File | What it is |
 |---|---|
-| `05-bangon-hero.jpg` | Hero |
-| `05-bangon-dining-area-1.jpg` | Dining area 1 |
+| `05-bangon-hero.jpg` | Hero (dining area 1 — also first dining picture) |
 | `05-bangon-dining-area-2.jpg` | Dining area 2 |
 | `05-bangon-concept-diagram.jpg` | Nodes of Resilience concept image |
 | `05-bangon-lobby-reception.jpg` | Lobby / reception area |

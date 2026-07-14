@@ -10,6 +10,12 @@ export const SAMPLE_PROJECTS: Project[] = [
     description: "Drawing deep inspiration from the coastal scene, this home combines the ocean’s tones and textures to evoke a sense of tranquility, with an emphasis on natural lighting and timeless furniture pieces.",
     tools: ["AutoCAD", "SketchUp", "Enscape", "Adobe Photoshop"],
     heroImage: "/images/projects/01-coastal-residence/01-coastal-hero.jpg",
+    heroImages: [
+      "/images/projects/01-coastal-residence/01-coastal-hero.jpg",
+      "/images/projects/01-coastal-residence/01-coastal-living-area.jpg",
+      "/images/projects/01-coastal-residence/01-coastal-gallery-02-guest-bedroom.jpg",
+      "/images/projects/01-coastal-residence/01-coastal-gallery-05-kitchen.jpg"
+    ],
     moodboardImages: [
       "/images/projects/01-coastal-residence/01-coastal-moodboard.jpg"
     ],
@@ -54,6 +60,12 @@ export const SAMPLE_PROJECTS: Project[] = [
     description: "This contemporary style infused with Bavarian accents container home combines modern sustainability with a touch of rustic elegance. With its strong beams and wood accents, it celebrates heritage while incorporating cutting-edge technologies.",
     tools: ["AutoCAD", "SketchUp", "V-Ray", "Adobe Photoshop"],
     heroImage: "/images/projects/02-container-home/02-container-hero.jpg",
+    heroImages: [
+      "/images/projects/02-container-home/02-container-hero.jpg",
+      "/images/projects/02-container-home/02-container-gallery-01-exterior.jpg",
+      "/images/projects/02-container-home/02-container-gallery-living-area.jpg",
+      "/images/projects/02-container-home/02-container-gallery-02-dining-area.jpg"
+    ],
     moodboardImages: [
       "/images/projects/02-container-home/02-container-moodboard.jpg"
     ],
@@ -94,6 +106,13 @@ export const SAMPLE_PROJECTS: Project[] = [
     description: "Yuhum Hotel is a project inspired by the heritage of Bacolod, combined with designer John Galliano’s art style. Yuhum (smile) features the hotel’s dedication to provide guests with a luxurious experience creating an atmosphere filled with smiles enhancing their overall stay.",
     tools: ["AutoCAD", "SketchUp", "V-Ray", "Adobe Photoshop"],
     heroImage: "/images/projects/03-yuhum-hotel/03-yuhum-hero.jpg",
+    heroImages: [
+      "/images/projects/03-yuhum-hotel/03-yuhum-hero.jpg",
+      "/images/projects/03-yuhum-hotel/03-yuhum-restaurant.jpg",
+      "/images/projects/03-yuhum-hotel/03-yuhum-deluxe-suite.jpg",
+      "/images/projects/03-yuhum-hotel/03-yuhum-presidential-suite.jpg",
+      "/images/projects/03-yuhum-hotel/03-yuhum-game-area.jpg"
+    ],
     moodboardImages: [],
     inspiration: {
       text: "As Bacolod is known for being the City of Smile, Yuhum pays homage to the concept of Sugar Rush. Similarly, the hotel brings a burst of happiness and in a dramatic state which is also inspired from John Galliano’s Fashion Statements. Yuhum offers an appealing combination of local aesthetics and Old World charm by combining native Filipino materials and patterns with the beauty and balance of a French chateau. As this hotel is inspired by the works of French fashion designer John Galliano, the interior reflects Galliano’s boldness, drama, and storytelling.",
@@ -147,6 +166,13 @@ export const SAMPLE_PROJECTS: Project[] = [
     description: "\"Giliw,\" which translates to hospitality or love in Filipino, is an educational facility dedicated to teaching and assisting street children in Manila and children in need across the Philippines. Inspired by Childhope Philippines' vision, Giliw seeks to establish a long-lasting, sound, and compassionate environment in which less fortunate adolescents are able to learn, develop, and get involved in a variety of programs that emphasize income-generating proficiency.",
     tools: ["AutoCAD", "SketchUp", "Enscape", "Adobe Photoshop"],
     heroImage: "/images/projects/04-giliw-learning-facility/04-giliw-hero.jpg",
+    heroImages: [
+      "/images/projects/04-giliw-learning-facility/04-giliw-hero.jpg",
+      "/images/projects/04-giliw-learning-facility/04-giliw-learning-area.jpg",
+      "/images/projects/04-giliw-learning-facility/04-giliw-art-studio.jpg",
+      "/images/projects/04-giliw-learning-facility/04-giliw-workshop-studio.jpg",
+      "/images/projects/04-giliw-learning-facility/04-giliw-fitness-area.jpg"
+    ],
     moodboardImages: [
       "/images/projects/04-giliw-learning-facility/04-giliw-moodboard.jpg"
     ],
@@ -200,6 +226,13 @@ export const SAMPLE_PROJECTS: Project[] = [
     description: "Bangon Bayan is a proposed community resilience facility that centers on providing the community of Tondo a space for food security and a space for evacuating in consideration with the area’s high urban density and high rate of food insecurity. The space has a 1,512sqm area with spaces for resting, urban farming, skill improvement spaces, and areas where the community can access nutritious meals.",
     tools: ["AutoCAD", "SketchUp", "Enscape", "Adobe Photoshop"],
     heroImage: "/images/projects/05-bangon-bayan/05-bangon-hero.jpg",
+    heroImages: [
+      "/images/projects/05-bangon-bayan/05-bangon-hero.jpg",
+      "/images/projects/05-bangon-bayan/05-bangon-community-pantry.jpg",
+      "/images/projects/05-bangon-bayan/05-bangon-lobby-reception.jpg",
+      "/images/projects/05-bangon-bayan/05-bangon-outdoor-agriculture.jpg",
+      "/images/projects/05-bangon-bayan/05-bangon-evacuation-area.jpg"
+    ],
     moodboardImages: [],
     inspiration: {
       text: "Inspired by the bamboo plant and its nodes, this concept is a symbolism of resilience. In times of challenges, a community can learn from bamboo’s qualities of being flexible rather than being rigid (Lambert). A bamboo is also known to adapt to challenges with resilience, allowing individuals to be molded by their experiences without losing strength. The bamboo’s nodes function as clusters for community togetherness, food security, sanitations, and more forms of support that are all interlinked by flexible zones that mimic the joints of the bamboo.",
