@@ -1864,17 +1864,17 @@ export default function ProjectPage({
 
                 <div className="space-y-8">
                   {/* Row 1: Deluxe & Presidential suites */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                     {[project.galleryImages[1], project.galleryImages[2]].map((img, idx) => (
                       <div
                         key={idx}
-                        className="overflow-hidden rounded-sm shadow-md group cursor-pointer fade-up"
+                        className="overflow-hidden rounded-sm shadow-md group cursor-pointer aspect-[8/5] fade-up"
                         onClick={() => handleOpenLightbox(img, project.galleryImages)}
                       >
                         <img
                           src={img}
                           alt={`Yuhum Hotel Suite ${idx + 1}`}
-                          className="w-full h-auto group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
+                          className="w-full h-full object-cover object-left-bottom group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
                           referrerPolicy="no-referrer"
                         />
                       </div>
@@ -1882,17 +1882,17 @@ export default function ProjectPage({
                   </div>
 
                   {/* Row 2: Executive, Premiere, Game Area */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
                     {[project.galleryImages[3], project.galleryImages[4], project.galleryImages[5]].map((img, idx) => (
                       <div
                         key={idx}
-                        className="overflow-hidden rounded-sm shadow-md group cursor-pointer fade-up"
+                        className="overflow-hidden rounded-sm shadow-md group cursor-pointer aspect-[5/3] fade-up"
                         onClick={() => handleOpenLightbox(img, project.galleryImages)}
                       >
                         <img
                           src={img}
                           alt={`Yuhum Hotel Suite ${idx + 3}`}
-                          className="w-full h-auto group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
+                          className="w-full h-full object-cover object-left-bottom group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
                           referrerPolicy="no-referrer"
                         />
                       </div>
