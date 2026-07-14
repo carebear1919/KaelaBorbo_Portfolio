@@ -34,6 +34,7 @@ If a file uses `.png` instead, rename it to `.jpg` OR tell me and I'll update th
 | `02-container-elevation-b.jpg` | Elevation B |
 | `02-container-gallery-01-exterior.jpg` | Exterior perspective (gallery full-width) |
 | `02-container-gallery-02-dining-area.jpg` | Dining area |
+| `02-container-gallery-living-area.jpg` | Living area |
 | `02-container-gallery-03-office.jpg` | Office |
 | `02-container-gallery-04-kitchen.jpg` | Kitchen |
 | `02-container-sustainable-inclusions.jpg` | Single image for all sustainable inclusions |

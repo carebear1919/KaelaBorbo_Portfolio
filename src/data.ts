@@ -80,6 +80,7 @@ export const SAMPLE_PROJECTS: Project[] = [
     galleryImages: [
       "/images/projects/02-container-home/02-container-gallery-01-exterior.jpg",
       "/images/projects/02-container-home/02-container-gallery-02-dining-area.jpg",
+      "/images/projects/02-container-home/02-container-gallery-living-area.jpg",
       "/images/projects/02-container-home/02-container-gallery-03-office.jpg",
       "/images/projects/02-container-home/02-container-gallery-04-kitchen.jpg"
     ]
