@@ -1082,14 +1082,19 @@ export default function ProjectPage({
 
   return (
     <div className="paper-grain pb-24" id={`project-view-${project.slug}`}>
-      {/* SECTION 1: HERO - FULL BLEED PHOTO */}
-      <section
-        className="relative w-full h-[70vh] bg-cover bg-center flex items-end"
-        style={{ backgroundImage: `url(${project.heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/10 to-transparent" />
-        
-        <div className="max-w-7xl mx-auto w-full px-6 pb-16 z-10 text-paper">
+      {/* SECTION 1: HERO - FULL UNCROPPED PHOTO */}
+      <section className="w-full bg-ink flex justify-center">
+        <img
+          src={project.heroImage}
+          alt={project.name}
+          className="max-h-[82vh] w-auto max-w-full object-contain"
+          referrerPolicy="no-referrer"
+        />
+      </section>
+
+      {/* SECTION 1B: TITLE BAND BELOW HERO */}
+      <section className="bg-ink text-paper">
+        <div className="max-w-7xl mx-auto w-full px-6 py-12">
           {/* Breadcrumb back to home */}
           <button
             onClick={onNavigateHome}
@@ -1098,7 +1103,7 @@ export default function ProjectPage({
           >
             ← Back to Projects
           </button>
-          
+
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light tracking-tight leading-tight mb-4 max-w-4xl uppercase text-paper">
             {project.name}
           </h1>
