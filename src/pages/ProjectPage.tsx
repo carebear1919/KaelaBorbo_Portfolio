@@ -59,7 +59,7 @@ export default function ProjectPage({
           className="relative w-full h-[70vh] bg-cover bg-center flex items-end"
           style={{ backgroundImage: `url(${project.heroImage})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/15 to-transparent" />
           
           <div className="max-w-7xl mx-auto w-full px-6 pb-16 z-10 text-paper">
             {/* Breadcrumb back to home */}
@@ -402,7 +402,7 @@ export default function ProjectPage({
           className="relative w-full h-[70vh] bg-cover bg-center flex items-end"
           style={{ backgroundImage: `url(${project.heroImage})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/15 to-transparent" />
           
           <div className="max-w-7xl mx-auto w-full px-6 pb-16 z-10 text-paper">
             {/* Breadcrumb back to home */}
@@ -835,7 +835,7 @@ export default function ProjectPage({
           className="relative w-full h-[70vh] bg-cover bg-center flex items-end"
           style={{ backgroundImage: `url(${project.heroImage})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/15 to-transparent" />
           
           <div className="max-w-7xl mx-auto w-full px-6 pb-16 z-10 text-paper">
             {/* Breadcrumb back to home */}
@@ -1087,7 +1087,7 @@ export default function ProjectPage({
         className="relative w-full h-[70vh] bg-cover bg-center flex items-end"
         style={{ backgroundImage: `url(${project.heroImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/10 to-transparent" />
         
         <div className="max-w-7xl mx-auto w-full px-6 pb-16 z-10 text-paper">
           {/* Breadcrumb back to home */}
