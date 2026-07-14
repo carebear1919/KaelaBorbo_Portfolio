@@ -1339,8 +1339,8 @@ export default function ProjectPage({
               </div>
             </div>
 
-            {/* Full-width mood board with Sugar Rush headline */}
-            <div className="pt-8 space-y-8 text-center fade-up">
+            {/* Mood board card with Sugar Rush headline */}
+            <div className="p-8 md:p-12 bg-paper border border-mist/20 rounded-md shadow-sm space-y-8 text-center fade-up">
               <div className="space-y-3">
                 <span className="font-mono text-xxs tracking-[0.3em] text-slate uppercase block">
                   02 / MOOD BOARD
@@ -1356,13 +1356,13 @@ export default function ProjectPage({
               <img
                 src="/images/projects/03-yuhum-hotel/03-yuhum-moodboard.jpg"
                 alt="Yuhum Hotel Mood Board"
-                className="w-full object-contain rounded-sm shadow-sm cursor-pointer"
+                className="max-w-2xl w-full mx-auto object-contain rounded-sm shadow-sm cursor-pointer"
                 referrerPolicy="no-referrer"
                 onClick={() => handleOpenLightbox("/images/projects/03-yuhum-hotel/03-yuhum-moodboard.jpg", ["/images/projects/03-yuhum-hotel/03-yuhum-moodboard.jpg"])}
               />
 
               {project.inspiration?.text && (
-                <p className="text-sm md:text-base text-slate/90 font-light leading-relaxed max-w-4xl mx-auto text-left md:text-center">
+                <p className="text-sm md:text-base text-slate/90 font-light leading-relaxed max-w-3xl mx-auto text-left md:text-center">
                   {project.inspiration.text}
                 </p>
               )}
