@@ -1748,12 +1748,12 @@ export default function ProjectPage({
                 </div>
               )}
 
-              {/* 3-up grid: dining area, office, kitchen */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+              {/* Masonry columns: dining area, office, kitchen */}
+              <div className="columns-1 md:columns-2 gap-8">
                 {project.galleryImages.slice(1).map((img, idx) => (
                   <div
                     key={idx}
-                    className="overflow-hidden rounded-md shadow-md group cursor-pointer fade-up"
+                    className="break-inside-avoid mb-8 overflow-hidden rounded-md shadow-md group cursor-pointer fade-up"
                     onClick={() => handleOpenLightbox(img, project.galleryImages)}
                   >
                     <img
