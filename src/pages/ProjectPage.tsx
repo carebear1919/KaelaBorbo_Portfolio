@@ -1100,7 +1100,10 @@ export default function ProjectPage({
       {/* SECTION 1: HERO - FULL BLEED PHOTO */}
       <section
         className="relative w-full h-[70vh] bg-cover flex items-end"
-        style={{ backgroundImage: `url(${project.heroImage})`, backgroundPosition: "center 75%" }}
+        style={{
+          backgroundImage: `url(${project.heroImage})`,
+          backgroundPosition: project.slug === "hotel-concept" ? "center 35%" : "center 75%"
+        }}
       >
         <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/10 to-transparent" />
 
