@@ -1082,19 +1082,14 @@ export default function ProjectPage({
 
   return (
     <div className="paper-grain pb-24" id={`project-view-${project.slug}`}>
-      {/* SECTION 1: HERO - FULL UNCROPPED PHOTO */}
-      <section className="w-full bg-ink flex justify-center">
-        <img
-          src={project.heroImage}
-          alt={project.name}
-          className="max-h-[82vh] w-auto max-w-full object-contain"
-          referrerPolicy="no-referrer"
-        />
-      </section>
+      {/* SECTION 1: HERO - FULL BLEED PHOTO */}
+      <section
+        className="relative w-full h-[70vh] bg-cover flex items-end"
+        style={{ backgroundImage: `url(${project.heroImage})`, backgroundPosition: "center 75%" }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-ink/10 to-transparent" />
 
-      {/* SECTION 1B: TITLE BAND BELOW HERO */}
-      <section className="bg-ink text-paper">
-        <div className="max-w-7xl mx-auto w-full px-6 py-12">
+        <div className="max-w-7xl mx-auto w-full px-6 pb-16 z-10 text-paper">
           {/* Breadcrumb back to home */}
           <button
             onClick={onNavigateHome}
@@ -1122,6 +1117,7 @@ export default function ProjectPage({
       </section>
 
       {/* SECTION 2: OVERVIEW - TWO COLUMNS */}
+
       <section className="py-20 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
         {/* Left Sticky Sidebar */}
         <div className="md:col-span-4 space-y-8 md:sticky md:top-28 h-fit" id="project-overview-sidebar">

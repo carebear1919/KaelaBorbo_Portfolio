@@ -41,7 +41,8 @@ export const SAMPLE_PROJECTS: Project[] = [
       "/images/projects/01-coastal-residence/gallery-02-guest-bedroom.jpg",
       "/images/projects/01-coastal-residence/gallery-01-living-area.jpg",
       "/images/projects/01-coastal-residence/gallery-04-dining-area.jpg",
-      "/images/projects/01-coastal-residence/gallery-05-kitchen.jpg"
+      "/images/projects/01-coastal-residence/gallery-05-kitchen.jpg",
+      "/images/projects/01-coastal-residence/hero.jpg"
     ]
   },
   {
