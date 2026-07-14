@@ -134,7 +134,8 @@ export const SAMPLE_PROJECTS: Project[] = [
       "/images/projects/03-yuhum-hotel/03-yuhum-presidential-suite.jpg",
       "/images/projects/03-yuhum-hotel/03-yuhum-executive-suite.jpg",
       "/images/projects/03-yuhum-hotel/03-yuhum-premiere-suite.jpg",
-      "/images/projects/03-yuhum-hotel/03-yuhum-game-area.jpg"
+      "/images/projects/03-yuhum-hotel/03-yuhum-game-area.jpg",
+      "/images/projects/03-yuhum-hotel/03-yuhum-gift-shop.jpg"
     ]
   },
   {

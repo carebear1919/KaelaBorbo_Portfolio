@@ -1371,20 +1371,6 @@ export default function ProjectPage({
               </div>
             </div>
 
-            <div
-              className="relative overflow-hidden rounded-md shadow-md group cursor-pointer aspect-16/9 max-w-4xl mx-auto fade-up"
-              onClick={() => handleOpenLightbox("/images/projects/03-yuhum-hotel/03-yuhum-gift-shop.jpg", ["/images/projects/03-yuhum-hotel/03-yuhum-color-palette.jpg", "/images/projects/03-yuhum-hotel/03-yuhum-gift-shop.jpg"])}
-            >
-              <img
-                src="/images/projects/03-yuhum-hotel/03-yuhum-gift-shop.jpg"
-                alt="Yuhum Hotel Gift Shop"
-                className="w-full h-full object-cover group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute bottom-4 left-4 bg-ink/75 backdrop-blur-xs text-[8px] font-mono uppercase tracking-widest text-paper px-3 py-1.5 rounded-xs border border-white/5">
-                GIFT SHOP
-              </div>
-            </div>
           </div>
         </section>
       )}
@@ -1863,31 +1849,57 @@ export default function ProjectPage({
                   The guest suites and recreational spaces of Yuhum Hotel reflect the vibrant heritage of Bacolod and the bold, theatrical style of John Galliano. Inspired by the City of Smiles and the concept of Sugar Rush, the interiors feature rich colors, elegant detailing, and dramatic patterns that create a luxurious and memorable experience. By combining Filipino materials and motifs with the sophistication of a French chateau, the spaces celebrate local culture while embodying Galliano's signature sense of storytelling, elegance, and grandeur.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-                  {/* Staggered grid of 5 suite & recreation images */}
-                  {[
-                    { image: project.galleryImages[1], label: "DELUXE SUITE", gridClass: "md:col-span-8 aspect-video" },
-                    { image: project.galleryImages[2], label: "PRESIDENTIAL SUITE", gridClass: "md:col-span-4 aspect-square md:aspect-auto" },
-                    { image: project.galleryImages[3], label: "EXECUTIVE SUITE", gridClass: "md:col-span-4 aspect-square md:aspect-auto" },
-                    { image: project.galleryImages[4], label: "PREMIERE SUITE", gridClass: "md:col-span-4 aspect-square md:aspect-auto" },
-                    { image: project.galleryImages[5], label: "GAME AREA", gridClass: "md:col-span-4 aspect-square md:aspect-auto" }
-                  ].map((item, idx) => (
+                <div className="space-y-8">
+                  {/* Row 1: Deluxe & Presidential suites */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {[project.galleryImages[1], project.galleryImages[2]].map((img, idx) => (
+                      <div
+                        key={idx}
+                        className="overflow-hidden rounded-sm shadow-md group cursor-pointer fade-up"
+                        onClick={() => handleOpenLightbox(img, project.galleryImages)}
+                      >
+                        <img
+                          src={img}
+                          alt={`Yuhum Hotel Suite ${idx + 1}`}
+                          className="w-full h-auto group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
+                          referrerPolicy="no-referrer"
+                        />
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Row 2: Executive, Premiere, Game Area */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {[project.galleryImages[3], project.galleryImages[4], project.galleryImages[5]].map((img, idx) => (
+                      <div
+                        key={idx}
+                        className="overflow-hidden rounded-sm shadow-md group cursor-pointer fade-up"
+                        onClick={() => handleOpenLightbox(img, project.galleryImages)}
+                      >
+                        <img
+                          src={img}
+                          alt={`Yuhum Hotel Suite ${idx + 3}`}
+                          className="w-full h-auto group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
+                          referrerPolicy="no-referrer"
+                        />
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Row 3: Gift Shop */}
+                  {project.galleryImages[6] && (
                     <div
-                      key={idx}
-                      className={`relative overflow-hidden rounded-sm shadow-md group cursor-pointer fade-up ${item.gridClass}`}
-                      onClick={() => handleOpenLightbox(item.image, project.galleryImages)}
+                      className="overflow-hidden rounded-sm shadow-md group cursor-pointer max-w-2xl mx-auto fade-up"
+                      onClick={() => handleOpenLightbox(project.galleryImages[6], project.galleryImages)}
                     >
                       <img
-                        src={item.image}
-                        alt={`Yuhum Hotel ${item.label}`}
-                        className="w-full h-full object-cover group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
+                        src={project.galleryImages[6]}
+                        alt="Yuhum Hotel Gift Shop"
+                        className="w-full h-auto group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
                         referrerPolicy="no-referrer"
                       />
-                      <div className="absolute bottom-4 left-4 bg-ink/75 backdrop-blur-xs text-[8px] font-mono uppercase tracking-widest text-paper px-3 py-1.5 rounded-xs border border-white/5">
-                        {item.label}
-                      </div>
                     </div>
-                  ))}
+                  )}
                 </div>
               </div>
             </div>
