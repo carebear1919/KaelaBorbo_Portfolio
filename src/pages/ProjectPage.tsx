@@ -1158,10 +1158,21 @@ export default function ProjectPage({
 
         {/* Right Description Paragraphs */}
         <div className="md:col-span-8 space-y-6 text-base font-light text-ink/80 leading-relaxed md:pt-2" id="project-overview-content">
-          <h3 className="font-serif text-2xl md:text-3xl font-light text-ink leading-snug">
-            {project.description}
-          </h3>
-          {project.extendedDescription && !project.pullQuote && (
+          {project.slug === "coastal-residence" ? (
+            <>
+              <h3 className="font-serif text-2xl md:text-3xl font-light text-ink leading-snug">
+                Drawing deep inspiration from the coastal scene, this home combines the ocean’s tones and textures to evoke a sense of tranquility,
+              </h3>
+              <p className="text-sm md:text-base">
+                with an emphasis on natural lighting and timeless furniture pieces.
+              </p>
+            </>
+          ) : (
+            <h3 className="font-serif text-2xl md:text-3xl font-light text-ink leading-snug">
+              {project.description}
+            </h3>
+          )}
+          {project.extendedDescription && !project.pullQuote && project.slug !== "coastal-residence" && (
             <p className="text-sm md:text-base">
               {project.extendedDescription}
             </p>
@@ -1704,6 +1715,11 @@ export default function ProjectPage({
           <h3 className="font-serif text-3xl font-light text-ink uppercase">
             Project Photo Gallery
           </h3>
+          {project.slug === "coastal-residence" && project.extendedDescription && (
+            <p className="text-sm md:text-base text-ink/70 font-light leading-relaxed max-w-4xl mt-6">
+              {project.extendedDescription}
+            </p>
+          )}
         </div>
 
         {/* Alternate full-width with 2-up rows */}
