@@ -1821,16 +1821,29 @@ export default function ProjectPage({
                   The restaurant plays an integral part in the hotel project as it offers a glimpse of the food culture of Bacolod. The space features dramatic wall finishes such as dark red paint and wallpapers matched with checkerboard flooring and wood ceiling finishes to evoke grandeur, highlighting the Filipino-French fusion.
                 </p>
 
-                <div
-                  className="overflow-hidden rounded-md shadow-lg group cursor-pointer aspect-16/9 fade-up"
-                  onClick={() => handleOpenLightbox(project.galleryImages[0], project.galleryImages)}
-                >
-                  <img
-                    src={project.galleryImages[0]}
-                    alt="Yuhum Hotel Restaurant"
-                    className="w-full h-full object-cover group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
-                    referrerPolicy="no-referrer"
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+                  <div
+                    className="md:col-span-8 overflow-hidden rounded-md shadow-lg group cursor-pointer aspect-16/9 fade-up"
+                    onClick={() => handleOpenLightbox(project.galleryImages[0], project.galleryImages)}
+                  >
+                    <img
+                      src={project.galleryImages[0]}
+                      alt="Yuhum Hotel Restaurant"
+                      className="w-full h-full object-cover group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <div
+                    className="md:col-span-4 overflow-hidden rounded-md shadow-lg group cursor-pointer fade-up"
+                    onClick={() => handleOpenLightbox(project.galleryImages[6], project.galleryImages)}
+                  >
+                    <img
+                      src={project.galleryImages[6]}
+                      alt="Yuhum Hotel Gift Shop"
+                      className="w-full h-full object-cover object-bottom group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
                 </div>
               </div>
 
@@ -1886,20 +1899,6 @@ export default function ProjectPage({
                     ))}
                   </div>
 
-                  {/* Row 3: Gift Shop */}
-                  {project.galleryImages[6] && (
-                    <div
-                      className="overflow-hidden rounded-sm shadow-md group cursor-pointer max-w-2xl mx-auto fade-up"
-                      onClick={() => handleOpenLightbox(project.galleryImages[6], project.galleryImages)}
-                    >
-                      <img
-                        src={project.galleryImages[6]}
-                        alt="Yuhum Hotel Gift Shop"
-                        className="w-full h-auto group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
-                        referrerPolicy="no-referrer"
-                      />
-                    </div>
-                  )}
                 </div>
               </div>
             </div>
