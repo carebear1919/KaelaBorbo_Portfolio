@@ -1748,18 +1748,18 @@ export default function ProjectPage({
                 </div>
               )}
 
-              {/* Masonry columns: dining area, living area, office, kitchen */}
-              <div className="columns-1 sm:columns-2 md:columns-3 gap-8">
+              {/* Uniform 2x2 grid: dining area, living area, office, kitchen */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {project.galleryImages.slice(1).map((img, idx) => (
                   <div
                     key={idx}
-                    className="break-inside-avoid mb-8 overflow-hidden rounded-md shadow-md group cursor-pointer fade-up"
+                    className="overflow-hidden rounded-md shadow-md group cursor-pointer aspect-4/3 fade-up"
                     onClick={() => handleOpenLightbox(img, project.galleryImages)}
                   >
                     <img
                       src={img}
                       alt={`${project.name} Detail Perspective ${idx + 2}`}
-                      className="w-full h-auto group-hover:scale-103 transition-transform duration-700"
+                      className="w-full h-full object-cover object-left-bottom group-hover:scale-103 transition-transform duration-700"
                       referrerPolicy="no-referrer"
                     />
                   </div>
