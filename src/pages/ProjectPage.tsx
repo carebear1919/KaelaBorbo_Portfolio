@@ -1339,9 +1339,9 @@ export default function ProjectPage({
               </div>
             </div>
 
-            {/* Mood board card with Sugar Rush headline */}
-            <div className="p-8 md:p-12 bg-paper border border-mist/20 rounded-md shadow-sm space-y-8 text-center fade-up">
-              <div className="space-y-3">
+            {/* Mood board card with Sugar Rush headline — image | description */}
+            <div className="p-8 md:p-12 bg-paper border border-mist/20 rounded-md shadow-sm space-y-10 fade-up">
+              <div className="space-y-3 text-center">
                 <span className="font-mono text-xxs tracking-[0.3em] text-slate uppercase block">
                   02 / MOOD BOARD
                 </span>
@@ -1353,19 +1353,22 @@ export default function ProjectPage({
                 </span>
               </div>
 
-              <img
-                src="/images/projects/03-yuhum-hotel/03-yuhum-moodboard.jpg"
-                alt="Yuhum Hotel Mood Board"
-                className="max-w-2xl w-full mx-auto object-contain rounded-sm shadow-sm cursor-pointer"
-                referrerPolicy="no-referrer"
-                onClick={() => handleOpenLightbox("/images/projects/03-yuhum-hotel/03-yuhum-moodboard.jpg", ["/images/projects/03-yuhum-hotel/03-yuhum-moodboard.jpg"])}
-              />
-
-              {project.inspiration?.text && (
-                <p className="text-sm md:text-base text-slate/90 font-light leading-relaxed max-w-3xl mx-auto text-left md:text-center">
-                  {project.inspiration.text}
-                </p>
-              )}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div className="lg:col-span-7">
+                  <img
+                    src="/images/projects/03-yuhum-hotel/03-yuhum-moodboard.jpg"
+                    alt="Yuhum Hotel Mood Board"
+                    className="w-full object-contain rounded-sm shadow-sm cursor-pointer"
+                    referrerPolicy="no-referrer"
+                    onClick={() => handleOpenLightbox("/images/projects/03-yuhum-hotel/03-yuhum-moodboard.jpg", ["/images/projects/03-yuhum-hotel/03-yuhum-moodboard.jpg"])}
+                  />
+                </div>
+                {project.inspiration?.text && (
+                  <p className="lg:col-span-5 text-sm md:text-base text-slate/90 font-light leading-relaxed">
+                    {project.inspiration.text}
+                  </p>
+                )}
+              </div>
             </div>
 
             <div
