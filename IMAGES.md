@@ -37,13 +37,7 @@ If a file uses `.png` instead, rename it to `.jpg` OR tell me and I'll update th
 | `02-container-gallery-02-dining-area.jpg` | Dining area |
 | `02-container-gallery-03-office.jpg` | Office |
 | `02-container-gallery-04-kitchen.jpg` | Kitchen |
-| `02-container-inclusion-rainwater-harvest-tank.jpg` | Inclusion — rainwater harvest tank |
-| `02-container-inclusion-occupancy-sensor.jpg` | Inclusion — occupancy sensor |
-| `02-container-inclusion-tankless-water-heater.jpg` | Inclusion — tankless water heater |
-| `02-container-inclusion-smart-plugs.jpg` | Inclusion — smart plugs |
-| `02-container-inclusion-smart-home-technologies.jpg` | Inclusion — smart home technologies |
-| `02-container-inclusion-solar-panels.jpg` | Inclusion — solar panels |
-| `02-container-inclusion-smart-pet-feeders.jpg` | Inclusion — smart pet feeders |
+| `02-container-sustainable-inclusions.jpg` | Single image for all sustainable inclusions |
 
 ## 03 — Yuhum Hotel (`projects/03-yuhum-hotel/`)
 
