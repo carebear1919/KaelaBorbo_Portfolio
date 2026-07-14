@@ -29,7 +29,6 @@ If a file uses `.png` instead, rename it to `.jpg` OR tell me and I'll update th
 |---|---|
 | `02-container-hero.jpg` | Bedroom image (hero — also homepage carousel) |
 | `02-container-moodboard.jpg` | Mood board |
-| `02-container-living-area.jpg` | Living area (Concept & Mood center panel) |
 | `02-container-floor-plan.jpg` | Floor plan |
 | `02-container-elevation-a.jpg` | Elevation A |
 | `02-container-elevation-b.jpg` | Elevation B |

@@ -63,7 +63,7 @@ export const SAMPLE_PROJECTS: Project[] = [
     },
     concept: {
       text: "",
-      image: "/images/projects/02-container-home/02-container-living-area.jpg"
+      image: ""
     },
     floorPlanImage: "/images/projects/02-container-home/02-container-floor-plan.jpg",
     floorPlanContents: [
