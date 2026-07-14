@@ -1829,7 +1829,7 @@ export default function ProjectPage({
                     <img
                       src={project.galleryImages[0]}
                       alt="Yuhum Hotel Restaurant"
-                      className="w-full h-full object-cover group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
+                      className="w-full h-full object-cover object-left-bottom group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
                       referrerPolicy="no-referrer"
                     />
                   </div>
