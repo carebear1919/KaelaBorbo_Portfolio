@@ -598,58 +598,70 @@ export default function ProjectPage({
           </div>
         </section>
 
-        {/* SECTION 5: ELEVATION DRAWINGS */}
+        {/* SECTION 5: DRAWING STUDIES & LOUNGE AREA (SIDE BY SIDE PANELS) */}
         <section className="py-20 max-w-7xl mx-auto px-6">
-          <div className="mb-10 text-center">
-            <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-2">
-              04 / DRAWING STUDIES
-            </span>
-            <h3 className="font-serif text-3xl font-light text-ink uppercase tracking-wide">
-              ELEVATION A & ELEVATION B
-            </h3>
-          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            {/* Panel 1: Elevations stacked vertically */}
+            <div className="lg:col-span-7 p-8 bg-paper border border-mist/20 rounded-md shadow-sm flex flex-col justify-center space-y-8 fade-up">
+              <div className="border-l-2 border-[#10B981] pl-4">
+                <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-1">
+                  04 / DRAWING STUDIES
+                </span>
+                <h3 className="font-serif text-2xl font-light text-ink uppercase tracking-wide">
+                  Elevation A & Elevation B
+                </h3>
+              </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="space-y-2">
-              <img
-                src="/images/projects/04-giliw-learning-facility/04-giliw-elevation-a.jpg"
-                alt="Giliw Elevation A"
-                className="w-full object-contain rounded-sm shadow-sm cursor-pointer"
-                referrerPolicy="no-referrer"
-                onClick={() => handleOpenLightbox("/images/projects/04-giliw-learning-facility/04-giliw-elevation-a.jpg", ["/images/projects/04-giliw-learning-facility/04-giliw-elevation-a.jpg", "/images/projects/04-giliw-learning-facility/04-giliw-elevation-b.jpg"])}
-              />
-              <span className="font-mono text-[9px] tracking-widest text-mist uppercase block text-center">
-                ELEVATION A
-              </span>
+              <div className="space-y-8">
+                <div className="space-y-2">
+                  <img
+                    src="/images/projects/04-giliw-learning-facility/04-giliw-elevation-a.jpg"
+                    alt="Giliw Elevation A"
+                    className="w-full object-contain rounded-sm shadow-sm cursor-pointer"
+                    referrerPolicy="no-referrer"
+                    onClick={() => handleOpenLightbox("/images/projects/04-giliw-learning-facility/04-giliw-elevation-a.jpg", ["/images/projects/04-giliw-learning-facility/04-giliw-elevation-a.jpg", "/images/projects/04-giliw-learning-facility/04-giliw-elevation-b.jpg"])}
+                  />
+                  <span className="font-mono text-[9px] tracking-widest text-mist uppercase block text-center">
+                    ELEVATION A
+                  </span>
+                </div>
+                <div className="space-y-2">
+                  <img
+                    src="/images/projects/04-giliw-learning-facility/04-giliw-elevation-b.jpg"
+                    alt="Giliw Elevation B"
+                    className="w-full object-contain rounded-sm shadow-sm cursor-pointer"
+                    referrerPolicy="no-referrer"
+                    onClick={() => handleOpenLightbox("/images/projects/04-giliw-learning-facility/04-giliw-elevation-b.jpg", ["/images/projects/04-giliw-learning-facility/04-giliw-elevation-a.jpg", "/images/projects/04-giliw-learning-facility/04-giliw-elevation-b.jpg"])}
+                  />
+                  <span className="font-mono text-[9px] tracking-widest text-mist uppercase block text-center">
+                    ELEVATION B
+                  </span>
+                </div>
+              </div>
             </div>
-            <div className="space-y-2">
-              <img
-                src="/images/projects/04-giliw-learning-facility/04-giliw-elevation-b.jpg"
-                alt="Giliw Elevation B"
-                className="w-full object-contain rounded-sm shadow-sm cursor-pointer"
-                referrerPolicy="no-referrer"
-                onClick={() => handleOpenLightbox("/images/projects/04-giliw-learning-facility/04-giliw-elevation-b.jpg", ["/images/projects/04-giliw-learning-facility/04-giliw-elevation-a.jpg", "/images/projects/04-giliw-learning-facility/04-giliw-elevation-b.jpg"])}
-              />
-              <span className="font-mono text-[9px] tracking-widest text-mist uppercase block text-center">
-                ELEVATION B
-              </span>
-            </div>
-          </div>
-        </section>
 
-        {/* SECTION 6: LOUNGE AREA */}
-        <section className="py-20 border-t border-mist/10 bg-paper/20">
-          <div className="max-w-5xl mx-auto px-6">
-            <div
-              className="relative overflow-hidden rounded-md shadow-md group cursor-pointer max-w-md mx-auto"
-              onClick={() => handleOpenLightbox(project.galleryImages[0], project.galleryImages)}
-            >
-              <img
-                src={project.galleryImages[0]}
-                alt="Giliw Lounge Area"
-                className="w-full h-auto group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
-                referrerPolicy="no-referrer"
-              />
+            {/* Panel 2: Lounge area portrait */}
+            <div className="lg:col-span-5 p-8 bg-[#FAF9F5] border border-mist/20 rounded-md shadow-sm flex flex-col space-y-6 fade-up">
+              <div className="border-l-2 border-[#D97706] pl-4">
+                <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-1">
+                  05 / COMMON SPACES
+                </span>
+                <h3 className="font-serif text-2xl font-light text-ink uppercase tracking-wide">
+                  Lounge Area
+                </h3>
+              </div>
+
+              <div
+                className="overflow-hidden rounded-sm shadow-sm group cursor-pointer grow"
+                onClick={() => handleOpenLightbox(project.galleryImages[0], project.galleryImages)}
+              >
+                <img
+                  src={project.galleryImages[0]}
+                  alt="Giliw Lounge Area"
+                  className="w-full h-full object-cover object-bottom group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -662,7 +674,7 @@ export default function ProjectPage({
                 Learning Areas
               </h4>
               <span className="font-mono text-xxs tracking-widest text-slate uppercase block mt-1">
-                05 / LEARNING AREA & ART STUDIO
+                06 / LEARNING AREA & ART STUDIO
               </span>
             </div>
 
@@ -700,7 +712,7 @@ export default function ProjectPage({
                 Built-in Details
               </h4>
               <span className="font-mono text-xxs tracking-widest text-slate uppercase block mt-1">
-                06 / TECHNICAL ASSEMBLY KEY
+                07 / TECHNICAL ASSEMBLY KEY
               </span>
             </div>
 
@@ -761,7 +773,7 @@ export default function ProjectPage({
                 Workshop Studio & Fitness Area
               </h4>
               <span className="font-mono text-xxs tracking-widest text-slate uppercase block mt-1">
-                07 / HOLISTIC DEVELOPMENT
+                08 / HOLISTIC DEVELOPMENT
               </span>
             </div>
 
