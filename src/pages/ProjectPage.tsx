@@ -162,8 +162,8 @@ export default function ProjectPage({
         <section className="pb-20 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              "/images/projects/05-bangon-bayan/dining-area-1.jpg",
-              "/images/projects/05-bangon-bayan/dining-area-2.jpg"
+              "/images/projects/05-bangon-bayan/05-bangon-dining-area-1.jpg",
+              "/images/projects/05-bangon-bayan/05-bangon-dining-area-2.jpg"
             ].map((img, idx, arr) => (
               <div
                 key={idx}
@@ -217,8 +217,8 @@ export default function ProjectPage({
         <section className="py-20 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
-              { image: "/images/projects/05-bangon-bayan/lobby-reception.jpg", label: "LOBBY / RECEPTION AREA" },
-              { image: "/images/projects/05-bangon-bayan/outdoor-agriculture.jpg", label: "OUTDOOR AGRICULTURE AREA" }
+              { image: "/images/projects/05-bangon-bayan/05-bangon-lobby-reception.jpg", label: "LOBBY / RECEPTION AREA" },
+              { image: "/images/projects/05-bangon-bayan/05-bangon-outdoor-agriculture.jpg", label: "OUTDOOR AGRICULTURE AREA" }
             ].map((item, idx, arr) => (
               <div
                 key={idx}
@@ -245,10 +245,10 @@ export default function ProjectPage({
             <div className="lg:col-span-7">
               <div
                 className="relative overflow-hidden rounded-sm shadow-sm group cursor-pointer aspect-[16/10]"
-                onClick={() => handleOpenLightbox("/images/projects/05-bangon-bayan/community-pantry.jpg", ["/images/projects/05-bangon-bayan/community-pantry.jpg"])}
+                onClick={() => handleOpenLightbox("/images/projects/05-bangon-bayan/05-bangon-community-pantry.jpg", ["/images/projects/05-bangon-bayan/05-bangon-community-pantry.jpg"])}
               >
                 <img
-                  src="/images/projects/05-bangon-bayan/community-pantry.jpg"
+                  src="/images/projects/05-bangon-bayan/05-bangon-community-pantry.jpg"
                   alt="Bangon Bayan Community Pantry"
                   className="w-full h-full object-cover group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
                   referrerPolicy="no-referrer"
@@ -295,25 +295,25 @@ export default function ProjectPage({
               {[
                 {
                   title: "WORKSHOP AREA",
-                  image: "/images/projects/05-bangon-bayan/workshop-area.jpg",
+                  image: "/images/projects/05-bangon-bayan/05-bangon-workshop-area.jpg",
                   gridClass: "lg:col-span-5",
                   aspectClass: "aspect-4/3 lg:aspect-[3/4.2]"
                 },
                 {
                   title: "LEARNING AREA",
-                  image: "/images/projects/05-bangon-bayan/learning-area.jpg",
+                  image: "/images/projects/05-bangon-bayan/05-bangon-learning-area.jpg",
                   gridClass: "lg:col-span-7",
                   aspectClass: "aspect-4/3 lg:aspect-[1.6/1.05]"
                 },
                 {
                   title: "EVACUATION AREA",
-                  image: "/images/projects/05-bangon-bayan/evacuation-area.jpg",
+                  image: "/images/projects/05-bangon-bayan/05-bangon-evacuation-area.jpg",
                   gridClass: "lg:col-span-7",
                   aspectClass: "aspect-4/3 lg:aspect-[1.6/1.05]"
                 },
                 {
                   title: "INDOOR HYDROPONICS AREA",
-                  image: "/images/projects/05-bangon-bayan/indoor-hydroponics.jpg",
+                  image: "/images/projects/05-bangon-bayan/05-bangon-indoor-hydroponics.jpg",
                   gridClass: "lg:col-span-5",
                   aspectClass: "aspect-4/3 lg:aspect-[3/4.2]"
                 }
@@ -549,11 +549,11 @@ export default function ProjectPage({
             </div>
             <div className="lg:col-span-7">
               <img
-                src="/images/projects/04-giliw-learning-facility/material-selection.jpg"
+                src="/images/projects/04-giliw-learning-facility/04-giliw-material-selection.jpg"
                 alt="Giliw Material Selection"
                 className="w-full object-contain rounded-sm shadow-sm cursor-pointer"
                 referrerPolicy="no-referrer"
-                onClick={() => handleOpenLightbox("/images/projects/04-giliw-learning-facility/material-selection.jpg", ["/images/projects/04-giliw-learning-facility/material-selection.jpg"])}
+                onClick={() => handleOpenLightbox("/images/projects/04-giliw-learning-facility/04-giliw-material-selection.jpg", ["/images/projects/04-giliw-learning-facility/04-giliw-material-selection.jpg"])}
               />
             </div>
           </div>
@@ -607,11 +607,11 @@ export default function ProjectPage({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-2">
               <img
-                src="/images/projects/04-giliw-learning-facility/elevation-a.jpg"
+                src="/images/projects/04-giliw-learning-facility/04-giliw-elevation-a.jpg"
                 alt="Giliw Elevation A"
                 className="w-full object-contain rounded-sm shadow-sm cursor-pointer"
                 referrerPolicy="no-referrer"
-                onClick={() => handleOpenLightbox("/images/projects/04-giliw-learning-facility/elevation-a.jpg", ["/images/projects/04-giliw-learning-facility/elevation-a.jpg", "/images/projects/04-giliw-learning-facility/elevation-b.jpg"])}
+                onClick={() => handleOpenLightbox("/images/projects/04-giliw-learning-facility/04-giliw-elevation-a.jpg", ["/images/projects/04-giliw-learning-facility/04-giliw-elevation-a.jpg", "/images/projects/04-giliw-learning-facility/04-giliw-elevation-b.jpg"])}
               />
               <span className="font-mono text-[9px] tracking-widest text-mist uppercase block text-center">
                 ELEVATION A
@@ -619,11 +619,11 @@ export default function ProjectPage({
             </div>
             <div className="space-y-2">
               <img
-                src="/images/projects/04-giliw-learning-facility/elevation-b.jpg"
+                src="/images/projects/04-giliw-learning-facility/04-giliw-elevation-b.jpg"
                 alt="Giliw Elevation B"
                 className="w-full object-contain rounded-sm shadow-sm cursor-pointer"
                 referrerPolicy="no-referrer"
-                onClick={() => handleOpenLightbox("/images/projects/04-giliw-learning-facility/elevation-b.jpg", ["/images/projects/04-giliw-learning-facility/elevation-a.jpg", "/images/projects/04-giliw-learning-facility/elevation-b.jpg"])}
+                onClick={() => handleOpenLightbox("/images/projects/04-giliw-learning-facility/04-giliw-elevation-b.jpg", ["/images/projects/04-giliw-learning-facility/04-giliw-elevation-a.jpg", "/images/projects/04-giliw-learning-facility/04-giliw-elevation-b.jpg"])}
               />
               <span className="font-mono text-[9px] tracking-widest text-mist uppercase block text-center">
                 ELEVATION B
@@ -708,11 +708,11 @@ export default function ProjectPage({
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
               <div className="md:col-span-7">
                 <img
-                  src="/images/projects/04-giliw-learning-facility/built-in-details.jpg"
+                  src="/images/projects/04-giliw-learning-facility/04-giliw-built-in-details.jpg"
                   alt="Giliw Built-in Details"
                   className="w-full object-contain rounded-sm shadow-sm cursor-pointer"
                   referrerPolicy="no-referrer"
-                  onClick={() => handleOpenLightbox("/images/projects/04-giliw-learning-facility/built-in-details.jpg", ["/images/projects/04-giliw-learning-facility/built-in-details.jpg"])}
+                  onClick={() => handleOpenLightbox("/images/projects/04-giliw-learning-facility/04-giliw-built-in-details.jpg", ["/images/projects/04-giliw-learning-facility/04-giliw-built-in-details.jpg"])}
                 />
               </div>
 
@@ -956,10 +956,10 @@ export default function ProjectPage({
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
             <div 
               className="md:col-span-5 aspect-[4/5] rounded-sm overflow-hidden bg-ink shadow-md cursor-pointer group relative"
-              onClick={() => handleOpenLightbox("/images/projects/06-iglu-round-sofa/inspiration-ceramics-1.jpg", ["/images/projects/06-iglu-round-sofa/inspiration-ceramics-1.jpg", "/images/projects/06-iglu-round-sofa/inspiration-artist.jpg"])}
+              onClick={() => handleOpenLightbox("/images/projects/06-iglu-round-sofa/06-iglu-inspiration-ceramics-1.jpg", ["/images/projects/06-iglu-round-sofa/06-iglu-inspiration-ceramics-1.jpg", "/images/projects/06-iglu-round-sofa/06-iglu-inspiration-artist.jpg"])}
             >
               <img 
-                src="/images/projects/06-iglu-round-sofa/inspiration-ceramics-1.jpg" 
+                src="/images/projects/06-iglu-round-sofa/06-iglu-inspiration-ceramics-1.jpg" 
                 alt="Ceramic works of Lanelle Abueva-Fernando"
                 className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-102"
                 referrerPolicy="no-referrer"
@@ -971,10 +971,10 @@ export default function ProjectPage({
 
             <div 
               className="md:col-span-7 aspect-[16/10] md:aspect-auto rounded-sm overflow-hidden bg-ink shadow-md cursor-pointer group relative"
-              onClick={() => handleOpenLightbox("/images/projects/06-iglu-round-sofa/inspiration-artist.jpg", ["/images/projects/06-iglu-round-sofa/inspiration-ceramics-1.jpg", "/images/projects/06-iglu-round-sofa/inspiration-artist.jpg"])}
+              onClick={() => handleOpenLightbox("/images/projects/06-iglu-round-sofa/06-iglu-inspiration-artist.jpg", ["/images/projects/06-iglu-round-sofa/06-iglu-inspiration-ceramics-1.jpg", "/images/projects/06-iglu-round-sofa/06-iglu-inspiration-artist.jpg"])}
             >
               <img 
-                src="/images/projects/06-iglu-round-sofa/inspiration-artist.jpg" 
+                src="/images/projects/06-iglu-round-sofa/06-iglu-inspiration-artist.jpg" 
                 alt="Lanelle Abueva-Fernando"
                 className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-102"
                 referrerPolicy="no-referrer"
@@ -1010,9 +1010,9 @@ export default function ProjectPage({
           {/* 3 Images Technical Grid - Top view, section view, perspective */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
             {[
-              { image: "/images/projects/06-iglu-round-sofa/top-view.jpg", plate: "PLATE 01", label: "TOP VIEW" },
-              { image: "/images/projects/06-iglu-round-sofa/section-view.jpg", plate: "PLATE 02", label: "SECTION VIEW" },
-              { image: "/images/projects/06-iglu-round-sofa/perspective.jpg", plate: "PLATE 03", label: "PERSPECTIVE" }
+              { image: "/images/projects/06-iglu-round-sofa/06-iglu-top-view.jpg", plate: "PLATE 01", label: "TOP VIEW" },
+              { image: "/images/projects/06-iglu-round-sofa/06-iglu-section-view.jpg", plate: "PLATE 02", label: "SECTION VIEW" },
+              { image: "/images/projects/06-iglu-round-sofa/06-iglu-perspective.jpg", plate: "PLATE 03", label: "PERSPECTIVE" }
             ].map((item, idx, arr) => (
               <div
                 key={idx}
@@ -1297,11 +1297,11 @@ export default function ProjectPage({
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               <div className="lg:col-span-7 fade-up">
                 <img
-                  src="/images/projects/03-yuhum-hotel/color-palette.jpg"
+                  src="/images/projects/03-yuhum-hotel/03-yuhum-color-palette.jpg"
                   alt="Yuhum Hotel Color Palette"
                   className="w-full object-contain rounded-sm cursor-pointer shadow-sm"
                   referrerPolicy="no-referrer"
-                  onClick={() => handleOpenLightbox("/images/projects/03-yuhum-hotel/color-palette.jpg", ["/images/projects/03-yuhum-hotel/color-palette.jpg", "/images/projects/03-yuhum-hotel/gift-shop.jpg"])}
+                  onClick={() => handleOpenLightbox("/images/projects/03-yuhum-hotel/03-yuhum-color-palette.jpg", ["/images/projects/03-yuhum-hotel/03-yuhum-color-palette.jpg", "/images/projects/03-yuhum-hotel/03-yuhum-gift-shop.jpg"])}
                 />
               </div>
               <div className="lg:col-span-5 space-y-6 fade-up">
@@ -1321,10 +1321,10 @@ export default function ProjectPage({
 
             <div
               className="relative overflow-hidden rounded-md shadow-md group cursor-pointer aspect-16/9 max-w-4xl mx-auto fade-up"
-              onClick={() => handleOpenLightbox("/images/projects/03-yuhum-hotel/gift-shop.jpg", ["/images/projects/03-yuhum-hotel/color-palette.jpg", "/images/projects/03-yuhum-hotel/gift-shop.jpg"])}
+              onClick={() => handleOpenLightbox("/images/projects/03-yuhum-hotel/03-yuhum-gift-shop.jpg", ["/images/projects/03-yuhum-hotel/03-yuhum-color-palette.jpg", "/images/projects/03-yuhum-hotel/03-yuhum-gift-shop.jpg"])}
             >
               <img
-                src="/images/projects/03-yuhum-hotel/gift-shop.jpg"
+                src="/images/projects/03-yuhum-hotel/03-yuhum-gift-shop.jpg"
                 alt="Yuhum Hotel Gift Shop"
                 className="w-full h-full object-cover group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
                 referrerPolicy="no-referrer"
@@ -1352,13 +1352,13 @@ export default function ProjectPage({
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 font-mono text-xs">
               {[
-                { label: "Rainwater Harvest Tank", image: "/images/projects/02-container-home/inclusion-rainwater-harvest-tank.jpg" },
-                { label: "Occupancy Sensor", image: "/images/projects/02-container-home/inclusion-occupancy-sensor.jpg" },
-                { label: "Tankless Water Heater", image: "/images/projects/02-container-home/inclusion-tankless-water-heater.jpg" },
-                { label: "Smart Plugs", image: "/images/projects/02-container-home/inclusion-smart-plugs.jpg" },
-                { label: "Smart Home Technologies", image: "/images/projects/02-container-home/inclusion-smart-home-technologies.jpg" },
-                { label: "Solar Panels", image: "/images/projects/02-container-home/inclusion-solar-panels.jpg" },
-                { label: "Smart Pet Feeders", image: "/images/projects/02-container-home/inclusion-smart-pet-feeders.jpg" }
+                { label: "Rainwater Harvest Tank", image: "/images/projects/02-container-home/02-container-inclusion-rainwater-harvest-tank.jpg" },
+                { label: "Occupancy Sensor", image: "/images/projects/02-container-home/02-container-inclusion-occupancy-sensor.jpg" },
+                { label: "Tankless Water Heater", image: "/images/projects/02-container-home/02-container-inclusion-tankless-water-heater.jpg" },
+                { label: "Smart Plugs", image: "/images/projects/02-container-home/02-container-inclusion-smart-plugs.jpg" },
+                { label: "Smart Home Technologies", image: "/images/projects/02-container-home/02-container-inclusion-smart-home-technologies.jpg" },
+                { label: "Solar Panels", image: "/images/projects/02-container-home/02-container-inclusion-solar-panels.jpg" },
+                { label: "Smart Pet Feeders", image: "/images/projects/02-container-home/02-container-inclusion-smart-pet-feeders.jpg" }
               ].map((inclusion, idx, arr) => (
                 <div
                   key={idx}
@@ -1494,16 +1494,16 @@ export default function ProjectPage({
                       alt={`${project.name} Floor Plan`}
                       className="w-full object-contain rounded-sm cursor-pointer"
                       referrerPolicy="no-referrer"
-                      onClick={() => handleOpenLightbox(project.floorPlanImage, [project.floorPlanImage, "/images/projects/02-container-home/elevation-a.jpg", "/images/projects/02-container-home/elevation-b.jpg"])}
+                      onClick={() => handleOpenLightbox(project.floorPlanImage, [project.floorPlanImage, "/images/projects/02-container-home/02-container-elevation-a.jpg", "/images/projects/02-container-home/02-container-elevation-b.jpg"])}
                     />
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <img
-                          src="/images/projects/02-container-home/elevation-a.jpg"
+                          src="/images/projects/02-container-home/02-container-elevation-a.jpg"
                           alt="Container Home Elevation A"
                           className="w-full object-contain rounded-sm cursor-pointer"
                           referrerPolicy="no-referrer"
-                          onClick={() => handleOpenLightbox("/images/projects/02-container-home/elevation-a.jpg", [project.floorPlanImage, "/images/projects/02-container-home/elevation-a.jpg", "/images/projects/02-container-home/elevation-b.jpg"])}
+                          onClick={() => handleOpenLightbox("/images/projects/02-container-home/02-container-elevation-a.jpg", [project.floorPlanImage, "/images/projects/02-container-home/02-container-elevation-a.jpg", "/images/projects/02-container-home/02-container-elevation-b.jpg"])}
                         />
                         <span className="font-mono text-[9px] tracking-widest text-mist uppercase block text-center">
                           ELEVATION A
@@ -1511,11 +1511,11 @@ export default function ProjectPage({
                       </div>
                       <div className="space-y-2">
                         <img
-                          src="/images/projects/02-container-home/elevation-b.jpg"
+                          src="/images/projects/02-container-home/02-container-elevation-b.jpg"
                           alt="Container Home Elevation B"
                           className="w-full object-contain rounded-sm cursor-pointer"
                           referrerPolicy="no-referrer"
-                          onClick={() => handleOpenLightbox("/images/projects/02-container-home/elevation-b.jpg", [project.floorPlanImage, "/images/projects/02-container-home/elevation-a.jpg", "/images/projects/02-container-home/elevation-b.jpg"])}
+                          onClick={() => handleOpenLightbox("/images/projects/02-container-home/02-container-elevation-b.jpg", [project.floorPlanImage, "/images/projects/02-container-home/02-container-elevation-a.jpg", "/images/projects/02-container-home/02-container-elevation-b.jpg"])}
                         />
                         <span className="font-mono text-[9px] tracking-widest text-mist uppercase block text-center">
                           ELEVATION B
@@ -1527,11 +1527,11 @@ export default function ProjectPage({
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <img
-                        src="/images/projects/03-yuhum-hotel/floor-plan-first.jpg"
+                        src="/images/projects/03-yuhum-hotel/03-yuhum-floor-plan-first.jpg"
                         alt="Yuhum Hotel First Floor Plan"
                         className="w-full object-contain rounded-sm cursor-pointer"
                         referrerPolicy="no-referrer"
-                        onClick={() => handleOpenLightbox("/images/projects/03-yuhum-hotel/floor-plan-first.jpg", ["/images/projects/03-yuhum-hotel/floor-plan-first.jpg", "/images/projects/03-yuhum-hotel/floor-plan-second.jpg"])}
+                        onClick={() => handleOpenLightbox("/images/projects/03-yuhum-hotel/03-yuhum-floor-plan-first.jpg", ["/images/projects/03-yuhum-hotel/03-yuhum-floor-plan-first.jpg", "/images/projects/03-yuhum-hotel/03-yuhum-floor-plan-second.jpg"])}
                       />
                       <span className="font-mono text-[9px] tracking-widest text-mist uppercase block text-center">
                         1ST FLOOR PLAN
@@ -1539,11 +1539,11 @@ export default function ProjectPage({
                     </div>
                     <div className="space-y-2">
                       <img
-                        src="/images/projects/03-yuhum-hotel/floor-plan-second.jpg"
+                        src="/images/projects/03-yuhum-hotel/03-yuhum-floor-plan-second.jpg"
                         alt="Yuhum Hotel Second Floor Plan"
                         className="w-full object-contain rounded-sm cursor-pointer"
                         referrerPolicy="no-referrer"
-                        onClick={() => handleOpenLightbox("/images/projects/03-yuhum-hotel/floor-plan-second.jpg", ["/images/projects/03-yuhum-hotel/floor-plan-first.jpg", "/images/projects/03-yuhum-hotel/floor-plan-second.jpg"])}
+                        onClick={() => handleOpenLightbox("/images/projects/03-yuhum-hotel/03-yuhum-floor-plan-second.jpg", ["/images/projects/03-yuhum-hotel/03-yuhum-floor-plan-first.jpg", "/images/projects/03-yuhum-hotel/03-yuhum-floor-plan-second.jpg"])}
                       />
                       <span className="font-mono text-[9px] tracking-widest text-mist uppercase block text-center">
                         2ND FLOOR PLAN
@@ -2019,28 +2019,28 @@ export default function ProjectPage({
                     { 
                       title: "LIVELIHOOD & WORKSHOP AREA", 
                       detail: "Skills development & vocational training",
-                      image: "/images/projects/05-bangon-bayan/workshop-area.jpg",
+                      image: "/images/projects/05-bangon-bayan/05-bangon-workshop-area.jpg",
                       gridClass: "lg:col-span-5",
                       aspectClass: "aspect-4/3 lg:aspect-[3/4.2]"
                     },
                     { 
                       title: "MULTIPURPOSE HALL", 
                       detail: "Evacuation conversion & community meetings",
-                      image: "/images/projects/05-bangon-bayan/multipurpose-hall.jpg",
+                      image: "/images/projects/05-bangon-bayan/05-bangon-multipurpose-hall.jpg",
                       gridClass: "lg:col-span-7",
                       aspectClass: "aspect-4/3 lg:aspect-[1.6/1.05]"
                     },
                     { 
                       title: "PRIVACY PODS", 
                       detail: "Dignified temporary emergency shelter",
-                      image: "/images/projects/05-bangon-bayan/privacy-pods.jpg",
+                      image: "/images/projects/05-bangon-bayan/05-bangon-privacy-pods.jpg",
                       gridClass: "lg:col-span-7",
                       aspectClass: "aspect-4/3 lg:aspect-[1.6/1.05]"
                     },
                     { 
                       title: "INDOOR HYDROPONICS", 
                       detail: "Sustainable food production & green spaces",
-                      image: "/images/projects/05-bangon-bayan/indoor-hydroponics.jpg",
+                      image: "/images/projects/05-bangon-bayan/05-bangon-indoor-hydroponics.jpg",
                       gridClass: "lg:col-span-5",
                       aspectClass: "aspect-4/3 lg:aspect-[3/4.2]"
                     }

@@ -77,7 +77,7 @@ export default function About() {
           {/* Clean Grayscale Portrait (Middle Column) */}
           <div className="lg:col-span-4 relative group overflow-hidden rounded-sm border border-mist/20 shadow-lg fade-up">
             <img
-              src="/images/about/portrait.jpg"
+              src="/images/about/about-portrait.jpg"
               alt="Kaela V. Borbon Portrait"
               className="w-full h-full min-h-[380px] object-cover filter grayscale contrast-[1.04] brightness-95 group-hover:scale-101 transition-transform duration-1000"
               referrerPolicy="no-referrer"

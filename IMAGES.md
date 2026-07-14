@@ -1,111 +1,112 @@
 # Image Placement Guide
 
 Drop your images into `public/images/` using these exact file names (all `.jpg`).
+Every file name is prefixed with its project so they stay grouped in your file explorer.
 If a file uses `.png` instead, rename it to `.jpg` OR tell me and I'll update the code.
 
-## About page
+## About page (`public/images/about/`)
 
 | File | What it is |
 |---|---|
-| `public/images/about/portrait.jpg` | Your portrait photo (displayed grayscale, portrait orientation) |
+| `about-portrait.jpg` | Your portrait photo (done) |
 
-## 01 — Coastal Residence (`01-coastal-residence/`)
-
-| File | What it is |
-|---|---|
-| `hero.jpg` | Main wide shot — also used on homepage carousel + featured card (landscape, high-res) |
-| `moodboard.jpg` | Mood board / material collage image |
-| `living-area.jpg` | Wide labeled "Living Area" image — gallery full-width lead (done) |
-| `floor-plan.jpg` | Floor plan drawing (done) |
-| `gallery-01-living-area.jpg` | Gallery — living area shelving tile (done) |
-| `gallery-02-guest-bedroom.jpg` | Gallery — guest bedroom (done) |
-| `gallery-04-dining-area.jpg` | Gallery — dining area (done) |
-| `gallery-05-kitchen.jpg` | Gallery — kitchen (done) |
-
-## 02 — Container Home (`02-container-home/`)
+## 01 — Coastal Residence (`projects/01-coastal-residence/`)
 
 | File | What it is |
 |---|---|
-| `hero.jpg` | Bedroom image (main shot — also on homepage carousel) |
-| `moodboard.jpg` | Mood board image |
-| `living-area.jpg` | Living area picture (Concept & Mood center panel) |
-| `floor-plan.jpg` | Floor plan drawing |
-| `elevation-a.jpg` | Elevation A drawing |
-| `elevation-b.jpg` | Elevation B drawing |
-| `gallery-01-exterior.jpg` | Exterior perspective (full-width gallery top) |
-| `gallery-02-dining-area.jpg` | Dining area |
-| `gallery-03-office.jpg` | Office |
-| `gallery-04-kitchen.jpg` | Kitchen |
-| `inclusion-rainwater-harvest-tank.jpg` | Sustainable inclusion — rainwater harvest tank |
-| `inclusion-occupancy-sensor.jpg` | Sustainable inclusion — occupancy sensor |
-| `inclusion-tankless-water-heater.jpg` | Sustainable inclusion — tankless water heater |
-| `inclusion-smart-plugs.jpg` | Sustainable inclusion — smart plugs |
-| `inclusion-smart-home-technologies.jpg` | Sustainable inclusion — smart home technologies |
-| `inclusion-solar-panels.jpg` | Sustainable inclusion — solar panels |
-| `inclusion-smart-pet-feeders.jpg` | Sustainable inclusion — smart pet feeders |
+| `01-coastal-hero.jpg` | Hero banner — also homepage carousel + featured card + gallery (done) |
+| `01-coastal-moodboard.jpg` | Mood board (done) |
+| `01-coastal-living-area.jpg` | Wide labeled Living Area — gallery full-width lead (done) |
+| `01-coastal-floor-plan.jpg` | Floor plan (done) |
+| `01-coastal-gallery-01-living-area.jpg` | Gallery — living area shelving tile (done) |
+| `01-coastal-gallery-02-guest-bedroom.jpg` | Gallery — guest bedroom (done) |
+| `01-coastal-gallery-04-dining-area.jpg` | Gallery — dining area (done) |
+| `01-coastal-gallery-05-kitchen.jpg` | Gallery — kitchen (done) |
 
-## 03 — Yuhum Hotel (`03-yuhum-hotel/`)
+## 02 — Container Home (`projects/02-container-home/`)
 
 | File | What it is |
 |---|---|
-| `hero.jpg` | Main shot — also on homepage carousel |
-| `moodboard.jpg` | Mood board image |
-| `color-palette.jpg` | Color palette image (also Concept & Mood center panel) |
-| `gift-shop.jpg` | Gift shop image |
-| `floor-plan-first.jpg` | 1st floor plan |
-| `floor-plan-second.jpg` | 2nd floor plan |
-| `restaurant.jpg` | Restaurant wide image (full-width in gallery) |
-| `deluxe-suite.jpg` | Deluxe suite (large tile) |
-| `presidential-suite.jpg` | Presidential suite |
-| `executive-suite.jpg` | Executive suite |
-| `premiere-suite.jpg` | Premiere suite |
-| `game-area.jpg` | Game area |
+| `02-container-hero.jpg` | Bedroom image (hero — also homepage carousel) |
+| `02-container-moodboard.jpg` | Mood board |
+| `02-container-living-area.jpg` | Living area (Concept & Mood center panel) |
+| `02-container-floor-plan.jpg` | Floor plan |
+| `02-container-elevation-a.jpg` | Elevation A |
+| `02-container-elevation-b.jpg` | Elevation B |
+| `02-container-gallery-01-exterior.jpg` | Exterior perspective (gallery full-width) |
+| `02-container-gallery-02-dining-area.jpg` | Dining area |
+| `02-container-gallery-03-office.jpg` | Office |
+| `02-container-gallery-04-kitchen.jpg` | Kitchen |
+| `02-container-inclusion-rainwater-harvest-tank.jpg` | Inclusion — rainwater harvest tank |
+| `02-container-inclusion-occupancy-sensor.jpg` | Inclusion — occupancy sensor |
+| `02-container-inclusion-tankless-water-heater.jpg` | Inclusion — tankless water heater |
+| `02-container-inclusion-smart-plugs.jpg` | Inclusion — smart plugs |
+| `02-container-inclusion-smart-home-technologies.jpg` | Inclusion — smart home technologies |
+| `02-container-inclusion-solar-panels.jpg` | Inclusion — solar panels |
+| `02-container-inclusion-smart-pet-feeders.jpg` | Inclusion — smart pet feeders |
 
-## 04 — Giliw Learning Facility (`04-giliw-learning-facility/`)
-
-| File | What it is |
-|---|---|
-| `hero.jpg` | Main shot |
-| `moodboard.jpg` | Mood board image |
-| `material-selection.jpg` | Material selection image |
-| `floor-plan.jpg` | Floor plan drawing |
-| `elevation-a.jpg` | Elevation A drawing |
-| `elevation-b.jpg` | Elevation B drawing |
-| `lounge-area.jpg` | Lounge area picture (full-width) |
-| `learning-area.jpg` | Learning area picture |
-| `art-studio.jpg` | Art studio picture |
-| `built-in-details.jpg` | Built-in details drawing (with A–M assembly key) |
-| `workshop-studio.jpg` | Workshop studio picture |
-| `fitness-area.jpg` | Fitness area picture |
-
-## 05 — Bangon Bayan (`05-bangon-bayan/`)
+## 03 — Yuhum Hotel (`projects/03-yuhum-hotel/`)
 
 | File | What it is |
 |---|---|
-| `hero.jpg` | Main shot |
-| `dining-area-1.jpg` | Dining area picture 1 |
-| `dining-area-2.jpg` | Dining area picture 2 |
-| `concept-diagram.jpg` | Nodes of Resilience concept image (bamboo) |
-| `lobby-reception.jpg` | Lobby / reception area picture |
-| `outdoor-agriculture.jpg` | Outdoor agriculture area picture |
-| `community-pantry.jpg` | Community pantry picture |
-| `workshop-area.jpg` | Workshop area picture |
-| `learning-area.jpg` | Learning area picture |
-| `evacuation-area.jpg` | Evacuation area picture |
-| `indoor-hydroponics.jpg` | Indoor hydroponics area picture |
+| `03-yuhum-hero.jpg` | Hero — also homepage carousel |
+| `03-yuhum-moodboard.jpg` | Mood board |
+| `03-yuhum-color-palette.jpg` | Color palette (also Concept & Mood center panel) |
+| `03-yuhum-gift-shop.jpg` | Gift shop |
+| `03-yuhum-floor-plan-first.jpg` | 1st floor plan |
+| `03-yuhum-floor-plan-second.jpg` | 2nd floor plan |
+| `03-yuhum-restaurant.jpg` | Restaurant wide image (gallery full-width) |
+| `03-yuhum-deluxe-suite.jpg` | Deluxe suite (large tile) |
+| `03-yuhum-presidential-suite.jpg` | Presidential suite |
+| `03-yuhum-executive-suite.jpg` | Executive suite |
+| `03-yuhum-premiere-suite.jpg` | Premiere suite |
+| `03-yuhum-game-area.jpg` | Game area |
 
-## 06 — Iglu Round Sofa (`06-iglu-round-sofa/`)
+## 04 — Giliw Learning Facility (`projects/04-giliw-learning-facility/`)
 
 | File | What it is |
 |---|---|
-| `hero.jpg` | Main sofa shot |
-| `inspiration-ceramics-1.jpg` | Ceramic works inspiration image |
-| `inspiration-artist.jpg` | Person image (Lanelle Abueva-Fernando) |
-| `top-view.jpg` | Top view drawing |
-| `section-view.jpg` | Section view drawing |
-| `perspective.jpg` | Perspective view |
+| `04-giliw-hero.jpg` | Hero |
+| `04-giliw-moodboard.jpg` | Mood board |
+| `04-giliw-material-selection.jpg` | Material selection |
+| `04-giliw-floor-plan.jpg` | Floor plan |
+| `04-giliw-elevation-a.jpg` | Elevation A |
+| `04-giliw-elevation-b.jpg` | Elevation B |
+| `04-giliw-lounge-area.jpg` | Lounge area (full-width) |
+| `04-giliw-learning-area.jpg` | Learning area |
+| `04-giliw-art-studio.jpg` | Art studio |
+| `04-giliw-built-in-details.jpg` | Built-in details drawing (A–M key) |
+| `04-giliw-workshop-studio.jpg` | Workshop studio |
+| `04-giliw-fitness-area.jpg` | Fitness area |
+
+## 05 — Bangon Bayan (`projects/05-bangon-bayan/`)
+
+| File | What it is |
+|---|---|
+| `05-bangon-hero.jpg` | Hero |
+| `05-bangon-dining-area-1.jpg` | Dining area 1 |
+| `05-bangon-dining-area-2.jpg` | Dining area 2 |
+| `05-bangon-concept-diagram.jpg` | Nodes of Resilience concept image |
+| `05-bangon-lobby-reception.jpg` | Lobby / reception area |
+| `05-bangon-outdoor-agriculture.jpg` | Outdoor agriculture area |
+| `05-bangon-community-pantry.jpg` | Community pantry |
+| `05-bangon-workshop-area.jpg` | Workshop area |
+| `05-bangon-learning-area.jpg` | Learning area |
+| `05-bangon-evacuation-area.jpg` | Evacuation area |
+| `05-bangon-indoor-hydroponics.jpg` | Indoor hydroponics area |
+
+## 06 — Iglu Round Sofa (`projects/06-iglu-round-sofa/`)
+
+| File | What it is |
+|---|---|
+| `06-iglu-hero.jpg` | Hero (main sofa shot) |
+| `06-iglu-inspiration-ceramics-1.jpg` | Ceramic works inspiration |
+| `06-iglu-inspiration-artist.jpg` | Person image (Lanelle Abueva-Fernando) |
+| `06-iglu-top-view.jpg` | Top view drawing |
+| `06-iglu-section-view.jpg` | Section view drawing |
+| `06-iglu-perspective.jpg` | Perspective view |
 
 ## Notes
 
-- Remaining dashed "placeholder image" boxes on projects 02–05 pages (floor plans, elevations, extra perspectives) are still placeholder boxes in the layout — send me those images + names when ready and I'll wire them in the same way.
-- Recommended: compress images before adding (e.g. squoosh.app, quality ~80) — keeps site fast. Hero images ~1600px wide, gallery ~1200px.
+- Recommended sizes: heroes ~1600px wide, gallery images ~1200px wide (quality ~80, e.g. squoosh.app).
+- Low-res warning: `01-coastal-gallery-01-living-area.jpg` (298px) and `01-coastal-gallery-05-kitchen.jpg` (575px) — re-export bigger if possible.

@@ -13,11 +13,11 @@ export default function Contact() {
   }, []);
 
   const footerStripPhotos = [
-    "/images/projects/01-coastal-residence/gallery-01-living-area.jpg",
-    "/images/projects/01-coastal-residence/gallery-02-guest-bedroom.jpg",
-    "/images/projects/01-coastal-residence/gallery-04-dining-area.jpg",
-    "/images/projects/01-coastal-residence/gallery-05-kitchen.jpg",
-    "/images/projects/01-coastal-residence/gallery-03-living-area.jpg",
+    "/images/projects/01-coastal-residence/01-coastal-gallery-01-living-area.jpg",
+    "/images/projects/01-coastal-residence/01-coastal-gallery-02-guest-bedroom.jpg",
+    "/images/projects/01-coastal-residence/01-coastal-gallery-04-dining-area.jpg",
+    "/images/projects/01-coastal-residence/01-coastal-gallery-05-kitchen.jpg",
+    "/images/projects/01-coastal-residence/01-coastal-gallery-03-living-area.jpg",
   ];
 
   return (
@@ -27,22 +27,22 @@ export default function Contact() {
         {/* Tile 1: Top Left */}
         <div
           className="absolute top-24 left-[8%] w-48 aspect-square rounded-md bg-cover bg-center opacity-15 filter blur-[0.5px] rotate-[-6deg] transition-all duration-1000 hover:opacity-25"
-          style={{ backgroundImage: `url('/images/projects/01-coastal-residence/gallery-05-kitchen.jpg')` }}
+          style={{ backgroundImage: `url('/images/projects/01-coastal-residence/01-coastal-gallery-05-kitchen.jpg')` }}
         />
         {/* Tile 2: Top Right */}
         <div
           className="absolute top-36 right-[10%] w-56 aspect-4/5 rounded-md bg-cover bg-center opacity-15 filter blur-[0.5px] rotate-[8deg] transition-all duration-1000 hover:opacity-25"
-          style={{ backgroundImage: `url('/images/projects/01-coastal-residence/gallery-02-guest-bedroom.jpg')` }}
+          style={{ backgroundImage: `url('/images/projects/01-coastal-residence/01-coastal-gallery-02-guest-bedroom.jpg')` }}
         />
         {/* Tile 3: Mid Left Bottom */}
         <div
           className="absolute bottom-40 left-[4%] w-52 aspect-3/4 rounded-md bg-cover bg-center opacity-15 filter blur-[0.5px] rotate-[5deg] transition-all duration-1000 hover:opacity-25"
-          style={{ backgroundImage: `url('/images/projects/01-coastal-residence/gallery-04-dining-area.jpg')` }}
+          style={{ backgroundImage: `url('/images/projects/01-coastal-residence/01-coastal-gallery-04-dining-area.jpg')` }}
         />
         {/* Tile 4: Mid Right Bottom */}
         <div
           className="absolute bottom-32 right-[6%] w-48 aspect-square rounded-md bg-cover bg-center opacity-15 filter blur-[0.5px] rotate-[-4deg] transition-all duration-1000 hover:opacity-25"
-          style={{ backgroundImage: `url('/images/projects/01-coastal-residence/living-area.jpg')` }}
+          style={{ backgroundImage: `url('/images/projects/01-coastal-residence/01-coastal-living-area.jpg')` }}
         />
       </div>
 
@@ -68,7 +68,7 @@ export default function Contact() {
             <div className="md:col-span-5 relative aspect-square md:aspect-auto md:min-h-[480px] overflow-hidden bg-ink">
               <div
                 className="absolute inset-0 bg-cover bg-center filter grayscale contrast-[1.1] brightness-95 hover:grayscale-0 transition-all duration-[1500ms] ease-in-out scale-101 hover:scale-105"
-                style={{ backgroundImage: `url('/images/about/portrait.jpg')` }}
+                style={{ backgroundImage: `url('/images/about/about-portrait.jpg')` }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/40 via-transparent to-transparent pointer-events-none" />
               {/* Corner badge overlay */}

@@ -10,9 +10,9 @@ interface HomeProps {
 export default function Home({ onNavigate }: HomeProps) {
   // 1. Hero Carousel Setup
   const heroPhotos = [
-    "/images/projects/01-coastal-residence/hero.jpg", // Coastal Residence
-    "/images/projects/02-container-home/hero.jpg", // Container Home
-    "/images/projects/03-yuhum-hotel/hero.jpg" // Yuhum Hotel
+    "/images/projects/01-coastal-residence/01-coastal-hero.jpg", // Coastal Residence
+    "/images/projects/02-container-home/02-container-hero.jpg", // Container Home
+    "/images/projects/03-yuhum-hotel/03-yuhum-hero.jpg" // Yuhum Hotel
   ];
 
   const [heroIndex, setHeroIndex] = useState(0);
@@ -186,7 +186,7 @@ export default function Home({ onNavigate }: HomeProps) {
               {/* Image */}
               <div
                 className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
-                style={{ backgroundImage: `url('/images/projects/01-coastal-residence/hero.jpg')` }}
+                style={{ backgroundImage: `url('/images/projects/01-coastal-residence/01-coastal-hero.jpg')` }}
               />
               {/* Dark subtle overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-95" />
