@@ -1748,8 +1748,8 @@ export default function ProjectPage({
                 </div>
               )}
 
-              {/* Masonry columns: dining area, office, kitchen */}
-              <div className="columns-1 md:columns-2 gap-8">
+              {/* Masonry columns: dining area, living area, office, kitchen */}
+              <div className="columns-1 sm:columns-2 md:columns-3 gap-8">
                 {project.galleryImages.slice(1).map((img, idx) => (
                   <div
                     key={idx}
