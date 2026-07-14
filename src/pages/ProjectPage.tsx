@@ -1,9 +1,22 @@
 import { useState, useEffect } from "react";
-import { ArrowRight, MapPin, Calendar, Briefcase, Wrench, ChevronRight } from "lucide-react";
+import { ArrowRight, MapPin, Calendar, Briefcase, Wrench, ChevronRight, PencilRuler, Box, Camera, Aperture, Layers, type LucideIcon } from "lucide-react";
 import { Project } from "../types";
 import { SAMPLE_PROJECTS } from "../data";
 import { initScrollReveal } from "../utils";
 import Lightbox from "../components/Lightbox";
+
+const TOOL_ICONS: Record<string, LucideIcon> = {
+  "AutoCAD": PencilRuler,
+  "SketchUp": Box,
+  "Enscape": Camera,
+  "V-Ray": Aperture,
+  "Adobe Photoshop": Layers,
+};
+
+function ToolIcon({ tool, className }: { tool: string; className?: string }) {
+  const Icon = TOOL_ICONS[tool] ?? Wrench;
+  return <Icon className={className ?? "w-3 h-3 shrink-0"} />;
+}
 
 interface ProjectPageProps {
   slug: string;
@@ -126,8 +139,9 @@ export default function ProjectPage({
                   {["AutoCAD", "SketchUp", "Enscape", "Adobe Photoshop"].map((tool) => (
                     <span
                       key={tool}
-                      className="inline-block px-2.5 py-1 bg-[#10B981]/5 text-[#047857] text-[10px] rounded font-semibold border border-[#10B981]/10"
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#10B981]/5 text-[#047857] text-[10px] rounded font-semibold border border-[#10B981]/10"
                     >
+                      <ToolIcon tool={tool} />
                       {tool}
                     </span>
                   ))}
@@ -469,8 +483,9 @@ export default function ProjectPage({
                   {project.tools.map((tool) => (
                     <span
                       key={tool}
-                      className="inline-block px-2.5 py-1 bg-[#10B981]/5 text-[#047857] text-[10px] rounded font-semibold border border-[#10B981]/10"
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#10B981]/5 text-[#047857] text-[10px] rounded font-semibold border border-[#10B981]/10"
                     >
+                      <ToolIcon tool={tool} />
                       {tool}
                     </span>
                   ))}
@@ -1147,8 +1162,9 @@ export default function ProjectPage({
                 {project.tools.map((tool) => (
                   <span
                     key={tool}
-                    className="inline-block px-2.5 py-1 bg-ink/5 text-ink text-[10px] rounded"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-ink/5 text-ink text-[10px] rounded"
                   >
+                    <ToolIcon tool={tool} />
                     {tool}
                   </span>
                 ))}
