@@ -586,7 +586,7 @@ export default function ProjectPage({
                 </h3>
               </div>
               
-              <div className="grid grid-cols-2 gap-x-6 gap-y-2 font-mono text-[11px] text-ink/80 border-t border-mist/10 pt-4 max-h-[300px] overflow-y-auto pr-2">
+              <div className="grid grid-cols-2 gap-x-6 gap-y-2 font-mono text-[11px] text-ink/80 border-t border-mist/10 pt-4">
                 {project.floorPlanContents.map((item, idx) => (
                   <div key={idx} className="flex items-center gap-2 py-1.5 border-b border-mist/5">
                     <span className="text-slate font-semibold w-5">{item.number}</span>
