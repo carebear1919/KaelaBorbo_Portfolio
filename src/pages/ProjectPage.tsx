@@ -108,7 +108,7 @@ export default function ProjectPage({
               ← Back to Projects
             </button>
             
-            <span className="font-mono text-xxs tracking-[0.25em] text-[#10B981] uppercase block mb-3 font-semibold">
+            <span className="font-mono text-xxs tracking-[0.25em] text-mist uppercase block mb-3 font-semibold">
               05 | COMMUNITY RESILIENCE FACILITY
             </span>
             <h1 className="font-serif text-4xl md:text-6xl font-light tracking-tight leading-tight mb-4 max-w-4xl uppercase text-paper">
@@ -132,7 +132,7 @@ export default function ProjectPage({
         <section className="py-20 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
           {/* Left Column: Thesis Context Info */}
           <div className="md:col-span-4 space-y-8 md:sticky md:top-28 h-fit">
-            <div className="border-l-2 border-[#10B981] pl-6 py-2">
+            <div className="border-l-2 border-slate pl-6 py-2">
               <span className="font-mono text-xxs tracking-widest text-mist uppercase block mb-1">
                 PROJECT SCOPE
               </span>
@@ -163,7 +163,7 @@ export default function ProjectPage({
                   {["AutoCAD", "SketchUp", "Enscape", "Adobe Photoshop"].map((tool) => (
                     <span
                       key={tool}
-                      className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#10B981]/5 text-[#047857] text-[10px] rounded font-semibold border border-[#10B981]/10"
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-ink/5 text-slate text-[10px] rounded font-semibold border border-mist/20"
                     >
                       <ToolIcon tool={tool} />
                       {tool}
@@ -209,7 +209,7 @@ export default function ProjectPage({
         <section className="py-24 border-t border-b border-mist/10 bg-paper/30">
           <div className="max-w-4xl mx-auto px-6 text-center space-y-8">
             <div className="space-y-3">
-              <span className="font-mono text-xxs tracking-[0.3em] text-[#047857] font-semibold uppercase block">
+              <span className="font-mono text-xxs tracking-[0.3em] text-slate font-semibold uppercase block">
                 02 / CONCEPTUAL ANALYSIS
               </span>
               <h3 className="font-serif text-3xl md:text-4xl font-light text-ink uppercase tracking-wider">
@@ -274,7 +274,7 @@ export default function ProjectPage({
               </div>
             </div>
             <div className="lg:col-span-5 space-y-6">
-              <div className="border-l-2 border-[#10B981] pl-6 py-1">
+              <div className="border-l-2 border-slate pl-6 py-1">
                 <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-1">
                   03 / MICRO-ENTERPRISE & FOOD SECURITY
                 </span>
@@ -293,7 +293,7 @@ export default function ProjectPage({
         <section className="py-20 border-t border-mist/10">
           <div className="max-w-7xl mx-auto px-6 space-y-12">
             <div className="max-w-4xl space-y-4">
-              <div className="border-l-2 border-[#B45309] pl-6 py-1">
+              <div className="border-l-2 border-slate pl-6 py-1">
                 <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-1">
                   04 / MULTI-FUNCTIONAL ADAPTIVITY
                 </span>
@@ -437,7 +437,7 @@ export default function ProjectPage({
               ← Back to Projects
             </button>
             
-            <span className="font-mono text-xxs tracking-[0.25em] text-[#10B981] uppercase block mb-3 font-semibold">
+            <span className="font-mono text-xxs tracking-[0.25em] text-mist uppercase block mb-3 font-semibold">
               04 | GILIW LEARNING FACILITY
             </span>
             <h1 className="font-serif text-4xl md:text-6xl font-light tracking-tight leading-tight mb-4 max-w-4xl uppercase text-paper">
@@ -461,7 +461,7 @@ export default function ProjectPage({
         <section className="py-20 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
           {/* Left Column: Details */}
           <div className="md:col-span-4 space-y-8 md:sticky md:top-28 h-fit">
-            <div className="border-l-2 border-[#10B981] pl-6 py-2">
+            <div className="border-l-2 border-slate pl-6 py-2">
               <span className="font-mono text-xxs tracking-widest text-mist uppercase block mb-1">
                 PROJECT SCOPE
               </span>
@@ -492,7 +492,7 @@ export default function ProjectPage({
                   {project.tools.map((tool) => (
                     <span
                       key={tool}
-                      className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#10B981]/5 text-[#047857] text-[10px] rounded font-semibold border border-[#10B981]/10"
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-ink/5 text-slate text-[10px] rounded font-semibold border border-mist/20"
                     >
                       <ToolIcon tool={tool} />
                       {tool}
@@ -599,7 +599,7 @@ export default function ProjectPage({
               />
             </div>
             <div className="lg:col-span-5 space-y-6">
-              <div className="border-l-2 border-[#10B981] pl-6 py-1">
+              <div className="border-l-2 border-slate pl-6 py-1">
                 <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-1">
                   03 / SPATIAL ARRANGEMENT
                 </span>
@@ -625,7 +625,7 @@ export default function ProjectPage({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             {/* Panel 1: Elevations stacked vertically */}
             <div className="lg:col-span-7 p-8 bg-paper border border-mist/20 rounded-md shadow-sm flex flex-col justify-center space-y-8 fade-up">
-              <div className="border-l-2 border-[#10B981] pl-4">
+              <div className="border-l-2 border-slate pl-4">
                 <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-1">
                   04 / DRAWING STUDIES
                 </span>
@@ -664,7 +664,7 @@ export default function ProjectPage({
 
             {/* Panel 2: Lounge area portrait */}
             <div className="lg:col-span-5 p-8 bg-[#FAF9F5] border border-mist/20 rounded-md shadow-sm flex flex-col space-y-6 fade-up">
-              <div className="border-l-2 border-[#D97706] pl-4">
+              <div className="border-l-2 border-slate pl-4">
                 <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-1">
                   05 / COMMON SPACES
                 </span>
@@ -691,7 +691,7 @@ export default function ProjectPage({
         {/* SECTION 7: LEARNING AREAS */}
         <section className="py-20 max-w-7xl mx-auto px-6 border-t border-mist/10">
           <div className="space-y-6">
-            <div className="border-l-2 border-[#D97706] pl-4">
+            <div className="border-l-2 border-slate pl-4">
               <h4 className="font-serif text-2xl font-light text-ink uppercase tracking-wide">
                 Learning Areas
               </h4>
@@ -772,7 +772,7 @@ export default function ProjectPage({
                       { key: "M", label: "TOE KICK" }
                     ].map((part, idx) => (
                       <div key={idx} className="flex items-center gap-2 py-1 border-b border-mist/10">
-                        <span className="w-5 h-5 rounded-full bg-[#065F46] text-paper flex items-center justify-center font-bold text-[8px]">
+                        <span className="w-5 h-5 rounded-full bg-slate text-paper flex items-center justify-center font-bold text-[8px]">
                           {part.key}
                         </span>
                         <span className="tracking-wide text-ink font-light uppercase">
@@ -790,7 +790,7 @@ export default function ProjectPage({
         {/* SECTION 9: WORKSHOP STUDIO & FITNESS AREA */}
         <section className="py-20 max-w-7xl mx-auto px-6 border-t border-mist/10">
           <div className="space-y-6">
-            <div className="border-l-2 border-[#B45309] pl-4">
+            <div className="border-l-2 border-slate pl-4">
               <h4 className="font-serif text-2xl font-light text-ink uppercase tracking-wide">
                 Workshop Studio & Fitness Area
               </h4>
@@ -890,7 +890,7 @@ export default function ProjectPage({
               ← Back to Projects
             </button>
             
-            <span className="font-mono text-xxs tracking-[0.25em] text-[#B45309] uppercase block mb-3 font-semibold">
+            <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-3 font-semibold">
               06 | FURNITURE
             </span>
             <h1 className="font-serif text-4xl md:text-6xl font-light tracking-tight leading-tight mb-4 max-w-4xl uppercase text-paper">
@@ -937,7 +937,7 @@ export default function ProjectPage({
                 </div>
                 <div className="space-y-1">
                   <span className="text-mist block">AWARDS</span>
-                  <span className="text-ink font-semibold text-[#B45309]">3rd Runner-Up, LIKHAYAN 2023</span>
+                  <span className="text-ink font-semibold text-slate">3rd Runner-Up, LIKHAYAN 2023</span>
                 </div>
               </div>
             </div>
@@ -1828,7 +1828,7 @@ export default function ProjectPage({
             <div className="space-y-16">
               {/* Part 1: Restaurant Design with 2 images */}
               <div className="space-y-6">
-                <div className="border-l-2 border-[#B93C3C] pl-4">
+                <div className="border-l-2 border-slate pl-4">
                   <h4 className="font-serif text-2xl font-light text-ink uppercase tracking-wide">
                     The Restaurant / Filipino-French Fusion
                   </h4>
@@ -1869,7 +1869,7 @@ export default function ProjectPage({
 
               {/* Part 2: Guest Suites & Recreational Spaces with 5 images */}
               <div className="space-y-6 pt-8 border-t border-mist/10">
-                <div className="border-l-2 border-[#3C5A7D] pl-4">
+                <div className="border-l-2 border-slate pl-4">
                   <h4 className="font-serif text-2xl font-light text-ink uppercase tracking-wide">
                     Guest Suites & Recreation Spaces
                   </h4>
@@ -1926,7 +1926,7 @@ export default function ProjectPage({
             <div className="space-y-16">
               {/* Part 1: Learning Areas with 2 images */}
               <div className="space-y-6">
-                <div className="border-l-2 border-[#D97706] pl-4">
+                <div className="border-l-2 border-slate pl-4">
                   <h4 className="font-serif text-2xl font-light text-ink uppercase tracking-wide">
                     Learning Areas / Creative & Collaborative Spaces
                   </h4>
@@ -2001,7 +2001,7 @@ export default function ProjectPage({
                           { key: "N", label: "TOE KICK" }
                         ].map((part, idx) => (
                           <div key={idx} className="flex items-center gap-2 py-1 border-b border-mist/10">
-                            <span className="w-5 h-5 rounded-full bg-[#065F46] text-paper flex items-center justify-center font-bold text-[8px]">
+                            <span className="w-5 h-5 rounded-full bg-slate text-paper flex items-center justify-center font-bold text-[8px]">
                               {part.key}
                             </span>
                             <span className="tracking-wide text-ink font-light uppercase">
@@ -2017,7 +2017,7 @@ export default function ProjectPage({
 
               {/* Part 3: Workshop Area & Fitness Area with 2 images */}
               <div className="space-y-6 pt-8 border-t border-mist/10">
-                <div className="border-l-2 border-[#B45309] pl-4">
+                <div className="border-l-2 border-slate pl-4">
                   <h4 className="font-serif text-2xl font-light text-ink uppercase tracking-wide">
                     Workshop & Fitness Areas
                   </h4>
@@ -2051,7 +2051,7 @@ export default function ProjectPage({
             <div className="space-y-16">
               {/* Part 1: Community Pantry / Two-Level Pantry Hub with 2 images */}
               <div className="space-y-6">
-                <div className="border-l-2 border-[#047857] pl-4">
+                <div className="border-l-2 border-slate pl-4">
                   <h4 className="font-serif text-2xl font-light text-ink uppercase tracking-wide">
                     Double-Tiered Community Pantry Hub
                   </h4>
@@ -2083,7 +2083,7 @@ export default function ProjectPage({
 
               {/* Part 2: Flexible Spaces & Livelihood / Evacuation Centers with 4 images */}
               <div className="space-y-6 pt-8 border-t border-mist/10">
-                <div className="border-l-2 border-[#B45309] pl-4">
+                <div className="border-l-2 border-slate pl-4">
                   <h4 className="font-serif text-2xl font-light text-ink uppercase tracking-wide">
                     Flexible Zones & Disaster Response Systems
                   </h4>
