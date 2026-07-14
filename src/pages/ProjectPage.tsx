@@ -641,13 +641,13 @@ export default function ProjectPage({
         <section className="py-20 border-t border-mist/10 bg-paper/20">
           <div className="max-w-5xl mx-auto px-6">
             <div
-              className="relative overflow-hidden rounded-md shadow-md group cursor-pointer aspect-16/9"
+              className="relative overflow-hidden rounded-md shadow-md group cursor-pointer max-w-md mx-auto"
               onClick={() => handleOpenLightbox(project.galleryImages[0], project.galleryImages)}
             >
               <img
                 src={project.galleryImages[0]}
                 alt="Giliw Lounge Area"
-                className="w-full h-full object-cover group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
+                className="w-full h-auto group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
                 referrerPolicy="no-referrer"
               />
             </div>
