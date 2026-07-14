@@ -1292,30 +1292,45 @@ export default function ProjectPage({
       </section>
       )}
 
-      {/* SECTION 5.4: COLOR PALETTE & GIFT SHOP (FOR YUHUM HOTEL ONLY) */}
+      {/* SECTION 5.4: CONCEPT & MOOD — COLOR PALETTE, MOOD BOARD & GIFT SHOP (FOR YUHUM HOTEL ONLY) */}
       {project.slug === "hotel-concept" && (
-        <section className="py-20 bg-paper/30 border-b border-mist/10" id="project-hotel-palette-section">
+        <section className="py-24 bg-paper/30 border-t border-b border-mist/10" id="project-hotel-palette-section">
           <div className="max-w-7xl mx-auto px-6 space-y-12">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-7 fade-up">
-                <img
-                  src="/images/projects/03-yuhum-hotel/03-yuhum-color-palette.jpg"
-                  alt="Yuhum Hotel Color Palette"
-                  className="w-full object-contain rounded-sm cursor-pointer shadow-sm"
-                  referrerPolicy="no-referrer"
-                  onClick={() => handleOpenLightbox("/images/projects/03-yuhum-hotel/03-yuhum-color-palette.jpg", ["/images/projects/03-yuhum-hotel/03-yuhum-color-palette.jpg", "/images/projects/03-yuhum-hotel/03-yuhum-gift-shop.jpg"])}
-                />
-              </div>
-              <div className="lg:col-span-5 space-y-6 fade-up">
-                <div className="border-l-2 border-slate pl-6 py-1">
-                  <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-1">
-                    01 / CHROMATIC COORDINATION
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+              {/* Column 1: Massive Header & Metadata Panel */}
+              <div className="lg:col-span-3 flex flex-col justify-between p-8 bg-paper border border-mist/20 rounded-md shadow-sm fade-up">
+                <div>
+                  <span className="font-mono text-[9px] tracking-[0.3em] text-slate uppercase block mb-1">
+                    VOL. 01 / SCHEMATICS
                   </span>
-                  <h3 className="font-serif text-3xl font-light text-ink uppercase tracking-wide">
-                    Color Palette
-                  </h3>
+                  <h2 className="font-serif text-4xl md:text-5xl font-light tracking-tight text-ink leading-[1.05] uppercase">
+                    CONCEPT <br />
+                    <span className="italic font-normal text-slate lowercase">& mood</span>
+                  </h2>
+                  <div className="w-8 h-px bg-slate/40 mt-12" />
                 </div>
-                <p className="text-sm text-slate/85 font-light leading-relaxed">
+
+                <div className="pt-8 mt-8 border-t border-mist/10 flex justify-between items-baseline font-mono text-[9px] text-mist tracking-widest uppercase">
+                  <span>YEAR OF DESIGN</span>
+                  <span>{project.year}</span>
+                </div>
+              </div>
+
+              {/* Column 2: Color palette image + description */}
+              <div className="lg:col-span-9 flex flex-col justify-between p-8 bg-paper border border-mist/20 rounded-md shadow-sm fade-up">
+                <div className="space-y-6">
+                  <span className="font-mono text-[9px] tracking-[0.3em] text-slate uppercase block">
+                    01 / CHROMATIC COORDINATION — COLOR PALETTE
+                  </span>
+                  <img
+                    src="/images/projects/03-yuhum-hotel/03-yuhum-color-palette.jpg"
+                    alt="Yuhum Hotel Color Palette"
+                    className="w-full object-contain rounded-sm cursor-pointer"
+                    referrerPolicy="no-referrer"
+                    onClick={() => handleOpenLightbox("/images/projects/03-yuhum-hotel/03-yuhum-color-palette.jpg", ["/images/projects/03-yuhum-hotel/03-yuhum-color-palette.jpg"])}
+                  />
+                </div>
+                <p className="text-sm text-slate/85 font-light leading-relaxed pt-6 border-t border-mist/10 mt-6">
                   The color palette of the Yuhum Hotel & Restaurant revolves around soft red, blue, and neutral colors such as brown to evoke a sense of theatrics and flamboyance with a mix of French Countryside vibe that helps balance the overall space and create a more cohesive area. The hotel also features high quality materials such as stone, wood, brass, glass, and velvet fabrics that bring out a sophisticated look reflecting Galliano’s works.
                 </p>
               </div>
