@@ -20,8 +20,7 @@ If a file uses `.png` instead, rename it to `.jpg` OR tell me and I'll update th
 | `gallery-01-living-area.jpg` | Gallery — living area shelving tile (done) |
 | `gallery-02-guest-bedroom.jpg` | Gallery — guest bedroom (done) |
 | `gallery-04-dining-area.jpg` | Gallery — dining area (done) |
-| `gallery-05-kitchen.jpg` | Gallery — kitchen 1 (done) |
-| `gallery-06-kitchen.jpg` | Gallery — kitchen 2 (STILL MISSING) |
+| `gallery-05-kitchen.jpg` | Gallery — kitchen (done) |
 
 ## 02 — Container Home (`02-container-home/`)
 
