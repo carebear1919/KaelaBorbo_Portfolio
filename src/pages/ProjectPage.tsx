@@ -502,59 +502,77 @@ export default function ProjectPage({
           </div>
         </section>
 
-        {/* SECTION 3: MOOD BOARD & DESIGN PHILOSOPHY */}
-        <section className="py-24 border-t border-b border-mist/10 bg-paper/30">
-          <div className="max-w-4xl mx-auto px-6 text-center space-y-8">
-            <div className="space-y-3">
-              <span className="font-mono text-xxs tracking-[0.3em] text-[#047857] font-semibold uppercase block">
-                01 / DESIGN PHILOSOPHY
-              </span>
-              <h3 className="font-serif text-3xl md:text-4xl font-light text-ink uppercase tracking-wider">
-                GILIW
-              </h3>
-              <span className="font-serif italic text-lg text-slate block">
-                A Learning Center for Street Children
-              </span>
-            </div>
+        {/* SECTION 3: CONCEPT & MOOD — MATERIAL SELECTION & MOOD BOARD */}
+        <section className="py-24 bg-paper/30 border-t border-b border-mist/10">
+          <div className="max-w-7xl mx-auto px-6 space-y-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+              {/* Column 1: Massive Header & Metadata Panel */}
+              <div className="lg:col-span-3 flex flex-col justify-between p-8 bg-paper border border-mist/20 rounded-md shadow-sm fade-up">
+                <div>
+                  <span className="font-mono text-[9px] tracking-[0.3em] text-slate uppercase block mb-1">
+                    VOL. 01 / SCHEMATICS
+                  </span>
+                  <h2 className="font-serif text-4xl md:text-5xl font-light tracking-tight text-ink leading-[1.05] uppercase">
+                    CONCEPT <br />
+                    <span className="italic font-normal text-slate lowercase">& mood</span>
+                  </h2>
+                  <div className="w-8 h-px bg-slate/40 mt-12" />
+                </div>
 
-            <img
-              src={project.moodboardImages[0]}
-              alt="Giliw Mood Board"
-              className="w-full object-contain rounded-sm shadow-sm cursor-pointer"
-              referrerPolicy="no-referrer"
-              onClick={() => handleOpenLightbox(project.moodboardImages[0], project.moodboardImages)}
-            />
-
-            <p className="text-sm md:text-base text-slate/90 font-light leading-relaxed max-w-3xl mx-auto text-left md:text-center font-serif leading-relaxed">
-              {project.concept ? project.concept.text : ""}
-            </p>
-          </div>
-        </section>
-
-        {/* SECTION 3.5: MATERIAL SELECTION */}
-        <section className="py-20 max-w-7xl mx-auto px-6 border-b border-mist/10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-5 space-y-6">
-              <div className="border-l-2 border-[#10B981] pl-6 py-1">
-                <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-1">
-                  02 / TACTILE REFINEMENT
-                </span>
-                <h3 className="font-serif text-3xl font-light text-ink uppercase tracking-wide">
-                  Material Selection
-                </h3>
+                <div className="pt-8 mt-8 border-t border-mist/10 flex justify-between items-baseline font-mono text-[9px] text-mist tracking-widest uppercase gap-4">
+                  <span>YEAR OF DESIGN</span>
+                  <span className="text-right">{project.year}</span>
+                </div>
               </div>
-              <p className="text-sm text-slate/85 font-light leading-relaxed">
-                The materials utilized throughout Giliw reflect the facility's commitment to sustainability. Rattan and wood laminates add organic warmth and texture, tying the interiors to the outside, while long-lasting and environmentally friendly textiles boost convenience and durability. Terrazzo tiles have been used for flooring because of its adaptability, which matters in high-traffic areas, considering they are also easy to maintain. In addition to their advantages for the environment, these materials are perfect for Giliw as they can be used to create a unified space that is aligned with the center's objectives.
-              </p>
+
+              {/* Column 2: Material selection image + description */}
+              <div className="lg:col-span-9 flex flex-col justify-between p-8 bg-paper border border-mist/20 rounded-md shadow-sm fade-up">
+                <div className="space-y-6">
+                  <span className="font-mono text-[9px] tracking-[0.3em] text-slate uppercase block">
+                    01 / TACTILE REFINEMENT — MATERIAL SELECTION
+                  </span>
+                  <img
+                    src="/images/projects/04-giliw-learning-facility/04-giliw-material-selection.jpg"
+                    alt="Giliw Material Selection"
+                    className="w-full object-contain rounded-sm cursor-pointer"
+                    referrerPolicy="no-referrer"
+                    onClick={() => handleOpenLightbox("/images/projects/04-giliw-learning-facility/04-giliw-material-selection.jpg", ["/images/projects/04-giliw-learning-facility/04-giliw-material-selection.jpg"])}
+                  />
+                </div>
+                <p className="text-sm text-slate/85 font-light leading-relaxed pt-6 border-t border-mist/10 mt-6">
+                  The materials utilized throughout Giliw reflect the facility's commitment to sustainability. Rattan and wood laminates add organic warmth and texture, tying the interiors to the outside, while long-lasting and environmentally friendly textiles boost convenience and durability. Terrazzo tiles have been used for flooring because of its adaptability, which matters in high-traffic areas, considering they are also easy to maintain. In addition to their advantages for the environment, these materials are perfect for Giliw as they can be used to create a unified space that is aligned with the center's objectives.
+                </p>
+              </div>
             </div>
-            <div className="lg:col-span-7">
-              <img
-                src="/images/projects/04-giliw-learning-facility/04-giliw-material-selection.jpg"
-                alt="Giliw Material Selection"
-                className="w-full object-contain rounded-sm shadow-sm cursor-pointer"
-                referrerPolicy="no-referrer"
-                onClick={() => handleOpenLightbox("/images/projects/04-giliw-learning-facility/04-giliw-material-selection.jpg", ["/images/projects/04-giliw-learning-facility/04-giliw-material-selection.jpg"])}
-              />
+
+            {/* Mood board card with GILIW headline — image | description */}
+            <div className="p-8 md:p-12 bg-paper border border-mist/20 rounded-md shadow-sm space-y-10 fade-up">
+              <div className="space-y-3 text-center">
+                <span className="font-mono text-xxs tracking-[0.3em] text-slate uppercase block">
+                  02 / MOOD BOARD — DESIGN PHILOSOPHY
+                </span>
+                <h3 className="font-serif text-4xl md:text-6xl font-light tracking-tight text-ink uppercase">
+                  GILIW
+                </h3>
+                <span className="font-serif italic text-xl text-slate block lowercase tracking-wide">
+                  A Learning Center for Street Children
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                <div className="lg:col-span-7">
+                  <img
+                    src={project.moodboardImages[0]}
+                    alt="Giliw Mood Board"
+                    className="w-full object-contain rounded-sm shadow-sm cursor-pointer"
+                    referrerPolicy="no-referrer"
+                    onClick={() => handleOpenLightbox(project.moodboardImages[0], project.moodboardImages)}
+                  />
+                </div>
+                <p className="lg:col-span-5 text-sm md:text-base text-slate/90 font-light leading-relaxed">
+                  {project.concept ? project.concept.text : ""}
+                </p>
+              </div>
             </div>
           </div>
         </section>
