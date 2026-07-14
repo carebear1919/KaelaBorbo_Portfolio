@@ -176,9 +176,6 @@ export default function ProjectPage({
                   className="w-full h-full object-cover group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute bottom-4 left-4 bg-ink/75 backdrop-blur-xs text-[8px] font-mono uppercase tracking-widest text-paper px-3 py-1.5 rounded-xs border border-white/5">
-                  DINING AREA
-                </div>
               </div>
             ))}
           </div>
@@ -231,9 +228,6 @@ export default function ProjectPage({
                   className="w-full h-full object-cover group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute bottom-4 left-4 bg-ink/75 backdrop-blur-xs text-[8px] font-mono uppercase tracking-widest text-paper px-3 py-1.5 rounded-xs border border-white/5">
-                  {item.label}
-                </div>
               </div>
             ))}
           </div>
@@ -253,9 +247,6 @@ export default function ProjectPage({
                   className="w-full h-full object-cover group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute bottom-4 left-4 bg-ink/75 backdrop-blur-xs text-[8px] font-mono uppercase tracking-widest text-paper px-3 py-1.5 rounded-xs border border-white/5">
-                  COMMUNITY PANTRY
-                </div>
               </div>
             </div>
             <div className="lg:col-span-5 space-y-6">
@@ -334,10 +325,6 @@ export default function ProjectPage({
                         className="w-full h-full object-cover transition-transform duration-[1500ms] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-[1.025]"
                         referrerPolicy="no-referrer"
                       />
-                      {/* Subtle top-left badge overlay */}
-                      <div className="absolute top-4 left-4 bg-[#242424]/90 backdrop-blur-xs px-2.5 py-1 rounded-xs text-[8px] font-mono tracking-widest uppercase text-paper border border-white/5">
-                        PERSPECTIVE 0{idx + 1}
-                      </div>
                     </div>
 
                     {/* Banner underneath */}
@@ -663,9 +650,6 @@ export default function ProjectPage({
                 className="w-full h-full object-cover group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute bottom-4 left-4 bg-ink/75 backdrop-blur-xs text-[8px] font-mono uppercase tracking-widest text-paper px-3 py-1.5 rounded-xs border border-white/5">
-                LOUNGE AREA
-              </div>
             </div>
           </div>
         </section>
@@ -702,9 +686,6 @@ export default function ProjectPage({
                     className="w-full h-full object-cover group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute bottom-4 left-4 bg-ink/75 backdrop-blur-xs text-[8px] font-mono uppercase tracking-widest text-paper px-3 py-1.5 rounded-xs border border-white/5">
-                    {item.label}
-                  </div>
                 </div>
               ))}
             </div>
@@ -804,9 +785,6 @@ export default function ProjectPage({
                     className="w-full h-full object-cover group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute bottom-4 left-4 bg-ink/75 backdrop-blur-xs text-[8px] font-mono uppercase tracking-widest text-paper px-3 py-1.5 rounded-xs border border-white/5">
-                    {item.label}
-                  </div>
                 </div>
               ))}
             </div>
@@ -982,9 +960,6 @@ export default function ProjectPage({
                 className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-102"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute bottom-4 left-4 bg-ink/75 backdrop-blur-xs text-[8px] font-mono uppercase tracking-widest text-paper px-3 py-1.5 rounded-xs border border-white/5">
-                CERAMIC WORKS
-              </div>
             </div>
 
             <div 
@@ -997,9 +972,6 @@ export default function ProjectPage({
                 className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-102"
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute bottom-4 left-4 bg-ink/75 backdrop-blur-xs text-[8px] font-mono uppercase tracking-widest text-paper px-3 py-1.5 rounded-xs border border-white/5">
-                LANELLE ABUEVA-FERNANDO
-              </div>
             </div>
           </div>
         </section>
@@ -2141,10 +2113,6 @@ export default function ProjectPage({
                             className="w-full h-full object-cover transition-transform duration-[1500ms] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-[1.025]"
                             referrerPolicy="no-referrer"
                           />
-                          {/* Subtle top-left badge overlay */}
-                          <div className="absolute top-4 left-4 bg-[#242424]/90 backdrop-blur-xs px-2.5 py-1 rounded-xs text-[8px] font-mono tracking-widest uppercase text-paper border border-white/5">
-                            PERSPECTIVE 0{index + 3}
-                          </div>
                         </div>
 
                         {/* Banner underneath */}
