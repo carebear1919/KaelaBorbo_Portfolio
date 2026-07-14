@@ -94,16 +94,14 @@ export const SAMPLE_PROJECTS: Project[] = [
     description: "Yuhum Hotel is a project inspired by the heritage of Bacolod, combined with designer John Galliano’s art style. Yuhum (smile) features the hotel’s dedication to provide guests with a luxurious experience creating an atmosphere filled with smiles enhancing their overall stay.",
     tools: ["AutoCAD", "SketchUp", "V-Ray", "Adobe Photoshop"],
     heroImage: "/images/projects/03-yuhum-hotel/03-yuhum-hero.jpg",
-    moodboardImages: [
-      "/images/projects/03-yuhum-hotel/03-yuhum-moodboard.jpg"
-    ],
+    moodboardImages: [],
     inspiration: {
       text: "As Bacolod is known for being the City of Smile, Yuhum pays homage to the concept of Sugar Rush. Similarly, the hotel brings a burst of happiness and in a dramatic state which is also inspired from John Galliano’s Fashion Statements. Yuhum offers an appealing combination of local aesthetics and Old World charm by combining native Filipino materials and patterns with the beauty and balance of a French chateau. As this hotel is inspired by the works of French fashion designer John Galliano, the interior reflects Galliano’s boldness, drama, and storytelling.",
       image: ""
     },
     concept: {
       text: "",
-      image: "/images/projects/03-yuhum-hotel/03-yuhum-color-palette.jpg"
+      image: ""
     },
     floorPlanImage: "/images/projects/03-yuhum-hotel/03-yuhum-floor-plan-first.jpg",
     floorPlanContents: [

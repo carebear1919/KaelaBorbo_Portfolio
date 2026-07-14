@@ -1187,6 +1187,7 @@ export default function ProjectPage({
       </section>
 
       {/* SECTION 3, 4, 5: CURATED LOOKBOOK 'CONCEPT & MOOD' 3-COLUMN SHEET (Slide 3 style) */}
+      {(project.moodboardImages.length > 0 || project.concept?.image) && (
       <section className="py-24 border-t border-b border-mist/10 bg-paper/30" id="project-concept-mood-lookbook">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
@@ -1289,6 +1290,7 @@ export default function ProjectPage({
           </div>
         </div>
       </section>
+      )}
 
       {/* SECTION 5.4: COLOR PALETTE & GIFT SHOP (FOR YUHUM HOTEL ONLY) */}
       {project.slug === "hotel-concept" && (
@@ -1307,7 +1309,7 @@ export default function ProjectPage({
               <div className="lg:col-span-5 space-y-6 fade-up">
                 <div className="border-l-2 border-slate pl-6 py-1">
                   <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-1">
-                    02 / CHROMATIC COORDINATION
+                    01 / CHROMATIC COORDINATION
                   </span>
                   <h3 className="font-serif text-3xl font-light text-ink uppercase tracking-wide">
                     Color Palette
@@ -1317,6 +1319,35 @@ export default function ProjectPage({
                   The color palette of the Yuhum Hotel & Restaurant revolves around soft red, blue, and neutral colors such as brown to evoke a sense of theatrics and flamboyance with a mix of French Countryside vibe that helps balance the overall space and create a more cohesive area. The hotel also features high quality materials such as stone, wood, brass, glass, and velvet fabrics that bring out a sophisticated look reflecting Galliano’s works.
                 </p>
               </div>
+            </div>
+
+            {/* Full-width mood board with Sugar Rush headline */}
+            <div className="pt-8 space-y-8 text-center fade-up">
+              <div className="space-y-3">
+                <span className="font-mono text-xxs tracking-[0.3em] text-slate uppercase block">
+                  02 / MOOD BOARD
+                </span>
+                <h3 className="font-serif text-4xl md:text-6xl font-light tracking-tight text-ink uppercase">
+                  Sugar Rush
+                </h3>
+                <span className="font-serif italic text-xl text-slate block lowercase tracking-wide">
+                  French-Filipino Interior
+                </span>
+              </div>
+
+              <img
+                src="/images/projects/03-yuhum-hotel/03-yuhum-moodboard.jpg"
+                alt="Yuhum Hotel Mood Board"
+                className="w-full object-contain rounded-sm shadow-sm cursor-pointer"
+                referrerPolicy="no-referrer"
+                onClick={() => handleOpenLightbox("/images/projects/03-yuhum-hotel/03-yuhum-moodboard.jpg", ["/images/projects/03-yuhum-hotel/03-yuhum-moodboard.jpg"])}
+              />
+
+              {project.inspiration?.text && (
+                <p className="text-sm md:text-base text-slate/90 font-light leading-relaxed max-w-4xl mx-auto text-left md:text-center">
+                  {project.inspiration.text}
+                </p>
+              )}
             </div>
 
             <div
