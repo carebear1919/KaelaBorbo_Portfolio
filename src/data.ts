@@ -21,12 +21,6 @@ export const SAMPLE_PROJECTS: Project[] = [
       text: "",
       image: ""
     },
-    process: [
-      "AutoCAD Drafting — Precision spatial plotting and layouts.",
-      "SketchUp Modeling — Three-dimensional spatial composition.",
-      "Enscape Rendering — Simulating real-time illumination and textures.",
-      "Photoshop Post-production — Coloring and ambiance balancing."
-    ],
     floorPlanImage: "/images/projects/01-coastal-residence/floor-plan.jpg",
     floorPlanContents: [
       { number: "1", label: "FOYER" },
