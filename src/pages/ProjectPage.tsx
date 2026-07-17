@@ -210,12 +210,12 @@ export default function ProjectPage({
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
               {/* Column 1: Massive Header & Metadata Panel */}
-              <div className="lg:col-span-3 flex flex-col justify-between p-8 bg-paper border border-mist/20 rounded-md shadow-sm fade-up">
+              <div className="lg:col-span-2 flex flex-col justify-between p-6 bg-paper border border-mist/20 rounded-md shadow-sm fade-up">
                 <div>
                   <span className="font-mono text-[9px] tracking-[0.3em] text-slate uppercase block mb-1">
                     VOL. 01 / SCHEMATICS
                   </span>
-                  <h2 className="font-serif text-4xl md:text-5xl font-light tracking-tight text-ink leading-[1.05] uppercase">
+                  <h2 className="font-serif text-3xl md:text-4xl font-light tracking-tight text-ink leading-[1.05] uppercase">
                     CONCEPT <br />
                     <span className="italic font-normal text-slate lowercase">& mood</span>
                   </h2>
@@ -229,7 +229,7 @@ export default function ProjectPage({
               </div>
 
               {/* Column 2: Mood board card with Nodes of Resilience headline */}
-              <div className="lg:col-span-9 p-8 md:p-12 bg-paper border border-mist/20 rounded-md shadow-sm space-y-10 fade-up">
+              <div className="lg:col-span-10 p-8 md:p-12 bg-paper border border-mist/20 rounded-md shadow-sm space-y-10 fade-up">
                 <div className="space-y-3 text-center">
                   <span className="font-mono text-xxs tracking-[0.3em] text-slate uppercase block">
                     01 / MOOD BOARD — CONCEPTUAL ANALYSIS
@@ -242,20 +242,17 @@ export default function ProjectPage({
                   </span>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                  <div className="lg:col-span-7">
-                    <img
-                      src={project.inspiration.image}
-                      alt="Bangon Bayan Mood Board"
-                      className="w-full object-contain rounded-sm shadow-sm cursor-pointer"
-                      referrerPolicy="no-referrer"
-                      onClick={() => handleOpenLightbox(project.inspiration.image, [project.inspiration.image])}
-                    />
-                  </div>
-                  <p className="lg:col-span-5 text-sm md:text-base text-slate/90 font-light leading-relaxed">
-                    {project.inspiration.text}
-                  </p>
-                </div>
+                <img
+                  src={project.inspiration.image}
+                  alt="Bangon Bayan Mood Board"
+                  className="w-full max-w-4xl mx-auto object-contain rounded-sm shadow-sm cursor-pointer"
+                  referrerPolicy="no-referrer"
+                  onClick={() => handleOpenLightbox(project.inspiration.image, [project.inspiration.image])}
+                />
+
+                <p className="text-sm md:text-base text-slate/90 font-light leading-relaxed max-w-4xl mx-auto text-left md:text-center">
+                  {project.inspiration.text}
+                </p>
               </div>
             </div>
           </div>
