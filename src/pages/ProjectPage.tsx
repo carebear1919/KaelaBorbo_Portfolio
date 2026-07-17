@@ -957,7 +957,7 @@ export default function ProjectPage({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7 grid grid-cols-2 gap-4">
               <div
-                className="aspect-[3/4] rounded-sm overflow-hidden bg-paper/40 border border-mist/15 cursor-pointer group relative flex items-center justify-center"
+                className="aspect-[3/4] overflow-hidden bg-ink cursor-pointer group relative flex items-center justify-center"
                 onClick={() => handleOpenLightbox("/images/projects/06-iglu-round-sofa/06-iglu-inspiration-ceramics-1.jpg", ["/images/projects/06-iglu-round-sofa/06-iglu-inspiration-ceramics-1.jpg", "/images/projects/06-iglu-round-sofa/06-iglu-inspiration-artist.jpg"])}
               >
                 <img
@@ -969,7 +969,7 @@ export default function ProjectPage({
               </div>
 
               <div
-                className="aspect-[3/4] rounded-sm overflow-hidden bg-paper/40 border border-mist/15 cursor-pointer group relative flex items-center justify-center"
+                className="aspect-[3/4] overflow-hidden bg-ink cursor-pointer group relative flex items-center justify-center"
                 onClick={() => handleOpenLightbox("/images/projects/06-iglu-round-sofa/06-iglu-inspiration-artist.jpg", ["/images/projects/06-iglu-round-sofa/06-iglu-inspiration-ceramics-1.jpg", "/images/projects/06-iglu-round-sofa/06-iglu-inspiration-artist.jpg"])}
               >
                 <img
