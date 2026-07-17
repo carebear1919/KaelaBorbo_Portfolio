@@ -257,6 +257,12 @@ export const SAMPLE_PROJECTS: Project[] = [
     description: "The Iglu Round Sofa was co-created by Kaela V. Borbon and draws inspiration from the ceramic works of artist Lanelle Abueva-Fernando, translating her handcrafted textures into a multifunctional seating piece with an integrated planter that symbolizes community and growth. The design celebrates Filipino craftsmanship while promoting interaction and connection through its circular form. It was recognized as the 3rd Runner-Up in the People's Choice Awards during the LIKHAYAN Exhibit 2023, highlighting its creative interpretation of local artistry and innovative furniture design.",
     tools: [],
     heroImage: "/images/projects/06-iglu-round-sofa/06-iglu-hero.jpg",
+    heroImages: [
+      "/images/projects/06-iglu-round-sofa/06-iglu-hero.jpg",
+      "/images/projects/06-iglu-round-sofa/06-iglu-perspective.jpg",
+      "/images/projects/06-iglu-round-sofa/06-iglu-top-view.jpg",
+      "/images/projects/06-iglu-round-sofa/06-iglu-section-view.jpg"
+    ],
     moodboardImages: [],
     inspiration: {
       text: "",
