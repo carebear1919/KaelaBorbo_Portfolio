@@ -409,7 +409,7 @@ export default function ProjectPage({
         <section className="relative w-full h-[70vh] flex items-end overflow-hidden">
           <HeroRotator images={project.heroImages ?? [project.heroImage]} />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/15 to-transparent" />
-          
+
           <div className="max-w-7xl mx-auto w-full px-6 pb-16 z-10 text-paper">
             {/* Breadcrumb back to home */}
             <button
@@ -419,7 +419,7 @@ export default function ProjectPage({
             >
               ← Back to Projects
             </button>
-            
+
             <span className="font-mono text-xxs tracking-[0.25em] text-mist uppercase block mb-3 font-semibold">
               04 | GILIW LEARNING FACILITY
             </span>
@@ -860,7 +860,10 @@ export default function ProjectPage({
       <div className="paper-grain pb-24 animate-fade-in" id="project-view-iglu-round-sofa">
         {/* SECTION 1: HERO - FULL BLEED PHOTO */}
         <section className="relative w-full h-[70vh] flex items-end overflow-hidden">
-          <HeroRotator images={project.heroImages ?? [project.heroImage]} />
+          <HeroRotator
+            images={project.heroImages ?? [project.heroImage]}
+            position={project.slug === "iglu-round-sofa" ? "center 70%" : "center"}
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/70 via-ink/15 to-transparent" />
           
           <div className="max-w-7xl mx-auto w-full px-6 pb-16 z-10 text-paper">
@@ -964,7 +967,7 @@ export default function ProjectPage({
           </div>
 
           {/* Inspiration 2-Image Grid (Highly Asymmetric & Elegant) */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
             <div 
               className="md:col-span-5 rounded-sm overflow-hidden bg-ink shadow-md cursor-pointer group relative"
               onClick={() => handleOpenLightbox("/images/projects/06-iglu-round-sofa/06-iglu-inspiration-ceramics-1.jpg", ["/images/projects/06-iglu-round-sofa/06-iglu-inspiration-ceramics-1.jpg", "/images/projects/06-iglu-round-sofa/06-iglu-inspiration-artist.jpg"])}
