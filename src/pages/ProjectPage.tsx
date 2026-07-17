@@ -205,32 +205,59 @@ export default function ProjectPage({
           </div>
         </section>
 
-        {/* SECTION 5: CONCEPT - NODES OF RESILIENCE */}
+        {/* SECTION 5: CONCEPT & MOOD — NODES OF RESILIENCE MOOD BOARD */}
         <section className="py-24 border-t border-b border-mist/10 bg-paper/30">
-          <div className="max-w-4xl mx-auto px-6 text-center space-y-8">
-            <div className="space-y-3">
-              <span className="font-mono text-xxs tracking-[0.3em] text-slate font-semibold uppercase block">
-                02 / CONCEPTUAL ANALYSIS
-              </span>
-              <h3 className="font-serif text-3xl md:text-4xl font-light text-ink uppercase tracking-wider">
-                Nodes of Resilience
-              </h3>
-              <span className="font-serif italic text-lg text-slate block lowercase">
-                “Bending without Breaking”
-              </span>
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+              {/* Column 1: Massive Header & Metadata Panel */}
+              <div className="lg:col-span-3 flex flex-col justify-between p-8 bg-paper border border-mist/20 rounded-md shadow-sm fade-up">
+                <div>
+                  <span className="font-mono text-[9px] tracking-[0.3em] text-slate uppercase block mb-1">
+                    VOL. 01 / SCHEMATICS
+                  </span>
+                  <h2 className="font-serif text-4xl md:text-5xl font-light tracking-tight text-ink leading-[1.05] uppercase">
+                    CONCEPT <br />
+                    <span className="italic font-normal text-slate lowercase">& mood</span>
+                  </h2>
+                  <div className="w-8 h-px bg-slate/40 mt-12" />
+                </div>
+
+                <div className="pt-8 mt-8 border-t border-mist/10 flex justify-between items-baseline font-mono text-[9px] text-mist tracking-widest uppercase gap-4">
+                  <span>YEAR OF DESIGN</span>
+                  <span className="text-right">{project.year}</span>
+                </div>
+              </div>
+
+              {/* Column 2: Mood board card with Nodes of Resilience headline */}
+              <div className="lg:col-span-9 p-8 md:p-12 bg-paper border border-mist/20 rounded-md shadow-sm space-y-10 fade-up">
+                <div className="space-y-3 text-center">
+                  <span className="font-mono text-xxs tracking-[0.3em] text-slate uppercase block">
+                    01 / MOOD BOARD — CONCEPTUAL ANALYSIS
+                  </span>
+                  <h3 className="font-serif text-4xl md:text-6xl font-light tracking-tight text-ink uppercase">
+                    Nodes of Resilience
+                  </h3>
+                  <span className="font-serif italic text-xl text-slate block lowercase tracking-wide">
+                    “Bending without Breaking”
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                  <div className="lg:col-span-7">
+                    <img
+                      src={project.inspiration.image}
+                      alt="Bangon Bayan Mood Board"
+                      className="w-full object-contain rounded-sm shadow-sm cursor-pointer"
+                      referrerPolicy="no-referrer"
+                      onClick={() => handleOpenLightbox(project.inspiration.image, [project.inspiration.image])}
+                    />
+                  </div>
+                  <p className="lg:col-span-5 text-sm md:text-base text-slate/90 font-light leading-relaxed">
+                    {project.inspiration.text}
+                  </p>
+                </div>
+              </div>
             </div>
-
-            <img
-              src={project.inspiration.image}
-              alt="Bangon Bayan Concept Diagram"
-              className="w-full max-w-2xl mx-auto object-contain rounded-sm shadow-sm cursor-pointer"
-              referrerPolicy="no-referrer"
-              onClick={() => handleOpenLightbox(project.inspiration.image, [project.inspiration.image])}
-            />
-
-            <p className="text-sm md:text-base text-slate/90 font-light leading-relaxed max-w-3xl mx-auto text-left md:text-center">
-              {project.inspiration.text}
-            </p>
           </div>
         </section>
 
