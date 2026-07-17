@@ -945,51 +945,49 @@ export default function ProjectPage({
           </div>
         </section>
 
-        {/* SECTION 3: THE INSPIRATION - 2 IMAGES GRID */}
+        {/* SECTION 3: THE INSPIRATION - IMAGES LEFT, TEXT RIGHT */}
         <section className="py-24 max-w-7xl mx-auto px-6 border-b border-mist/10" id="project-inspiration-section">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start mb-16">
-            <div className="md:col-span-4 space-y-4">
-              <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block">
-                01 / THE INSPIRATION
-              </span>
-              <h2 className="font-serif text-3xl md:text-4xl font-light tracking-tight text-ink uppercase">
-                Ceramics by Lanelle Abueva-Fernando
-              </h2>
+          <span className="font-mono text-xxs tracking-[0.25em] text-slate uppercase block mb-2">
+            01 / THE INSPIRATION
+          </span>
+          <h2 className="font-serif text-3xl md:text-4xl font-light tracking-tight text-ink uppercase mb-10">
+            Ceramics by Lanelle Abueva-Fernando
+          </h2>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div className="lg:col-span-7 grid grid-cols-2 gap-4">
+              <div
+                className="aspect-square rounded-sm overflow-hidden bg-ink shadow-md cursor-pointer group relative"
+                onClick={() => handleOpenLightbox("/images/projects/06-iglu-round-sofa/06-iglu-inspiration-ceramics-1.jpg", ["/images/projects/06-iglu-round-sofa/06-iglu-inspiration-ceramics-1.jpg", "/images/projects/06-iglu-round-sofa/06-iglu-inspiration-artist.jpg"])}
+              >
+                <img
+                  src="/images/projects/06-iglu-round-sofa/06-iglu-inspiration-ceramics-1.jpg"
+                  alt="Ceramic works of Lanelle Abueva-Fernando"
+                  className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+
+              <div
+                className="aspect-square rounded-sm overflow-hidden bg-ink shadow-md cursor-pointer group relative"
+                onClick={() => handleOpenLightbox("/images/projects/06-iglu-round-sofa/06-iglu-inspiration-artist.jpg", ["/images/projects/06-iglu-round-sofa/06-iglu-inspiration-ceramics-1.jpg", "/images/projects/06-iglu-round-sofa/06-iglu-inspiration-artist.jpg"])}
+              >
+                <img
+                  src="/images/projects/06-iglu-round-sofa/06-iglu-inspiration-artist.jpg"
+                  alt="Lanelle Abueva-Fernando"
+                  className="w-full h-full object-cover object-top transition-transform duration-[1200ms] group-hover:scale-105"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
             </div>
-            <div className="md:col-span-8 text-sm text-ink/80 font-light leading-relaxed space-y-6">
+
+            <div className="lg:col-span-5 text-sm text-ink/80 font-light leading-relaxed space-y-6">
               <p>
                 The Iglu Round Sofa draws inspiration from the ceramic works of Lanelle Abueva-Fernando, particularly the handcrafted vessel forms that celebrate organic textures and Filipino craftsmanship. Its circular silhouette echoes the rounded geometry of her pottery, while the woven base references the tactile quality of handcrafted ceramics.
               </p>
               <p>
                 The integrated planter at the center symbolizes growth and community, creating a gathering space that encourages interaction and connection. Through its soft curves, natural materials, and earthy tones, the sofa reflects the warmth, artistry, and timeless character found in Abueva-Fernando's ceramic creations.
               </p>
-            </div>
-          </div>
-
-          {/* Inspiration 2-Image Grid (Highly Asymmetric & Elegant) */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-            <div 
-              className="md:col-span-5 rounded-sm overflow-hidden bg-ink shadow-md cursor-pointer group relative"
-              onClick={() => handleOpenLightbox("/images/projects/06-iglu-round-sofa/06-iglu-inspiration-ceramics-1.jpg", ["/images/projects/06-iglu-round-sofa/06-iglu-inspiration-ceramics-1.jpg", "/images/projects/06-iglu-round-sofa/06-iglu-inspiration-artist.jpg"])}
-            >
-              <img 
-                src="/images/projects/06-iglu-round-sofa/06-iglu-inspiration-ceramics-1.jpg" 
-                alt="Ceramic works of Lanelle Abueva-Fernando"
-                className="w-full h-auto transition-transform duration-[1200ms] group-hover:scale-102"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-
-            <div 
-              className="md:col-span-7 rounded-sm overflow-hidden bg-ink shadow-md cursor-pointer group relative"
-              onClick={() => handleOpenLightbox("/images/projects/06-iglu-round-sofa/06-iglu-inspiration-artist.jpg", ["/images/projects/06-iglu-round-sofa/06-iglu-inspiration-ceramics-1.jpg", "/images/projects/06-iglu-round-sofa/06-iglu-inspiration-artist.jpg"])}
-            >
-              <img 
-                src="/images/projects/06-iglu-round-sofa/06-iglu-inspiration-artist.jpg" 
-                alt="Lanelle Abueva-Fernando"
-                className="w-full h-auto transition-transform duration-[1200ms] group-hover:scale-102"
-                referrerPolicy="no-referrer"
-              />
             </div>
           </div>
         </section>
