@@ -191,13 +191,13 @@ export default function ProjectPage({
             ].map((img, idx, arr) => (
               <div
                 key={idx}
-                className="relative overflow-hidden rounded-sm shadow-sm group cursor-pointer aspect-[16/10]"
+                className="relative overflow-hidden rounded-sm shadow-sm group cursor-pointer"
                 onClick={() => handleOpenLightbox(img, arr)}
               >
                 <img
                   src={img}
                   alt={`Bangon Bayan Dining Area ${idx + 1}`}
-                  className="w-full h-full object-cover group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
+                  className="w-full h-auto group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -267,13 +267,13 @@ export default function ProjectPage({
             ].map((item, idx, arr) => (
               <div
                 key={idx}
-                className="relative overflow-hidden rounded-sm shadow-sm group cursor-pointer aspect-[16/10]"
+                className="relative overflow-hidden rounded-sm shadow-sm group cursor-pointer"
                 onClick={() => handleOpenLightbox(item.image, arr.map((i) => i.image))}
               >
                 <img
                   src={item.image}
                   alt={`Bangon Bayan ${item.label}`}
-                  className="w-full h-full object-cover group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
+                  className="w-full h-auto group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -286,13 +286,13 @@ export default function ProjectPage({
           <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7">
               <div
-                className="relative overflow-hidden rounded-sm shadow-sm group cursor-pointer aspect-[16/10]"
+                className="relative overflow-hidden rounded-sm shadow-sm group cursor-pointer"
                 onClick={() => handleOpenLightbox("/images/projects/05-bangon-bayan/05-bangon-community-pantry.jpg", ["/images/projects/05-bangon-bayan/05-bangon-community-pantry.jpg"])}
               >
                 <img
                   src="/images/projects/05-bangon-bayan/05-bangon-community-pantry.jpg"
                   alt="Bangon Bayan Community Pantry"
-                  className="w-full h-full object-cover group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
+                  className="w-full h-auto group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -336,25 +336,25 @@ export default function ProjectPage({
                   title: "WORKSHOP AREA",
                   image: "/images/projects/05-bangon-bayan/05-bangon-workshop-area.jpg",
                   gridClass: "lg:col-span-5",
-                  aspectClass: "aspect-4/3 lg:aspect-[3/4.2]"
+                  aspectClass: ""
                 },
                 {
                   title: "LEARNING AREA",
                   image: "/images/projects/05-bangon-bayan/05-bangon-learning-area.jpg",
                   gridClass: "lg:col-span-7",
-                  aspectClass: "aspect-4/3 lg:aspect-[1.6/1.05]"
+                  aspectClass: ""
                 },
                 {
                   title: "EVACUATION AREA",
                   image: "/images/projects/05-bangon-bayan/05-bangon-evacuation-area.jpg",
                   gridClass: "lg:col-span-7",
-                  aspectClass: "aspect-4/3 lg:aspect-[1.6/1.05]"
+                  aspectClass: ""
                 },
                 {
                   title: "INDOOR HYDROPONICS AREA",
                   image: "/images/projects/05-bangon-bayan/05-bangon-indoor-hydroponics.jpg",
                   gridClass: "lg:col-span-5",
-                  aspectClass: "aspect-4/3 lg:aspect-[3/4.2]"
+                  aspectClass: ""
                 }
               ].map((item, idx, arr) => {
                 const allImages = arr.map(i => i.image);
@@ -370,7 +370,7 @@ export default function ProjectPage({
                       <img
                         src={item.image}
                         alt={item.title}
-                        className="w-full h-full object-cover transition-transform duration-[1500ms] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-[1.025]"
+                        className="w-full h-auto transition-transform duration-[1500ms] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-[1.025]"
                         referrerPolicy="no-referrer"
                       />
                     </div>
@@ -704,7 +704,7 @@ export default function ProjectPage({
                 <img
                   src={project.galleryImages[0]}
                   alt="Giliw Lounge Area"
-                  className="w-full h-full object-cover object-bottom group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
+                  className="w-full h-auto group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -735,13 +735,13 @@ export default function ProjectPage({
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="relative overflow-hidden rounded-md shadow-md group cursor-pointer aspect-[16/10] fade-up"
+                  className="relative overflow-hidden rounded-md shadow-md group cursor-pointer fade-up"
                   onClick={() => handleOpenLightbox(item.image, project.galleryImages)}
                 >
                   <img
                     src={item.image}
                     alt={`Giliw ${item.label}`}
-                    className="w-full h-full object-cover group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
+                    className="w-full h-auto group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
                     referrerPolicy="no-referrer"
                   />
                 </div>
@@ -834,13 +834,13 @@ export default function ProjectPage({
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="relative overflow-hidden rounded-md shadow-md group cursor-pointer aspect-[16/10] fade-up"
+                  className="relative overflow-hidden rounded-md shadow-md group cursor-pointer fade-up"
                   onClick={() => handleOpenLightbox(item.image, project.galleryImages)}
                 >
                   <img
                     src={item.image}
                     alt={`Giliw ${item.label}`}
-                    className="w-full h-full object-cover group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
+                    className="w-full h-auto group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
                     referrerPolicy="no-referrer"
                   />
                 </div>
@@ -1007,25 +1007,25 @@ export default function ProjectPage({
           {/* Inspiration 2-Image Grid (Highly Asymmetric & Elegant) */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
             <div 
-              className="md:col-span-5 aspect-[4/5] rounded-sm overflow-hidden bg-ink shadow-md cursor-pointer group relative"
+              className="md:col-span-5 rounded-sm overflow-hidden bg-ink shadow-md cursor-pointer group relative"
               onClick={() => handleOpenLightbox("/images/projects/06-iglu-round-sofa/06-iglu-inspiration-ceramics-1.jpg", ["/images/projects/06-iglu-round-sofa/06-iglu-inspiration-ceramics-1.jpg", "/images/projects/06-iglu-round-sofa/06-iglu-inspiration-artist.jpg"])}
             >
               <img 
                 src="/images/projects/06-iglu-round-sofa/06-iglu-inspiration-ceramics-1.jpg" 
                 alt="Ceramic works of Lanelle Abueva-Fernando"
-                className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-102"
+                className="w-full h-auto transition-transform duration-[1200ms] group-hover:scale-102"
                 referrerPolicy="no-referrer"
               />
             </div>
 
             <div 
-              className="md:col-span-7 aspect-[16/10] md:aspect-auto rounded-sm overflow-hidden bg-ink shadow-md cursor-pointer group relative"
+              className="md:col-span-7 rounded-sm overflow-hidden bg-ink shadow-md cursor-pointer group relative"
               onClick={() => handleOpenLightbox("/images/projects/06-iglu-round-sofa/06-iglu-inspiration-artist.jpg", ["/images/projects/06-iglu-round-sofa/06-iglu-inspiration-ceramics-1.jpg", "/images/projects/06-iglu-round-sofa/06-iglu-inspiration-artist.jpg"])}
             >
               <img 
                 src="/images/projects/06-iglu-round-sofa/06-iglu-inspiration-artist.jpg" 
                 alt="Lanelle Abueva-Fernando"
-                className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-102"
+                className="w-full h-auto transition-transform duration-[1200ms] group-hover:scale-102"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -1054,7 +1054,7 @@ export default function ProjectPage({
           </div>
 
           {/* 3 Images Technical Grid - Top view, section view, perspective */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             {[
               { image: "/images/projects/06-iglu-round-sofa/06-iglu-top-view.jpg", plate: "PLATE 01", label: "TOP VIEW" },
               { image: "/images/projects/06-iglu-round-sofa/06-iglu-section-view.jpg", plate: "PLATE 02", label: "SECTION VIEW" },
@@ -1529,7 +1529,7 @@ export default function ProjectPage({
                   <img
                     src={mat.image}
                     alt={mat.caption}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-auto group-hover:scale-105 transition-transform duration-700"
                     referrerPolicy="no-referrer"
                   />
                 </div>
@@ -1867,13 +1867,13 @@ export default function ProjectPage({
 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
                   <div
-                    className="md:col-span-8 overflow-hidden rounded-md shadow-lg group cursor-pointer aspect-16/9 fade-up"
+                    className="md:col-span-8 overflow-hidden rounded-md shadow-lg group cursor-pointer fade-up"
                     onClick={() => handleOpenLightbox(project.galleryImages[0], project.galleryImages)}
                   >
                     <img
                       src={project.galleryImages[0]}
                       alt="Yuhum Hotel Restaurant"
-                      className="w-full h-full object-cover object-left-bottom group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
+                      className="w-full h-auto group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
                       referrerPolicy="no-referrer"
                     />
                   </div>
@@ -1884,7 +1884,7 @@ export default function ProjectPage({
                     <img
                       src={project.galleryImages[6]}
                       alt="Yuhum Hotel Gift Shop"
-                      className="w-full h-full object-cover object-bottom group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
+                      className="w-full h-auto group-hover:scale-[1.015] transition-transform duration-[1200ms] ease-out"
                       referrerPolicy="no-referrer"
                     />
                   </div>
@@ -1908,17 +1908,17 @@ export default function ProjectPage({
 
                 <div className="space-y-8">
                   {/* Row 1: Deluxe & Presidential suites */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                     {[project.galleryImages[1], project.galleryImages[2]].map((img, idx) => (
                       <div
                         key={idx}
-                        className="overflow-hidden rounded-sm shadow-md group cursor-pointer aspect-[8/5] fade-up"
+                        className="overflow-hidden rounded-sm shadow-md group cursor-pointer fade-up"
                         onClick={() => handleOpenLightbox(img, project.galleryImages)}
                       >
                         <img
                           src={img}
                           alt={`Yuhum Hotel Suite ${idx + 1}`}
-                          className="w-full h-full object-cover object-left-bottom group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
+                          className="w-full h-auto group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
                           referrerPolicy="no-referrer"
                         />
                       </div>
@@ -1926,17 +1926,17 @@ export default function ProjectPage({
                   </div>
 
                   {/* Row 2: Executive, Premiere, Game Area */}
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
                     {[project.galleryImages[3], project.galleryImages[4], project.galleryImages[5]].map((img, idx) => (
                       <div
                         key={idx}
-                        className="overflow-hidden rounded-sm shadow-md group cursor-pointer aspect-[5/3] fade-up"
+                        className="overflow-hidden rounded-sm shadow-md group cursor-pointer fade-up"
                         onClick={() => handleOpenLightbox(img, project.galleryImages)}
                       >
                         <img
                           src={img}
                           alt={`Yuhum Hotel Suite ${idx + 3}`}
-                          className="w-full h-full object-cover object-left-bottom group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
+                          className="w-full h-auto group-hover:scale-[1.025] transition-transform duration-[1200ms] ease-out"
                           referrerPolicy="no-referrer"
                         />
                       </div>
@@ -2127,28 +2127,28 @@ export default function ProjectPage({
                       detail: "Skills development & vocational training",
                       image: "/images/projects/05-bangon-bayan/05-bangon-workshop-area.jpg",
                       gridClass: "lg:col-span-5",
-                      aspectClass: "aspect-4/3 lg:aspect-[3/4.2]"
+                      aspectClass: ""
                     },
                     { 
                       title: "MULTIPURPOSE HALL", 
                       detail: "Evacuation conversion & community meetings",
                       image: "/images/projects/05-bangon-bayan/05-bangon-multipurpose-hall.jpg",
                       gridClass: "lg:col-span-7",
-                      aspectClass: "aspect-4/3 lg:aspect-[1.6/1.05]"
+                      aspectClass: ""
                     },
                     { 
                       title: "PRIVACY PODS", 
                       detail: "Dignified temporary emergency shelter",
                       image: "/images/projects/05-bangon-bayan/05-bangon-privacy-pods.jpg",
                       gridClass: "lg:col-span-7",
-                      aspectClass: "aspect-4/3 lg:aspect-[1.6/1.05]"
+                      aspectClass: ""
                     },
                     { 
                       title: "INDOOR HYDROPONICS", 
                       detail: "Sustainable food production & green spaces",
                       image: "/images/projects/05-bangon-bayan/05-bangon-indoor-hydroponics.jpg",
                       gridClass: "lg:col-span-5",
-                      aspectClass: "aspect-4/3 lg:aspect-[3/4.2]"
+                      aspectClass: ""
                     }
                   ].map((item, index, arr) => {
                     const allImages = arr.map(i => i.image);
@@ -2164,7 +2164,7 @@ export default function ProjectPage({
                           <img
                             src={item.image}
                             alt={item.title}
-                            className="w-full h-full object-cover transition-transform duration-[1500ms] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-[1.025]"
+                            className="w-full h-auto transition-transform duration-[1500ms] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-[1.025]"
                             referrerPolicy="no-referrer"
                           />
                         </div>
