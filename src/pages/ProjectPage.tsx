@@ -330,68 +330,27 @@ export default function ProjectPage({
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
               {[
-                {
-                  title: "WORKSHOP AREA",
-                  image: "/images/projects/05-bangon-bayan/05-bangon-workshop-area.jpg",
-                  gridClass: "lg:col-span-5",
-                  aspectClass: ""
-                },
-                {
-                  title: "LEARNING AREA",
-                  image: "/images/projects/05-bangon-bayan/05-bangon-learning-area.jpg",
-                  gridClass: "lg:col-span-7",
-                  aspectClass: ""
-                },
-                {
-                  title: "EVACUATION AREA",
-                  image: "/images/projects/05-bangon-bayan/05-bangon-evacuation-area.jpg",
-                  gridClass: "lg:col-span-7",
-                  aspectClass: ""
-                },
-                {
-                  title: "INDOOR HYDROPONICS AREA",
-                  image: "/images/projects/05-bangon-bayan/05-bangon-indoor-hydroponics.jpg",
-                  gridClass: "lg:col-span-5",
-                  aspectClass: ""
-                }
-              ].map((item, idx, arr) => {
-                const allImages = arr.map(i => i.image);
-                return (
-                  <div
-                    key={idx}
-                    onClick={() => handleOpenLightbox(item.image, allImages)}
-                    className={`group cursor-pointer flex flex-col h-full rounded-sm overflow-hidden transition-all duration-500 fade-up ${item.gridClass}`}
-                    id={`resilience-zone-card-${idx}`}
-                  >
-                    {/* Image Wrap */}
-                    <div className={`relative overflow-hidden w-full bg-ink rounded-sm ${item.aspectClass}`}>
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="w-full h-auto transition-transform duration-[1500ms] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-[1.025]"
-                        referrerPolicy="no-referrer"
-                      />
-                    </div>
-
-                    {/* Banner underneath */}
-                    <div className="pt-4 pb-2 bg-transparent shrink-0 flex flex-col justify-between">
-                      <div className="space-y-1">
-                        <h4 className="font-serif text-lg font-medium text-ink tracking-wide group-hover:text-slate transition-colors leading-tight uppercase">
-                          {item.title}
-                        </h4>
-                      </div>
-
-                      <div className="w-full h-px bg-mist/20 group-hover:bg-slate/30 transition-colors mt-4" />
-                      <div className="flex items-center justify-between text-[7px] font-mono tracking-widest uppercase text-slate/60 group-hover:text-ink transition-colors pt-3">
-                        <span>Magnify View</span>
-                        <ArrowRight className="w-2.5 h-2.5 group-hover:translate-x-1 transition-transform" />
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
+                "/images/projects/05-bangon-bayan/05-bangon-workshop-area.jpg",
+                "/images/projects/05-bangon-bayan/05-bangon-learning-area.jpg",
+                "/images/projects/05-bangon-bayan/05-bangon-evacuation-area.jpg",
+                "/images/projects/05-bangon-bayan/05-bangon-indoor-hydroponics.jpg"
+              ].map((img, idx, arr) => (
+                <div
+                  key={idx}
+                  onClick={() => handleOpenLightbox(img, arr)}
+                  className="overflow-hidden rounded-sm shadow-md group cursor-pointer fade-up"
+                  id={`resilience-zone-card-${idx}`}
+                >
+                  <img
+                    src={img}
+                    alt={`Bangon Bayan Flexible Zone ${idx + 1}`}
+                    className="w-full h-auto transition-transform duration-[1500ms] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-[1.025]"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </section>
