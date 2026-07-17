@@ -963,7 +963,7 @@ export default function ProjectPage({
                 <img
                   src="/images/projects/06-iglu-round-sofa/06-iglu-inspiration-ceramics-1.jpg"
                   alt="Ceramic works of Lanelle Abueva-Fernando"
-                  className="w-full h-full object-contain transition-transform duration-[1200ms] group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -975,7 +975,7 @@ export default function ProjectPage({
                 <img
                   src="/images/projects/06-iglu-round-sofa/06-iglu-inspiration-artist.jpg"
                   alt="Lanelle Abueva-Fernando"
-                  className="w-full h-full object-contain transition-transform duration-[1200ms] group-hover:scale-105"
+                  className="w-full h-full object-cover object-top transition-transform duration-[1200ms] group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
               </div>
