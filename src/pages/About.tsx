@@ -63,9 +63,9 @@ export default function About() {
           <div className="lg:col-span-4 flex flex-col justify-between p-8 bg-ink text-paper rounded-sm shadow-xl relative overflow-hidden lg:-mt-12 lg:mb-12 min-h-[300px] fade-up">
             <div className="absolute -right-16 -top-16 w-32 h-32 rounded-full bg-paper/5 pointer-events-none" />
             <div>
-              <span className="font-mono text-[8px] tracking-[0.3em] text-mist uppercase block mb-1">DESIGN PHILOSOPHY</span>
-              <div className="w-10 h-px bg-mist/30 my-4" />
-              <p className="font-serif text-lg font-light leading-relaxed italic text-paper/90">
+              <span className="font-mono text-[9px] tracking-[0.3em] text-mist uppercase block mb-1">01 / Design Philosophy</span>
+              <div className="w-10 h-px bg-slate/60 my-4" />
+              <p className="font-serif text-xl leading-relaxed italic text-paper">
                 Transforming spaces into functional and striking environments with a strong interest in creating research-driven spaces.
               </p>
             </div>
@@ -82,21 +82,27 @@ export default function About() {
               className="w-full h-full min-h-[380px] object-cover filter grayscale contrast-[1.04] brightness-95 group-hover:scale-101 transition-transform duration-1000"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute bottom-4 left-4 bg-[#242424]/90 backdrop-blur-xs text-paper px-3 py-1 font-mono text-[8px] uppercase tracking-widest border border-white/10 rounded-xs">
+            <div className="absolute bottom-4 left-4 bg-[#242424]/90 backdrop-blur-xs text-paper px-3 py-1 font-mono text-[9px] uppercase tracking-widest border border-white/10 rounded-xs">
               BS Interior Design
             </div>
           </div>
 
           {/* Core Biography Statement utilizing Exact words */}
           <div className="lg:col-span-4 flex flex-col justify-between space-y-8 fade-up">
-            <p className="text-xs md:text-sm text-ink leading-relaxed font-light text-justify">
-              A fresh Bachelor of Science in Interior Design graduate (July 2026) and a creative individual with a passion for transforming spaces into functional and striking environments. Adept at utilizing various software applications and design methods to create visually appealing design concepts. Has experience in residential, commercial, hospitality, and community-centered design, with a strong interest in creating research-driven spaces that foster sustainability and positive social impact.
-            </p>
+            <div className="space-y-3">
+              <span className="font-mono text-[9px] tracking-[0.3em] text-slate uppercase block">02 / The Snapshot</span>
+              <p className="text-sm md:text-base text-ink/80 leading-relaxed font-light">
+                A fresh Bachelor of Science in Interior Design graduate <span className="text-ink font-normal">(July 2026)</span> and a creative individual with a passion for transforming spaces into functional and striking environments. Adept at utilizing various software applications and design methods to create visually appealing design concepts.
+              </p>
+              <p className="text-sm md:text-base text-ink/80 leading-relaxed font-light">
+                Has experience in residential, commercial, hospitality, and community-centered design, with a strong interest in creating research-driven spaces that foster sustainability and positive social impact.
+              </p>
+            </div>
 
             {/* Editorial list of personal interests */}
             <div className="pt-6 border-t border-mist/20">
-              <span className="font-mono text-[8px] tracking-[0.3em] text-mist uppercase block mb-3">Interests</span>
-              <div className="flex flex-wrap gap-x-3 gap-y-1.5 font-mono text-[10px] text-slate font-light">
+              <span className="font-mono text-[9px] tracking-[0.3em] text-mist uppercase block mb-3">Interests</span>
+              <div className="flex flex-wrap gap-x-3 gap-y-2 font-mono text-xs text-slate">
                 {interests.map((item, idx) => (
                   <span key={item} className="flex items-center">
                     <span>{item}</span>
@@ -112,7 +118,7 @@ export default function About() {
         {/* SECTION 3: WORK EXPERIENCE & ACCOMPLISHMENTS (Staggered Layout) */}
         <div className="mb-36">
           <div className="border-b border-mist/20 pb-4 mb-16 fade-up">
-            <span className="font-mono text-[9px] tracking-[0.4em] text-slate uppercase block mb-2">RECORD OF EXECUTION</span>
+            <span className="font-mono text-[10px] tracking-[0.4em] text-slate uppercase block mb-2 font-semibold">03 / RECORD OF EXECUTION</span>
             <h2 className="font-serif text-3xl md:text-4xl font-light tracking-tight text-ink uppercase">
               WORK EXPERIENCE
             </h2>
@@ -121,56 +127,56 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             
             {/* Job block 1 */}
-            <div className="lg:col-span-6 relative bg-paper border border-mist/15 p-8 rounded-sm shadow-2xs hover:shadow-xs transition-shadow duration-300 fade-up">
-              <div className="absolute -left-1.5 top-8 w-3 h-px bg-slate" />
-              <div className="space-y-4">
+            <div className="lg:col-span-6 relative bg-paper border border-mist/15 p-8 rounded-sm shadow-2xs hover:shadow-md hover:border-slate/30 transition-all duration-300 fade-up">
+              <div className="absolute left-0 top-8 bottom-8 w-[3px] bg-slate rounded-full" />
+              <div className="space-y-4 pl-2">
                 <div className="flex justify-between items-start gap-4">
                   <div>
                     <h3 className="font-serif text-2xl font-light text-ink tracking-tight">
                       Sketch Interiors
                     </h3>
-                    <p className="font-mono text-[10px] text-slate uppercase tracking-wider mt-1">
+                    <p className="font-mono text-[11px] text-slate uppercase tracking-wider mt-1">
                       Student Intern
                     </p>
                   </div>
-                  <span className="font-mono text-[9px] text-mist bg-[#FAF9F5] border border-mist/20 px-2.5 py-1 rounded-sm uppercase tracking-wider shrink-0">
+                  <span className="font-mono text-[10px] text-slate bg-slate/5 border border-slate/20 px-2.5 py-1 rounded-sm uppercase tracking-wider shrink-0">
                     Oct-Dec 2025
                   </span>
                 </div>
 
-                <div className="font-mono text-[9px] text-slate font-medium">
+                <div className="font-mono text-[10px] text-ink font-semibold tracking-wide">
                   Accomplished 140 required hours
                 </div>
 
-                <p className="text-xs text-slate/85 font-light leading-relaxed pt-2 border-t border-mist/10">
+                <p className="text-sm text-ink/70 font-light leading-relaxed pt-3 border-t border-mist/10">
                   Created AutoCAD layouts, 3D renders, presentations for clients, and assisted in site visits and consultations.
                 </p>
               </div>
             </div>
 
             {/* Job block 2 (Staggered slightly lower on desktop grids) */}
-            <div className="lg:col-span-6 relative bg-paper border border-mist/15 p-8 rounded-sm shadow-2xs hover:shadow-xs transition-shadow duration-300 lg:translate-y-8 fade-up">
-              <div className="absolute -left-1.5 top-8 w-3 h-px bg-slate" />
-              <div className="space-y-4">
+            <div className="lg:col-span-6 relative bg-paper border border-mist/15 p-8 rounded-sm shadow-2xs hover:shadow-md hover:border-navy/30 transition-all duration-300 lg:translate-y-8 fade-up">
+              <div className="absolute left-0 top-8 bottom-8 w-[3px] bg-navy rounded-full" />
+              <div className="space-y-4 pl-2">
                 <div className="flex justify-between items-start gap-4">
                   <div>
                     <h3 className="font-serif text-2xl font-light text-ink tracking-tight">
                       EO Studio, Inc.
                     </h3>
-                    <p className="font-mono text-[10px] text-slate uppercase tracking-wider mt-1">
+                    <p className="font-mono text-[11px] text-navy uppercase tracking-wider mt-1">
                       Student Intern
                     </p>
                   </div>
-                  <span className="font-mono text-[9px] text-mist bg-[#FAF9F5] border border-mist/20 px-2.5 py-1 rounded-sm uppercase tracking-wider shrink-0">
+                  <span className="font-mono text-[10px] text-navy bg-navy/5 border border-navy/20 px-2.5 py-1 rounded-sm uppercase tracking-wider shrink-0">
                     Jan-Feb 2026
                   </span>
                 </div>
 
-                <div className="font-mono text-[9px] text-slate font-medium">
+                <div className="font-mono text-[10px] text-ink font-semibold tracking-wide">
                   Accomplished 140 required hours
                 </div>
 
-                <p className="text-xs text-slate/85 font-light leading-relaxed pt-2 border-t border-mist/10">
+                <p className="text-sm text-ink/70 font-light leading-relaxed pt-3 border-t border-mist/10">
                   Provided design research, created AutoCAD layouts, 3D renders, and working drawings, assisted in materials, accessories, and furniture sourcing, and helped during site consultations and client meetings.
                 </p>
               </div>
@@ -182,7 +188,7 @@ export default function About() {
         {/* SECTION 4: EDUCATIONAL BLUEPRINT (Clean grid timeline) */}
         <div className="mb-36 pt-12">
           <div className="border-b border-mist/20 pb-4 mb-16 fade-up">
-            <span className="font-mono text-[9px] tracking-[0.4em] text-slate uppercase block mb-2">ACADEMIC FRAMEWORK</span>
+            <span className="font-mono text-[10px] tracking-[0.4em] text-slate uppercase block mb-2 font-semibold">04 / ACADEMIC FRAMEWORK</span>
             <h2 className="font-serif text-3xl md:text-4xl font-light tracking-tight text-ink uppercase">
               EDUCATION
             </h2>
@@ -207,24 +213,24 @@ export default function About() {
                   </span>
                 </div>
                 
-                <p className="font-mono text-[9px] text-slate uppercase tracking-widest border-b border-mist/15 pb-2">
+                <p className="font-mono text-[10px] text-slate uppercase tracking-widest border-b border-mist/15 pb-3">
                   BS Interior Design Major in Construction and Project Management
                 </p>
 
                 <ul className="space-y-3 pt-2">
-                  <li className="text-xs text-slate/85 font-light flex items-start gap-2.5">
+                  <li className="text-sm text-ink/75 font-light flex items-start gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-slate mt-1.5 shrink-0" />
-                    <span>Graduated cum laude</span>
+                    <span>Graduated <span className="text-ink font-normal">cum laude</span></span>
                   </li>
-                  <li className="text-xs text-slate/85 font-light flex items-start gap-2.5">
+                  <li className="text-sm text-ink/75 font-light flex items-start gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-slate mt-1.5 shrink-0" />
                     <span>Dean’s Lister (2022-2026)</span>
                   </li>
-                  <li className="text-xs text-slate/85 font-light flex items-start gap-2.5">
+                  <li className="text-sm text-ink/75 font-light flex items-start gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-slate mt-1.5 shrink-0" />
                     <span>Best Thesis Awardee</span>
                   </li>
-                  <li className="text-xs text-slate/85 font-light flex items-start gap-2.5 leading-relaxed">
+                  <li className="text-sm text-ink/75 font-light flex items-start gap-2.5 leading-relaxed">
                     <span className="w-1.5 h-1.5 rounded-full bg-slate mt-1.5 shrink-0" />
                     <span>Relevant Coursework on Residential Design, Furniture Design, Manual and Digital Drafting, Retail Design, and Public/Hospitality Centers</span>
                   </li>
@@ -248,20 +254,20 @@ export default function About() {
                   </span>
                 </div>
                 
-                <p className="font-mono text-[9px] text-slate uppercase tracking-widest border-b border-mist/15 pb-2">
+                <p className="font-mono text-[10px] text-slate uppercase tracking-widest border-b border-mist/15 pb-3">
                   Humanities and Social Sciences Strand in Senior High School
                 </p>
 
                 <ul className="space-y-3 pt-2">
-                  <li className="text-xs text-slate/85 font-light flex items-start gap-2.5">
+                  <li className="text-sm text-ink/75 font-light flex items-start gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-slate mt-1.5 shrink-0" />
                     <span>Fidelity Awardee</span>
                   </li>
-                  <li className="text-xs text-slate/85 font-light flex items-start gap-2.5">
+                  <li className="text-sm text-ink/75 font-light flex items-start gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-slate mt-1.5 shrink-0" />
                     <span>Graduated with High Honors</span>
                   </li>
-                  <li className="text-xs text-slate/85 font-light flex items-start gap-2.5">
+                  <li className="text-sm text-ink/75 font-light flex items-start gap-2.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-slate mt-1.5 shrink-0" />
                     <span>Specialized in Technical Drafting</span>
                   </li>
@@ -275,7 +281,7 @@ export default function About() {
         {/* SECTION 5: ACCOMPLISHMENTS (Fine-Art Grid Spread) */}
         <div className="mb-36">
           <div className="border-b border-mist/20 pb-4 mb-16 fade-up">
-            <span className="font-mono text-[9px] tracking-[0.4em] text-slate uppercase block mb-2">HONORS & LAURELS</span>
+            <span className="font-mono text-[10px] tracking-[0.4em] text-slate uppercase block mb-2 font-semibold">05 / HONORS & LAURELS</span>
             <h2 className="font-serif text-3xl md:text-4xl font-light tracking-tight text-ink uppercase">
               ACCOMPLISHMENTS
             </h2>
@@ -314,24 +320,24 @@ export default function About() {
                 category: "Executive curation"
               }
             ].map((item) => (
-              <div 
-                key={item.id} 
+              <div
+                key={item.id}
                 className="bg-paper border border-mist/15 hover:border-slate/40 p-6 rounded-sm shadow-3xs flex flex-col justify-between gap-6 transition-all duration-300 group fade-up"
               >
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <span className="font-mono text-[10px] text-slate font-semibold tracking-widest">
+                    <span className="flex items-center justify-center w-7 h-7 rounded-full bg-ink text-paper font-mono text-[10px] font-semibold tracking-wide group-hover:bg-slate transition-colors">
                       {item.id}
                     </span>
-                    <span className="font-mono text-[8px] text-mist uppercase tracking-widest">
+                    <span className="font-mono text-[9px] text-mist uppercase tracking-widest">
                       {item.category}
                     </span>
                   </div>
-                  <p className="text-xs md:text-sm text-ink font-light leading-relaxed group-hover:text-slate transition-colors">
+                  <p className="text-sm md:text-base text-ink/85 font-light leading-relaxed group-hover:text-ink transition-colors">
                     {item.title}
                   </p>
                 </div>
-                
+
                 {/* Visual balance line */}
                 <div className="w-6 h-px bg-mist/30 group-hover:w-full transition-all duration-500" />
               </div>
@@ -348,13 +354,13 @@ export default function About() {
               Draft
             </div>
 
-            <span className="font-mono text-[9px] tracking-[0.2em] text-mist uppercase block mb-4 border-b border-mist/10 pb-2">
+            <span className="font-mono text-[10px] tracking-[0.2em] text-slate uppercase block mb-4 border-b border-mist/10 pb-3 font-semibold">
               SKILLS
             </span>
             <div className="space-y-4">
               <div>
-                <span className="font-mono text-[8px] text-slate uppercase block mb-1 font-semibold tracking-wider">Design</span>
-                <p className="text-xs text-ink font-light leading-relaxed">
+                <span className="font-mono text-[9px] text-mist uppercase block mb-2 font-semibold tracking-wider">Design</span>
+                <p className="text-sm text-ink/80 font-light leading-relaxed">
                   Technical Drafting, 3D Rendering, Space Planning, Concept Development, Furniture Design, Visual Merchandising, Residential Design, Hospitality Design
                 </p>
               </div>
@@ -363,10 +369,10 @@ export default function About() {
 
           {/* LANGUAGES COLUMN */}
           <div className="lg:col-span-3 bg-paper border border-mist/15 p-8 rounded-sm shadow-3xs relative overflow-hidden fade-up">
-            <span className="font-mono text-[9px] tracking-[0.2em] text-mist uppercase block mb-4 border-b border-mist/10 pb-2">
+            <span className="font-mono text-[10px] tracking-[0.2em] text-slate uppercase block mb-4 border-b border-mist/10 pb-3 font-semibold">
               LANGUAGES
             </span>
-            <ul className="space-y-3.5 text-xs text-ink font-light">
+            <ul className="space-y-3.5 text-sm text-ink/85 font-light">
               <li className="flex items-center gap-2.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-slate" />
                 <span>Filipino</span>
@@ -380,14 +386,14 @@ export default function About() {
 
           {/* ACTIVITIES COLUMN */}
           <div className="lg:col-span-4 bg-paper border border-mist/15 p-8 rounded-sm shadow-3xs relative overflow-hidden fade-up">
-            <span className="font-mono text-[9px] tracking-[0.2em] text-mist uppercase block mb-4 border-b border-mist/10 pb-2">
+            <span className="font-mono text-[10px] tracking-[0.2em] text-slate uppercase block mb-4 border-b border-mist/10 pb-3 font-semibold">
               ACTIVITIES
             </span>
             <div className="space-y-3">
-              <h4 className="font-serif text-base font-light text-ink uppercase tracking-tight">
+              <h4 className="font-serif text-lg font-light text-ink uppercase tracking-tight">
                 New Life Bacoor
               </h4>
-              <p className="text-xs text-slate/85 font-light leading-relaxed">
+              <p className="text-sm text-ink/70 font-light leading-relaxed">
                 Media Department Team Leader since October 2025
               </p>
             </div>
