@@ -44,6 +44,18 @@ function HeroRotator({ images, position }: { images: string[]; position?: string
   );
 }
 
+function FloatingBackButton({ onClick }: { onClick: () => void }) {
+  return (
+    <button
+      onClick={onClick}
+      className="fixed top-24 left-6 z-40 flex items-center gap-1.5 px-4 py-2 rounded-full bg-paper/90 backdrop-blur-sm border border-mist/20 shadow-md font-mono text-[10px] tracking-widest uppercase text-ink/70 hover:text-ink hover:border-mist/40 transition-all duration-300"
+      id="floating-back-btn"
+    >
+      ← Projects
+    </button>
+  );
+}
+
 interface ProjectPageProps {
   slug: string;
   onNavigateProject: (slug: string) => void;
@@ -93,6 +105,7 @@ export default function ProjectPage({
   if (project.slug === "community-resilience-facility") {
     return (
       <div className="paper-grain pb-24 animate-fade-in" id="project-view-community-resilience-facility">
+        <FloatingBackButton onClick={onNavigateProjects} />
         {/* SECTION 1: HERO - FULL BLEED PHOTO */}
         <section className="relative w-full h-[70vh] flex items-end overflow-hidden">
           <HeroRotator images={project.heroImages ?? [project.heroImage]} />
@@ -405,6 +418,7 @@ export default function ProjectPage({
   if (project.slug === "giliw-learning-facility") {
     return (
       <div className="paper-grain pb-24 animate-fade-in" id="project-view-giliw-learning-facility">
+        <FloatingBackButton onClick={onNavigateProjects} />
         {/* SECTION 1: HERO - FULL BLEED PHOTO */}
         <section className="relative w-full h-[70vh] flex items-end overflow-hidden">
           <HeroRotator images={project.heroImages ?? [project.heroImage]} />
@@ -858,6 +872,7 @@ export default function ProjectPage({
   if (project.slug === "iglu-round-sofa") {
     return (
       <div className="paper-grain pb-24 animate-fade-in" id="project-view-iglu-round-sofa">
+        <FloatingBackButton onClick={onNavigateProjects} />
         {/* SECTION 1: HERO - FULL BLEED PHOTO */}
         <section className="relative w-full h-[70vh] flex items-end overflow-hidden">
           <HeroRotator
@@ -1103,6 +1118,7 @@ export default function ProjectPage({
 
   return (
     <div className="paper-grain pb-24" id={`project-view-${project.slug}`}>
+      <FloatingBackButton onClick={onNavigateProjects} />
       {/* SECTION 1: HERO - FULL BLEED ROTATING PHOTOS */}
       <section className="relative w-full h-[70vh] flex items-end overflow-hidden">
         <HeroRotator
