@@ -51,6 +51,10 @@ export default function App() {
     window.location.hash = "#home";
   };
 
+  const handleNavigateProjects = () => {
+    window.location.hash = "#projects";
+  };
+
   const handleNavigateContact = () => {
     window.location.hash = "#contact";
   };
@@ -73,7 +77,7 @@ export default function App() {
             <ProjectPage
               slug={currentPath.substring("project/".length)}
               onNavigateProject={handleNavigateProject}
-              onNavigateHome={handleNavigateHome}
+              onNavigateProjects={handleNavigateProjects}
             />
           </div>
         )}

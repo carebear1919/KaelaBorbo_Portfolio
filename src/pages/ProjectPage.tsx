@@ -47,13 +47,13 @@ function HeroRotator({ images, position }: { images: string[]; position?: string
 interface ProjectPageProps {
   slug: string;
   onNavigateProject: (slug: string) => void;
-  onNavigateHome: () => void;
+  onNavigateProjects: () => void;
 }
 
 export default function ProjectPage({
   slug,
   onNavigateProject,
-  onNavigateHome,
+  onNavigateProjects,
 }: ProjectPageProps) {
   const projectIndex = SAMPLE_PROJECTS.findIndex((p) => p.slug === slug);
   const project: Project = projectIndex !== -1 ? SAMPLE_PROJECTS[projectIndex] : SAMPLE_PROJECTS[0];
@@ -101,7 +101,7 @@ export default function ProjectPage({
           <div className="max-w-7xl mx-auto w-full px-6 pb-16 z-10 text-paper">
             {/* Breadcrumb back to home */}
             <button
-              onClick={onNavigateHome}
+              onClick={onNavigateProjects}
               className="font-mono text-xxs tracking-widest uppercase text-mist hover:text-paper transition-colors mb-6 flex items-center gap-1.5 focus:outline-none"
               id="project-back-btn"
             >
@@ -413,7 +413,7 @@ export default function ProjectPage({
           <div className="max-w-7xl mx-auto w-full px-6 pb-16 z-10 text-paper">
             {/* Breadcrumb back to home */}
             <button
-              onClick={onNavigateHome}
+              onClick={onNavigateProjects}
               className="font-mono text-xxs tracking-widest uppercase text-mist hover:text-paper transition-colors mb-6 flex items-center gap-1.5 focus:outline-none"
               id="project-back-btn"
             >
@@ -869,7 +869,7 @@ export default function ProjectPage({
           <div className="max-w-7xl mx-auto w-full px-6 pb-16 z-10 text-paper">
             {/* Breadcrumb back to home */}
             <button
-              onClick={onNavigateHome}
+              onClick={onNavigateProjects}
               className="font-mono text-xxs tracking-widest uppercase text-mist hover:text-paper transition-colors mb-6 flex items-center gap-1.5 focus:outline-none"
               id="project-back-btn"
             >
@@ -1114,7 +1114,7 @@ export default function ProjectPage({
         <div className="max-w-7xl mx-auto w-full px-6 pb-16 z-10 text-paper">
           {/* Breadcrumb back to home */}
           <button
-            onClick={onNavigateHome}
+            onClick={onNavigateProjects}
             className="font-mono text-xxs tracking-widest uppercase text-sky-200/80 hover:text-white transition-colors mb-6 flex items-center gap-1.5 focus:outline-none"
             id="project-back-btn"
           >
