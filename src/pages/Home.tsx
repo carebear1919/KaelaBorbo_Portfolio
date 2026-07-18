@@ -225,7 +225,7 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
 
         {/* 6 projects in asymmetric editorial grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
           {SAMPLE_PROJECTS.map((project, index) => {
             // Asymmetric layout sizing per project card
             let colSpan = "col-span-12";
